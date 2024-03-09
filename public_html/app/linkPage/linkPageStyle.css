@@ -15,12 +15,50 @@
 }
 
 body{
-    background-color: mediumaquamarine;
+    background-image: url('../../resources/img/background.png');
+    background-color: #fffa8a;
 }
 
 /* Styling for contents in the middle */
 #mainBase{
-    background-color: tan;
-    width: 100%;
-    height: 500;
+    margin: auto;
+    transform: translateY(30%);
+    text-align: center;
+    background-color: whitesmoke;
+    width: 60%;
+    max-width: 600px;
+    min-width: 400px;
+}
+
+#profile{
+    width: 250px;
+    border-radius: 5px;
+}
+
+/* Styling for link boxes */
+.linkBox{
+    margin: auto;
+    width: 40%;
+    min-width: 40%;
+    /* white-space: nowrap; */
+}
+
+#websiteLink{
+    background-color: navy;
+}
+
+#shopLink{
+    background-color: orange;
+}
+
+#instagramArtLink{
+    background-color: lightpink;
+}
+
+#instagramShopLink{
+    background-color: lightcoral;
+}
+
+#frensLink{
+    background-color: mediumaquamarine;
 }

@@ -2,6 +2,7 @@ MyWebsite
 ------------
 
 Author: Hyoseo Kwag [cloudymonkey@naver.com](mailto:cloudymonkey@naver.com)
+
 Date: March 9 2024 - Present
 
 
@@ -24,6 +25,16 @@ Date: March 9 2024 - Present
 - [ ] sixth link: animal frens (description)
 
 
+## :framed_picture: Sketches
+<details>
+    <summary>main link page</summary>
+    <!-- ![link page 1](MyWebsite\public_html\resources\img\readme_img\main_link page 1.png) -->
+    ![link page 1](public_html\resources\img\readme_img\main_link page 1.png)
+    ![link page 2](MyWebsite\public_html\resources\img\readme_img\main_link page 2.png)
+</details>
+
+
 ## :shamrock: Links Used to Implement
 * [Readme Emoji Cheatsheet](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md)
 * [Webfont Generator](https://www.fontsquirrel.com/tools/webfont-generator)
+* [Image Color Picker](https://imagecolorpicker.com/)
