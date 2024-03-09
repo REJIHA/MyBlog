@@ -1,0 +1,26 @@
+/* 
+    This is the css for linkPage.
+*/
+
+@font-face {
+    font-family: 'rejiha_font';
+    src: url('rejiha_font-regular-MyWebsite\public_html\resources\font\webfontkit-20240309-135718\rejiha_font-regular-webfont.woff2.woff2') format('woff2'),
+         url('rejiha_font-MyWebsite\public_html\resources\font\webfontkit-20240309-135718\rejiha_font-regular-webfont.woffregular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: rejiha_font;
+}
+
+body{
+    background-color: mediumaquamarine;
+}
+
+/* Styling for contents in the middle */
+#mainBase{
+    background-color: tan;
+    width: 100%;
+    height: 500;
+}
