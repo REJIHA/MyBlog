@@ -22,10 +22,18 @@ body{
     background-color: #fffa8a;
 }
 
+/* Styling for title */
+#title{
+    animation-name: websiteAnimation;
+    animation-duration: 1.5s;
+}
+
 /* Styling for contents in the middle */
 #mainBase{
+    animation-name: websiteAnimation;
+    animation-duration: 1.5s;
     margin: auto;
-    padding-top: 80px;
+    padding-top: 50px;
     transform: translateY(150px);
     text-align: center;
     background-image: url('../../resources/img/base_paper.png');
@@ -37,24 +45,38 @@ body{
     /* filter: drop-shadow(5px 5px 5px #474747); */
 }
 
-#profile{
+@keyframes websiteAnimation{
+    from {opacity: 0%;}
+    to {opacity: 100%;}
+}
+
+.profile{
+    margin-bottom: 15px;
+}
+
+#profilePic{
     width: 250px;
     border-radius: 5px;
+}
+
+#emailing:hover{
+    color: #f3a455;
 }
 
 /* Styling for link boxes */
 .linkBox{
     margin: auto;
+    margin-bottom: 5px;
     width: 40%;
     min-width: 40%;
 }
 .linkBox:hover{
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
     filter: brightness(.8);
+    transform: scale(1.1);
 }
 
-
 #websiteLink{
-    /* color: #e4e4e4; */
     padding: 10px;
     background-image: url('../../resources/img/purple_washi.png');
     background-color: transparent;
