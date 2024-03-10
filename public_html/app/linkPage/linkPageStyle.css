@@ -14,6 +14,7 @@
     font-family: rejiha_font;
     font-size: 25px;
     color: #4c4250;
+    text-decoration: none
 }
 
 body{
@@ -24,7 +25,7 @@ body{
 /* Styling for contents in the middle */
 #mainBase{
     margin: auto;
-    padding-top: 60px;
+    padding-top: 80px;
     transform: translateY(150px);
     text-align: center;
     background-image: url('../../resources/img/base_paper.png');
@@ -33,8 +34,8 @@ body{
     background-size: contain;
     width: 500px;
     height: 600px;
-    /* filter: drop-shadow(5px 5px 5px #474747);
-} */
+    /* filter: drop-shadow(5px 5px 5px #474747); */
+}
 
 #profile{
     width: 250px;
@@ -44,10 +45,13 @@ body{
 /* Styling for link boxes */
 .linkBox{
     margin: auto;
-    /* width: 40%; */
-    /* min-width: 40%; */
-    /* white-space: nowrap; */
+    width: 40%;
+    min-width: 40%;
 }
+.linkBox:hover{
+    filter: brightness(.8);
+}
+
 
 #websiteLink{
     /* color: #e4e4e4; */
