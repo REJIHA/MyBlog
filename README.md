@@ -31,7 +31,7 @@ Date: March 9 2024 - Present
     ![link page sketch 2](https://raw.githubusercontent.com/REJIHA/MyWebsite/blob/0.1/public_html/resources/img/readme_img/main_link%20page%202.png)
     ![link page sketch 2](MyWebsite/public_html/resources/img/readme_img/main_link page 2.png)
 </details>
-![link page sketch 2](public_html/resources/img/readme_img/main_link%20page%202.png)
+![link page sketch 2](<public_html/resources/img/readme_img/main_link page 2.png>)
 
 
 ## :shamrock: Links Used to Implement
