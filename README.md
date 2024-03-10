@@ -28,9 +28,7 @@ Date: March 9 2024 - Present
 ## :framed_picture: Sketches
 <details>
     <summary>main link page</summary>
-    <!-- ![link page 1](MyWebsite\public_html\resources\img\readme_img\main_link page 1.png) -->
-    ![link page 1](public_html\resources\img\readme_img\main_link page 1.png)
-    ![link page 2](MyWebsite\public_html\resources\img\readme_img\main_link page 2.png)
+    ![link page sketch 2](public_html/resources/img/readme_img/main_link page 2.png)
 </details>
 
 

@@ -12,6 +12,8 @@
 
 * {
     font-family: rejiha_font;
+    font-size: 25px;
+    color: #4c4250;
 }
 
 body{
@@ -22,13 +24,17 @@ body{
 /* Styling for contents in the middle */
 #mainBase{
     margin: auto;
-    transform: translateY(30%);
+    padding-top: 60px;
+    transform: translateY(150px);
     text-align: center;
-    background-color: whitesmoke;
-    width: 60%;
-    max-width: 600px;
-    min-width: 400px;
-}
+    background-image: url('../../resources/img/base_paper.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 500px;
+    height: 600px;
+    /* filter: drop-shadow(5px 5px 5px #474747);
+} */
 
 #profile{
     width: 250px;
@@ -38,25 +44,42 @@ body{
 /* Styling for link boxes */
 .linkBox{
     margin: auto;
-    width: 40%;
-    min-width: 40%;
+    /* width: 40%; */
+    /* min-width: 40%; */
     /* white-space: nowrap; */
 }
 
 #websiteLink{
-    background-color: navy;
+    /* color: #e4e4e4; */
+    padding: 10px;
+    background-image: url('../../resources/img/purple_washi.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
 }
 
 #shopLink{
-    background-color: orange;
+    padding: 10px;
+    background-image: url('../../resources/img/orange_washi.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
+
+#instagramShopLink{
+    background-color: lightcoral;
+}
+
 
 #instagramArtLink{
     background-color: lightpink;
 }
 
-#instagramShopLink{
-    background-color: lightcoral;
+#tiktokLink{
+    background-color: lightblue;
 }
 
 #frensLink{
