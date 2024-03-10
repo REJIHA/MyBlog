@@ -30,13 +30,8 @@ Date: March 9 2024 - Present
 ## :framed_picture: Sketches
 <details>
     <summary>main link page</summary>
-    <!-- ![link page sketch 2](https://raw.githubusercontent.com/REJIHA/MyWebsite/blob/0.1/public_html/resources/img/readme_img/main_link%20page%202.png)
-    ![link page sketch 2](MyWebsite/public_html/resources/img/readme_img/main_link page 2.png) -->
-    <!-- ![link page sketch 2](./public_html/resources/img/readme_img/main_link page 2.png)
-    ![link page sketch 2](./main_link page 2.png) -->
-    ![](https://github.com/REJIHA/MyWebsite/blob/0.1/main_link%20page%202.png)
+    ![img1](https://github.com/REJIHA/MyWebsite/blob/0.1/public_html/resources/img/readme_img/main_link%20page%201.png?raw=true)
 </details>
-![](./main_link%20page%202.png)
 
 ## :shamrock: Links Used to Implement
 * [Readme Emoji Cheatsheet](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md)
