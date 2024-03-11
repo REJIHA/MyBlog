@@ -18,20 +18,36 @@ Date: March 9 2024 - Present
 
 
 ## :fish: To-Do
-- [ ] main - link to other pages (like linktree)
-- [ ] first link: my website
-- [ ] second link: shop
-- [ ] third link: instagram (shop)
-- [ ] fourth link: instagram (art)
-- [ ] fifth link: tiktok
-- [ ] sixth link: animal frens (description)
-
+- [x] main - link to other pages (like linktree)
+    - [x] first link: my website
+    - [x] second link: shop
+    - [x] third link: instagram (shop)
+    - [x] fourth link: instagram (art)
+    - [x] fifth link: tiktok
+    - [x] sixth link: animal frens (description)
+- [ ] my website page
+    - [ ] about me page
+    - [ ] link to resume
+    - [ ] courses taken
+        - [ ] comp sci (major)
+        - [ ] art (minor)
+    - [ ] coding projects showcase
+    - [ ] version tracking page (gif of me typing)
+- [ ] animal frens introduction page
+- [ ] funsies
+    - [ ] animal frens profile maker & popularity poll (using cookie)
+- [ ] WRAPPING UP
+    - [ ] make website ssl certificated
+    - [ ] publish to digital ocean
+    - [ ] buy domain
+    - [ ] check responsiveness (desktop & mobile)
 
 ## :framed_picture: Sketches
-<details>
+<!-- <details>
     <summary>main link page</summary>
     ![img1](https://github.com/REJIHA/MyWebsite/blob/0.1/public_html/resources/img/readme_img/main_link%20page%201.png?raw=true)
-</details>
+</details> -->
+[click here to view](https://github.com/REJIHA/MyWebsite/tree/0.1/public_html/resources/img/readme_img)
 
 ## :shamrock: Links Used to Implement
 * [Readme Emoji Cheatsheet](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md)
