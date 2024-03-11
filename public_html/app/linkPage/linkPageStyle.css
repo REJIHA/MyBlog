@@ -26,6 +26,13 @@ body{
 #title{
     animation-name: websiteAnimation;
     animation-duration: 1.5s;
+    width: 450px;
+    /* width: 70%;
+    max-width: 600px;
+    min-width: 400px; */
+    display: block;
+    margin: auto;
+    padding-top: 20px;
 }
 
 /* Styling for contents in the middle */
@@ -33,8 +40,9 @@ body{
     animation-name: websiteAnimation;
     animation-duration: 1.5s;
     margin: auto;
-    padding-top: 50px;
-    transform: translateY(150px);
+    padding-top: 40px;
+    padding-bottom: 60px;
+    /* transform: translateY(50px); */
     text-align: center;
     background-image: url('../../resources/img/base_paper.png');
     background-color: transparent;
@@ -72,7 +80,7 @@ body{
 }
 .linkBox:hover{
     text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
-    filter: brightness(.8);
+    filter: brightness(0.9);
     transform: scale(1.1);
 }
 
@@ -96,18 +104,38 @@ body{
 }
 
 #instagramShopLink{
-    background-color: lightcoral;
+    padding: 10px;
+    background-image: url('../../resources/img/red_washi.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
 
 #instagramArtLink{
-    background-color: lightpink;
+    padding: 10px;
+    background-image: url('../../resources/img/pink_washi.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
 #tiktokLink{
-    background-color: lightblue;
+    padding: 10px;
+    background-image: url('../../resources/img/blue_washi.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
 #frensLink{
-    background-color: mediumaquamarine;
+    padding: 10px;
+    background-image: url('../../resources/img/green_washi.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
