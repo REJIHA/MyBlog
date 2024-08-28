@@ -5,7 +5,7 @@ MyWebsite
 
 Author: Hyoseo Kwag [cloudymonkey@naver.com](mailto:cloudymonkey@naver.com)
 
-Date: March 9 2024 - Present
+Date: March 9,10 2024, August 28 2024 - Present
 
 
 ## :rotating_light: Notes
@@ -36,6 +36,7 @@ Date: March 9 2024 - Present
 - [ ] animal frens introduction page
 - [ ] funsies
     - [ ] animal frens profile maker & popularity poll (using cookie)
+    - [ ] QR code generaor
 - [ ] WRAPPING UP
     - [ ] make website ssl certificated
     - [ ] publish to digital ocean

@@ -1,0 +1,25 @@
+/* 
+    This is the css for myWebsite.
+*/
+
+/* could not convert ttf to woff so hopefully ttf is good enough */
+@font-face {
+    font-family: 'silkscreen';
+    src: url('../../resources/font/silkscreen/slkscr.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'silkscreen_bold';
+    src: url('../../resources/font/silkscreen/slkscrb.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: silkscreen;
+    font-size: 25px;
+    color: #4c4250;
+    text-decoration: none
+}
