@@ -1,0 +1,55 @@
+/* 
+    This is the css for myWebsite.
+*/
+
+/* Using free to use font "sillkscreen" by Jason Kottke.
+Could not convert ttf to woff so change upon malfunction */
+@font-face {
+    font-family: 'silkscreen';
+    src: url('../../resources/font/silkscreen/slkscr.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* bold one is not that pretty, maybe delete */
+/* @font-face {
+    font-family: 'silkscreen_bold';
+    src: url('../../resources/font/silkscreen/slkscrb.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+} */
+
+* {
+    font-family: silkscreen;
+    font-size: 25px;
+    color: #4c4250;
+    text-decoration: none
+}
+
+body {
+    background-color: blue;
+}
+
+/* disable interacting with images (like saving them) */
+img {
+    pointer-events: none;
+}
+
+h1 {
+    font-family: silkscreen;
+    font-size: 50px;
+    color: white;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    text-align: center;
+    margin: auto;
+    /* width: 80%; */
+    background-color: purple;
+}
+
+#mainBackgroundImg {
+    width: 90%;
+    height: auto;
+    padding: 10px;
+
+    background-color: red;
+}

@@ -2,7 +2,7 @@
     This is the css for linkPage.
 */
 
-/* woff for browsers, ttf for mobile */
+/* Setting my custom font. woff for browsers, ttf for mobile */
 @font-face {
     font-family: 'rejiha_font';
     /* first method did not work in laptop but it worked in pc */
@@ -25,6 +25,11 @@
 body{
     background-image: url('../../resources/img/linkPage/background.png');
     background-color: #fffa8a;
+}
+
+/* Disable interacting with images (like saving them) */
+img {
+    pointer-events: none;
 }
 
 /* Styling for title */
@@ -58,11 +63,13 @@ body{
     /* filter: drop-shadow(5px 5px 5px #474747); */
 }
 
+/* Animation on reveal/ refresh */
 @keyframes websiteAnimation{
     from {opacity: 0%;}
     to {opacity: 100%;}
 }
 
+/* Styling for my avatar profile picture */
 .profile{
     margin-bottom: 15px;
 }
@@ -76,12 +83,23 @@ body{
     color: #f3a455;
 }
 
+/* Fixes the bug being able to click link on supposedly blank space */
+.hrefBox{
+    display: contents;
+}
+
 /* Styling for link boxes */
 .linkBox{
     margin: auto;
     margin-bottom: 5px;
     width: 40%;
     min-width: 40%;
+
+    padding: 10px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 .linkBox:hover{
     text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
@@ -89,58 +107,28 @@ body{
     transform: scale(1.1);
 }
 
+/* Styling for each links */
 #websiteLink{
-    padding: 10px;
     background-image: url('../../resources/img/linkPage/purple_washi.png');
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-
 }
 
 #shopLink{
-    padding: 10px;
     background-image: url('../../resources/img/linkPage/orange_washi.png');
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
 }
 
 #instagramShopLink{
-    padding: 10px;
     background-image: url('../../resources/img/linkPage/red_washi.png');
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
 }
 
 
 #instagramArtLink{
-    padding: 10px;
     background-image: url('../../resources/img/linkPage/pink_washi.png');
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
 }
 
 #tiktokLink{
-    padding: 10px;
     background-image: url('../../resources/img/linkPage/blue_washi.png');
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
 }
 
 #frensLink{
-    padding: 10px;
     background-image: url('../../resources/img/linkPage/green_washi.png');
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
 }
