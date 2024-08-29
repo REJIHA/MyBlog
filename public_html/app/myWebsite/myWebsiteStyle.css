@@ -14,7 +14,7 @@ Could not convert ttf to woff so change upon malfunction */
 * {
     font-family: silkscreen;
     font-size: 25px;
-    color: #4c4250;
+    color: black;
     text-decoration: none
 }
 
@@ -23,6 +23,7 @@ body {
     background-size: 40px 40px;    
     background-image: repeating-linear-gradient(0deg, #fff, #fff 2px, transparent 1px, transparent 40px),
                     repeating-linear-gradient(-90deg, #fff, #fff 2px, transparent 1px, transparent 40px);
+    /* !cursor not staying as custom curser! */
     /* cursor: url('../../resources/img/myWebsite/xp_cursor.png'), auto; */
 }
 
@@ -57,24 +58,23 @@ h1 {
 
 #linkIcon {
     /* position: absolute;
-    /* z-index: 9; */
-    /* background-color: red;
+    background-color: red;
     border: 1px solid purple;
-    text-align: center; */ */
+    text-align: center; */
 }
 
 #linkIcon_aboutme {
     /* Place the icon depending on background size */
     position: absolute;
-    top: 170px;
-    left: 180px;
+    top: 5px;
+    left: 5px;
 
-    width: 50px;
-    height: 50px;
-    padding: 10px;
+    /* width: 100px;
+    height: 100px;
+    padding: 10px; */
     cursor: move;
-    /* z-index: 10; */
-    background-color: blue;
+    /* background-color: blue; */
     text-align: center;
-    font-size: 15px;
+    font-size: 20px;
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
 }

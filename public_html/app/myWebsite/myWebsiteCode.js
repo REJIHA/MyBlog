@@ -23,7 +23,7 @@ var boundary = {
 function startDragging(id) {
     // Fetch the element to drag from html and start tracking mouse movements
     dragElem = document.getElementById(id);
-    console.log("dragging this item: "+dragElem.id);
+    // console.log("dragging this item: "+dragElem.id);
 
     dragElem.addEventListener('mousedown', mouseDown);
 }
@@ -32,7 +32,7 @@ function mouseDown(e) {
     // Grab cursor position upon drag start click
     coordinate.startX = e.clientX;
     coordinate.startY = e.clientY;
-    console.log("mouse start XY: ("+coordinate.startX+", "+coordinate.startY+")");
+    // console.log("mouse start XY: ("+coordinate.startX+", "+coordinate.startY+")");
 
     document.addEventListener('mousemove', mouseMove);
     document.addEventListener('mouseup', mouseUp);
@@ -58,3 +58,20 @@ function mouseUp(e) {
     // Upon releasing the click stop dragging
     document.removeEventListener('mousemove', mouseMove);
 }
+
+function repositionIcons() {
+    // When background image resize, reposition & resize icons inside too
+    const bckgnd = document.getElementById("mainBackgroundImg");
+    // const aboutme = document.getElementById("linkIcon_aboutme");
+    const aboutme = document.getElementById("aboutmeImg");
+
+    // const bckgndWidth = bckgnd.offsetWidth;
+    const bckgndHeight = bckgnd.offsetHeight;
+    // console.log("background size: "+bckgndWidth+" "+bckgndHeight);
+
+    aboutme.style.width = (bckgndHeight * 0.15) + "px";
+    aboutme.style.height = (bckgndHeight * 0.15) + "px";
+    console.log("about me: "+aboutme.offsetWidth+" "+aboutme.offsetHeight);
+}
+
+window.onresize = repositionIcons;
