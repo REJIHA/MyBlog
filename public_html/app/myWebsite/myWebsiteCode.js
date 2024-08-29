@@ -1,7 +1,10 @@
 /*
-Javascript code that...
+First, this javascript code keeps icons inside windows xp style background in
+appropriate ratio to background, so when the user resizes or refreshes the
+window or moves the icon, they stay relative to changed aspects.
 */
 
+const imgRatio = 0.15;
 let dragElem = null;
 
 // Object for mouse cursor coordinates upon click on draggable item
@@ -52,6 +55,7 @@ function mouseMove(e) {
     // Move the element
     dragElem.style.top = (dragElem.offsetTop - coordinate.newY) + 'px';
     dragElem.style.left = (dragElem.offsetLeft - coordinate.newX) + 'px';
+    // console.log("moved to: ("+(dragElem.offsetTop - coordinate.newY)+", "+(dragElem.offsetLeft - coordinate.newX)+")");
 }
 
 function mouseUp(e) {
@@ -60,18 +64,24 @@ function mouseUp(e) {
 }
 
 function repositionIcons() {
+/*  TODO: stick icon coordinate according to background image ratio
+            do not let icon move out of background image
+*/
+
     // When background image resize, reposition & resize icons inside too
     const bckgnd = document.getElementById("mainBackgroundImg");
-    // const aboutme = document.getElementById("linkIcon_aboutme");
     const aboutme = document.getElementById("aboutmeImg");
+
 
     // const bckgndWidth = bckgnd.offsetWidth;
     const bckgndHeight = bckgnd.offsetHeight;
     // console.log("background size: "+bckgndWidth+" "+bckgndHeight);
 
-    aboutme.style.width = (bckgndHeight * 0.15) + "px";
-    aboutme.style.height = (bckgndHeight * 0.15) + "px";
-    console.log("about me: "+aboutme.offsetWidth+" "+aboutme.offsetHeight);
+    aboutme.style.width = (bckgndHeight * imgRatio) + "px";
+    aboutme.style.height = (bckgndHeight * imgRatio) + "px";
+    // console.log("about me: "+aboutme.offsetWidth+" "+aboutme.offsetHeight);
 }
 
+// Make sure icons keep appropriate size and location on refresh & resize of window
 window.onresize = repositionIcons;
+window.onload = repositionIcons;
