@@ -31,7 +31,7 @@ function setBoundary() {
     boundary.bot = boundary.top + baseImg.offsetHeight;     // gotta subtract (icon size + bounndary size) here
     boundary.left = baseImg.offsetLeft + boundarySize;
     boundary.right = boundary.left + baseImg.offsetWidth;   // gotta subtract (icon size + bounndary size) here
-    console.log("BOUNDARY TBLR: "+boundary.top+","+boundary.bot+","+boundary.left+","+boundary.right);
+    // console.log("BOUNDARY TBLR: "+boundary.top+","+boundary.bot+","+boundary.left+","+boundary.right);
 }
 
 function startDragging(id) {
@@ -109,11 +109,13 @@ function mouseMove(e) {
 function mouseUp(e) {
     // Upon releasing the click stop dragging
     document.removeEventListener('mousemove', mouseMove);
+
+    // document.removeEventListener('mouseup', mouseUp);
+    // document.removeEventListener('mousedown', mouseDown);
+    // console.log("NO MORE DRAGGING");
 }
 
 function repositionIcons() {
-    setBoundary;
-
     // Elements for resizing
     // const bckgnd = document.getElementById("mainBackgroundImg");
     // const bckgnd = baseImg;
@@ -142,19 +144,14 @@ function repositionIcons() {
 }
 
 
-// Make sure icons keep appropriate size and location on refresh & resize of window
-// function init() {
-//     setBoundary;
-//     repositionIcons;
-// }
-// window.onload = init;
-// window.onresize = init;
-
-// setBoundary doesnt run when repositionIcons runs...?????
-window.onload = window.onresize = setBoundary;
-// window.onload = window.onresize = repositionIcons;
+// Make sure to keep new boundary area, and icons' appropriate size
+// and location on refresh & resize of window
+window.addEventListener('load', setBoundary);
+window.addEventListener('load', repositionIcons);
+window.addEventListener('resize', setBoundary);
+window.addEventListener('resize', repositionIcons);
 
 /*  TODO: stick icon coordinate according to background image ratio
-            do not let icon move out of background image
+            do not let icon move out of background image (tweak more)
             CANNOT DRAG OR CLICK ON MOBILE WEB
 */

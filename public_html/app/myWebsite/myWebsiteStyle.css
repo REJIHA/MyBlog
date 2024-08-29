@@ -69,8 +69,8 @@ figcaption {
 #linkIcon_aboutme {
     /* Place the icon depending on background size */
     position: absolute;
-    top: 5px;
-    left: 5px;
+    top: 100px;
+    left: 150px;
 
     cursor: move;
 }
