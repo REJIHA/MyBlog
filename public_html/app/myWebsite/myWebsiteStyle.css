@@ -11,14 +11,6 @@ Could not convert ttf to woff so change upon malfunction */
     font-style: normal;
 }
 
-/* bold one is not that pretty, maybe delete */
-/* @font-face {
-    font-family: 'silkscreen_bold';
-    src: url('../../resources/font/silkscreen/slkscrb.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-} */
-
 * {
     font-family: silkscreen;
     font-size: 25px;
@@ -31,6 +23,7 @@ body {
     background-size: 40px 40px;    
     background-image: repeating-linear-gradient(0deg, #fff, #fff 2px, transparent 1px, transparent 40px),
                     repeating-linear-gradient(-90deg, #fff, #fff 2px, transparent 1px, transparent 40px);
+    /* cursor: url('../../resources/img/myWebsite/xp_cursor.png'), auto; */
 }
 
 /* disable interacting with images (like saving them) */
@@ -38,6 +31,7 @@ img {
     pointer-events: none;
 }
 
+/* Styling of the website header */
 h1 {
     font-family: silkscreen;
     font-size: 50px;
@@ -46,8 +40,10 @@ h1 {
     text-align: center;
     margin: auto;
     width: 80%;
+    padding-bottom: 15px;
 }
 
+/* Styling of main background image (the windows xp) */
 #mainBackgroundImg {
     max-width: 90vw;
     max-height: 90vh;
@@ -55,6 +51,21 @@ h1 {
     margin-left:auto;
     margin-right:auto;
 
-    padding: 20px;
+    padding: 5px;
+    background-color: black;
+}
+
+.linkIcon {
+    position: absolute;
+    /* z-index: 9; */
     background-color: red;
+    border: 1px solid purple;
+    text-align: center;
+}
+
+.linkIcon_aboutme {
+    padding: 10px;
+    cursor: move;
+    /* z-index: 10; */
+    background-color: blue;
 }
