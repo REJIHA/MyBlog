@@ -63,7 +63,7 @@ img {
     /* filter: drop-shadow(5px 5px 5px #474747); */
 }
 
-/* Animation on reveal/ refresh */
+/* Animation on refresh */
 @keyframes websiteAnimation{
     from {opacity: 0%;}
     to {opacity: 100%;}
@@ -103,7 +103,7 @@ img {
 }
 .linkBox:hover{
     text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
-    filter: brightness(0.9);
+    /* filter: brightness(0.9); */
     transform: scale(1.1);
 }
 
