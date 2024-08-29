@@ -2,45 +2,59 @@
 Javascript code that...
 */
 
-function dragElement(element) {
-    var pos1=0, pos2=0, ps3=0, pos4=0;
-    console.log("element: "+element.id);
-    if (document.getElementById(element.id+"_aboutme")) {
-        document.getElementById(element.id+"_aboutme").onmousedown = dragMouseDown;
-    } else {
-        element.onmousedown = dragMouseDown;
-    }
+let dragElem = null;
+
+// Object for mouse cursor coordinates upon click on draggable item
+var coordinate = {
+    newX: 0,
+    newY: 0,
+    startX: 0,
+    startY: 0
+};
+
+// Boundary of draggable area
+var boundary = {
+    top: 0,
+    bot: 0,
+    left: 0,
+    right: 0
+};
+
+function startDragging(id) {
+    // Fetch the element to drag from html and start tracking mouse movements
+    dragElem = document.getElementById(id);
+    console.log("dragging this item: "+dragElem.id);
+
+    dragElem.addEventListener('mousedown', mouseDown);
 }
 
-function dragMouseDown(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // get the mouse cursor position at startup:
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
-    document.onmousemove = elementDrag;
+function mouseDown(e) {
+    // Grab cursor position upon drag start click
+    coordinate.startX = e.clientX;
+    coordinate.startY = e.clientY;
+    console.log("mouse start XY: ("+coordinate.startX+", "+coordinate.startY+")");
+
+    document.addEventListener('mousemove', mouseMove);
+    document.addEventListener('mouseup', mouseUp);
 }
 
-function elementDrag(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // calculate the new cursor position:
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    // set the element's new position:
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+function mouseMove(e) {
+    // Calculate distance between drag start click and mouse move (dragging)
+    coordinate.newX = coordinate.startX - e.clientX;
+    coordinate.newY = coordinate.startY - e.clientY;
+    // console.log("new XY: ("+coordinate.newX+", "+coordinate.newY+")");
+
+    // Reset start position
+    coordinate.startX = e.clientX;
+    coordinate.startY = e.clientY;
+    // console.log("curr start XY: ("+coordinate.startX+", "+coordinate.startY+")");
+
+    // Move the element
+    dragElem.style.top = (dragElem.offsetTop - coordinate.newY) + 'px';
+    dragElem.style.left = (dragElem.offsetLeft - coordinate.newX) + 'px';
 }
 
-function closeDragElement() {
-    // stop moving when mouse button is released:
-    document.onmouseup = null;
-    document.onmousemove = null;
+function mouseUp(e) {
+    // Upon releasing the click stop dragging
+    document.removeEventListener('mousemove', mouseMove);
 }
-
-
-dragElement(document.getElementById("linkIcon"));

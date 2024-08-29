@@ -6,8 +6,6 @@
   <head>
     <meta name="viewport" content="width=device-width", initial-scale="1.0">
     <link rel="stylesheet" type="text/css" href="./myWebsiteStyle.css">
-    <script src="myWebsiteCode.js"></script>
-
     <!-- add icon here -->
     <title>My Website</title>
   </head>
@@ -17,8 +15,10 @@
         <img src="../../resources/img/myWebsite/xp_background.png" alt="XP Background" id="mainBackgroundImg">
 
         <div id="linkIcon">
-          <div id="linkIcon_aboutme">about me</div>
+          <div id="linkIcon_aboutme" onmouseover="startDragging(this.id)">about me</div>
         </div>
     </main>
   </body>
+  <!-- Putting javascript here so it executes after page loads -->
+    <script src="myWebsiteCode.js"></script>
 </html>

@@ -56,3 +56,4 @@ Date: March 9,10 2024, August 28 2024 - Present
 * [Image Color Picker](https://imagecolorpicker.com/)
 * [Pixel Font "Silkscreen"](https://www.dafont.com/silkscreen.font)
 * [CSS position property](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
+* [Javascript - Drag & Drop](https://youtu.be/ymDjvycjgUM?si=UZUC14YY_Eu5hWJp)

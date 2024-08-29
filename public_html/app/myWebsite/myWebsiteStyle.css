@@ -55,17 +55,26 @@ h1 {
     background-color: black;
 }
 
-.linkIcon {
-    position: absolute;
+#linkIcon {
+    /* position: absolute;
     /* z-index: 9; */
-    background-color: red;
+    /* background-color: red;
     border: 1px solid purple;
-    text-align: center;
+    text-align: center; */ */
 }
 
-.linkIcon_aboutme {
+#linkIcon_aboutme {
+    /* Place the icon depending on background size */
+    position: absolute;
+    top: 170px;
+    left: 180px;
+
+    width: 50px;
+    height: 50px;
     padding: 10px;
     cursor: move;
     /* z-index: 10; */
     background-color: blue;
+    text-align: center;
+    font-size: 15px;
 }
