@@ -70,8 +70,10 @@ figcaption {
     /* Place the icon depending on background size */
     z-index: 10;
     position: absolute;
-    top: 100px;
-    left: 150px;
+    /* top: 100px;
+    left: 150px; */
+    top: 5vh;
+    left: 10vw;
 
     cursor: move;
 }

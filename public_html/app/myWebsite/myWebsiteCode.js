@@ -4,9 +4,9 @@ appropriate ratio to background, so when the user resizes or refreshes the
 window or moves the icon, they stay relative to changed aspects.
 */
 
-const baseImg = document.getElementById("mainBackgroundImg");
+const bkgdImg = document.getElementById("mainBackgroundImg");
 const imgRatio = 0.15;
-const boundarySize = parseInt(window.getComputedStyle(baseImg).getPropertyValue("padding"));
+const boundarySize = parseInt(window.getComputedStyle(bkgdImg).getPropertyValue("padding"));
 let dragElem = null;
 
 // Object for mouse cursor coordinates upon click on draggable item
@@ -25,6 +25,13 @@ var boundary = {
     right: 0
 };
 
+var winSize = {
+    oldWidth: 0,
+    oldHeight: 0,
+    newWidth: 0,
+    newHeight: 0
+};
+
 function setBoundary() {
     // Get the changed icon size (base -> aboutme icon)
     computedWidth = document.getElementById("linkIcon_aboutme").clientWidth;
@@ -32,11 +39,43 @@ function setBoundary() {
     // console.log("ICON SIZE w,h: "+computedWidth+","+computedHeight);
 
     // Set boundary of draggable icons
-    boundary.top = baseImg.offsetTop + boundarySize;
-    boundary.bot = boundary.top + baseImg.offsetHeight - (computedHeight + boundarySize*2);
-    boundary.left = baseImg.offsetLeft + boundarySize;
-    boundary.right = boundary.left + baseImg.offsetWidth - (computedWidth + boundarySize*2);
+    boundary.top = bkgdImg.offsetTop + boundarySize;
+    boundary.bot = boundary.top + bkgdImg.offsetHeight - (computedHeight + boundarySize*2);
+    boundary.left = bkgdImg.offsetLeft + boundarySize;
+    boundary.right = boundary.left + bkgdImg.offsetWidth - (computedWidth + boundarySize*2);
     // console.log("BOUNDARY TBLR: "+boundary.top+","+boundary.bot+","+boundary.left+","+boundary.right);
+}
+
+function saveBackgroundSize() {
+    var computedBkgd = window.getComputedStyle(bkgdImg);
+    const backRect = bkgdImg.getBoundingClientRect();
+    // Below calculation gives size without padding, border, and margins
+    currWidth = bkgdImg.clientWidth - (parseFloat(computedBkgd.paddingLeft) + parseFloat(computedBkgd.paddingRight));
+    currHeight = bkgdImg.clientHeight - (parseFloat(computedBkgd.paddingTop) + parseFloat(computedBkgd.paddingBottom));
+    
+    // width is okay but height is movinig toooo much
+    // currWidth = backRect.left;
+    // currHeight = backRect.top;
+
+
+
+
+
+    if ((winSize.oldWidth == 0) && (winSize.oldHeight == 0)) {
+        // Initially the old size is original size
+        winSize.oldWidth = bkgdImg.naturalWidth;
+        winSize.oldHeight = bkgdImg.naturalHeight;
+        winSize.newWidth = currWidth;
+        winSize.newHeight = currHeight;
+        // console.log("INIT: "+JSON.stringify(winSize));
+    } else {
+        // Keep previous size as old and save changed size as new
+        winSize.oldWidth = winSize.newWidth;
+        winSize.oldHeight = winSize.newHeight;
+        winSize.newWidth = currWidth;
+        winSize.newHeight = currHeight;
+        // console.log("OLD N NEW: "+JSON.stringify(winSize));
+    }
 }
 
 function startDragging(id) {
@@ -116,33 +155,55 @@ function mouseUp(e) {
 }
 
 function repositionIcons() {
+    // Save new background size
+    saveBackgroundSize();
+
     // Elements for resizing
     // TODO: for all icons!
+    // const iconImgs = ["aboutmeImg"];
+    // for (let i=0; i<iconImgs.length; i++) {
+    //     curr = iconImgs[i];
+    // }
     const aboutmeImg = document.getElementById("aboutmeImg");
 
-    // When window resizes, get height of background img and change icon size correspondingly
-    const baseImgHeight = baseImg.offsetHeight;
-    // console.log("background size: "+baseImgWidth+" "+baseImgHeight);
-    aboutmeImg.style.width = (baseImgHeight * imgRatio) + "px";
-    aboutmeImg.style.height = (baseImgHeight * imgRatio) + "px";
+    // Get height of background img and change icon size correspondingly
+    const bkgdImgHeight = bkgdImg.offsetHeight;
+    // console.log("background size: "+bkgdImgWidth+" "+bkgdImgHeight);
+    aboutmeImg.style.width = (bkgdImgHeight * imgRatio) + "px";
+    aboutmeImg.style.height = (bkgdImgHeight * imgRatio) + "px";
     // console.log("about me: "+aboutmeImg.offsetWidth+" "+aboutmeImg.offsetHeight);
 
     // After resizing the icon related to window size, calculate boundary area
     // (why it's called here is because it needs changed icon size)
     setBoundary();
 
-    // const imgWidth = baseImg.width;
-    // const imgHeight = baseImg.height;
-    // console.log("img size: "+imgWidth+" x "+imgHeight);
-    const aboutmeLocation = document.getElementById("linkIcon_aboutme");
-    const location = aboutmeLocation.getBoundingClientRect();
-    // console.log("icon at: ("+location.top+","+location.left+")");
 
-    // const baseImgX = baseImg.getBoundingClientRect().left;
-    // const baseImgY = baseImg.getBoundingClientRect().top;
-    // console.log("background at: ("+baseImgX+","+baseImgY+")");
+    // Change location of icon in relation to current window size
+    const backRect = bkgdImg.getBoundingClientRect();
+    const currElem = document.getElementById("linkIcon_aboutme");
+    const currElemRect = currElem.getBoundingClientRect();
     
+    // const iconsAt = ["linkIcon_aboutme"];
+    // for (let i=0; i<iconsAt.length; i++) {
+    //      curr = iconsAt[i];
+    // }
+    // TODO: ERROR HERE! getting null
+    // Get current location of icon
+    backX = backRect.left;
+    backY = backRect.top;
+    // console.log("background img at: "+backX+","+backY);
+    currX = currElemRect.left;
+    currY = currElemRect.top;
+    // console.log("currently at: "+currX+","+currY);
 
+    // TODO: on load doesnt change to new coordinates -> make initial winsize.old large?
+    // Calculate & change coordinates
+    moveX = (winSize.newWidth*currX) / winSize.oldWidth;
+    moveY = ((winSize.newHeight)*currY) / winSize.oldHeight;
+    console.log("NEW COORDINATES: "+moveX+","+moveY);
+    // currElem.style.left = moveX+'px';
+    // currElem.style.top = moveY+'px';
+    currElem.style.top = (currElem.style.top + backY) + 'px';
 }
 
 // On loading and resizing of window, change icons' size and location too
@@ -154,5 +215,5 @@ window.addEventListener('resize', repositionIcons);
 
 /*  TODO: stick icon coordinate according to background image ratio
             CANNOT DRAG OR CLICK ON MOBILE WEB
-            use loops to make all icons resized & repositioned
+            as more icons are added use loops to make all icons resized & repositioned
 */
