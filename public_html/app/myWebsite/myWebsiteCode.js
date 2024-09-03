@@ -27,10 +27,14 @@ var boundary = {
 
 function setBoundary() {
     // const baseImg = document.getElementById("mainBackgroundImg");
+    iconCompStyle = window.getComputedStyle(document.getElementById("linkIcon_aboutme"));
+    computedWidth = parseInt(iconCompStyle.getPropertyValue("width"));
+    computedHeight = parseInt(iconCompStyle.getPropertyValue("height"));
+    console.log("ICON SIZE w,h: "+computedWidth+","+computedHeight);
     boundary.top = baseImg.offsetTop + boundarySize;
-    boundary.bot = boundary.top + baseImg.offsetHeight;     // gotta subtract (icon size + bounndary size) here
+    boundary.bot = boundary.top + baseImg.offsetHeight - (computedHeight + boundarySize*2);     // gotta subtract (icon size + boundary size) here
     boundary.left = baseImg.offsetLeft + boundarySize;
-    boundary.right = boundary.left + baseImg.offsetWidth;   // gotta subtract (icon size + bounndary size) here
+    boundary.right = boundary.left + baseImg.offsetWidth - (computedWidth + boundarySize*2);   // gotta subtract (icon size + boundary size) here
     // console.log("BOUNDARY TBLR: "+boundary.top+","+boundary.bot+","+boundary.left+","+boundary.right);
 }
 
@@ -84,7 +88,7 @@ function mouseMove(e) {
         dragElem.style.left = boundary.right + 'px';
     } else {
         // For some reason icon ended up outside of boundary...
-        console.log("icon is outside of bounary!")
+        // console.log("icon is outside of bounary!")
     }
 
     // Move y coordinate
@@ -99,7 +103,7 @@ function mouseMove(e) {
         dragElem.style.top = boundary.bot + 'px';
     } else {
         // For some reason icon ended up outside of boundary...
-        console.log("icon is outside of bounary!")
+        // console.log("icon is outside of bounary!")
     }
 
     // dragElem.style.left = moveToY + 'px';
