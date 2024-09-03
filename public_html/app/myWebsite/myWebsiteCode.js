@@ -26,15 +26,16 @@ var boundary = {
 };
 
 function setBoundary() {
-    // const baseImg = document.getElementById("mainBackgroundImg");
-    iconCompStyle = window.getComputedStyle(document.getElementById("linkIcon_aboutme"));
-    computedWidth = parseInt(iconCompStyle.getPropertyValue("width"));
-    computedHeight = parseInt(iconCompStyle.getPropertyValue("height"));
-    console.log("ICON SIZE w,h: "+computedWidth+","+computedHeight);
+    // Get the changed icon size (base -> aboutme icon)
+    computedWidth = document.getElementById("linkIcon_aboutme").clientWidth;
+    computedHeight = document.getElementById("linkIcon_aboutme").clientHeight;
+    // console.log("ICON SIZE w,h: "+computedWidth+","+computedHeight);
+
+    // Set boundary of draggable icons
     boundary.top = baseImg.offsetTop + boundarySize;
-    boundary.bot = boundary.top + baseImg.offsetHeight - (computedHeight + boundarySize*2);     // gotta subtract (icon size + boundary size) here
+    boundary.bot = boundary.top + baseImg.offsetHeight - (computedHeight + boundarySize*2);
     boundary.left = baseImg.offsetLeft + boundarySize;
-    boundary.right = boundary.left + baseImg.offsetWidth - (computedWidth + boundarySize*2);   // gotta subtract (icon size + boundary size) here
+    boundary.right = boundary.left + baseImg.offsetWidth - (computedWidth + boundarySize*2);
     // console.log("BOUNDARY TBLR: "+boundary.top+","+boundary.bot+","+boundary.left+","+boundary.right);
 }
 
@@ -71,12 +72,12 @@ function mouseMove(e) {
     moveToX = (dragElem.offsetLeft - coordinate.newX);
     moveToY = (dragElem.offsetTop - coordinate.newY);
 
-    // this lets icons move all over the place
+    // this lets icons move all over the place without boundary
     // dragElem.style.left = moveToX + 'px';
     // dragElem.style.top = moveToY + 'px';
     // console.log("moved to: ("+(dragElem.offsetTop - coordinate.newY)+", "+(dragElem.offsetLeft - coordinate.newX)+")");
 
-    // Move x coordinate
+    // Move x coordinate inside the boundary
     if ((boundary.left <= moveToX) && (moveToX <= boundary.right)) {
         // New x coordinate is inside the moveable area
         dragElem.style.left = moveToX + 'px';
@@ -87,11 +88,11 @@ function mouseMove(e) {
         // New x coordinate is too right, stop going further
         dragElem.style.left = boundary.right + 'px';
     } else {
-        // For some reason icon ended up outside of boundary...
-        // console.log("icon is outside of bounary!")
+        // Icon ended up outside of boundary... put it back inside
+        dragElem.style.left = boundary.right + 'px';
     }
 
-    // Move y coordinate
+    // Move y coordinate inside the boundary
     if ((boundary.top <= moveToY) && (moveToY <= boundary.bot)) {
         // New y coordinate is inside the moveable area
         dragElem.style.top = moveToY + 'px';
@@ -102,36 +103,33 @@ function mouseMove(e) {
         // New y coordinate is too low, stop going further
         dragElem.style.top = boundary.bot + 'px';
     } else {
-        // For some reason icon ended up outside of boundary...
-        // console.log("icon is outside of bounary!")
+        // Icon ended up outside of boundary... put it back inside
+        dragElem.style.top = boundary.bot + 'px';
     }
-
-    // dragElem.style.left = moveToY + 'px';
     // console.log("arrived at: ("+dragElem.style.left+","+dragElem.style.top+")");
 }
 
 function mouseUp(e) {
     // Upon releasing the click stop dragging
     document.removeEventListener('mousemove', mouseMove);
-
-    // document.removeEventListener('mouseup', mouseUp);
-    // document.removeEventListener('mousedown', mouseDown);
     // console.log("NO MORE DRAGGING");
 }
 
 function repositionIcons() {
     // Elements for resizing
-    // const bckgnd = document.getElementById("mainBackgroundImg");
-    // const bckgnd = baseImg;
+    // TODO: for all icons!
     const aboutmeImg = document.getElementById("aboutmeImg");
 
     // When window resizes, get height of background img and change icon size correspondingly
-    const baseImgWidth = baseImg.offsetWidth;
     const baseImgHeight = baseImg.offsetHeight;
     // console.log("background size: "+baseImgWidth+" "+baseImgHeight);
     aboutmeImg.style.width = (baseImgHeight * imgRatio) + "px";
     aboutmeImg.style.height = (baseImgHeight * imgRatio) + "px";
     // console.log("about me: "+aboutmeImg.offsetWidth+" "+aboutmeImg.offsetHeight);
+
+    // After resizing the icon related to window size, calculate boundary area
+    // (why it's called here is because it needs changed icon size)
+    setBoundary();
 
     // const imgWidth = baseImg.width;
     // const imgHeight = baseImg.height;
@@ -147,15 +145,14 @@ function repositionIcons() {
 
 }
 
-
-// Make sure to keep new boundary area, and icons' appropriate size
-// and location on refresh & resize of window
-window.addEventListener('load', setBoundary);
+// On loading and resizing of window, change icons' size and location too
 window.addEventListener('load', repositionIcons);
-window.addEventListener('resize', setBoundary);
+// window.addEventListener('load', setBoundary);
 window.addEventListener('resize', repositionIcons);
+// window.addEventListener('resize', setBoundary);
+
 
 /*  TODO: stick icon coordinate according to background image ratio
-            do not let icon move out of background image (tweak more)
             CANNOT DRAG OR CLICK ON MOBILE WEB
+            use loops to make all icons resized & repositioned
 */
