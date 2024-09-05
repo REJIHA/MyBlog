@@ -46,6 +46,37 @@ function setBoundary() {
     // console.log("BOUNDARY TBLR: "+boundary.top+","+boundary.bot+","+boundary.left+","+boundary.right);
 }
 
+function moveInsideBoundary(elem, newX, newY) {
+    if ((boundary.left <= newX) && (newX <= boundary.right)) {
+        // New x coordinate is inside the moveabe area
+        elem.style.left = newX + 'px';
+    } else if (boundary.left > newX) {
+        // New x coordinate is too left, stop going further
+        elem.style.left = boundary.left + 'px';
+    } else if (boundary.right > newX) {
+        // New x coordinate is too right, stop going further
+        elem.style.left = boundary.right + 'px';
+    } else {
+        // Icon ended up outside of boundary... put it back inside
+        elem.style.left = boundary.right + 'px';
+    }
+
+    if ((boundary.top <= newY) && (newY <= boundary.bot)) {
+        // New y coordinate is inside the moveable area
+        elem.style.top = newY + 'px';
+    } else if (boundary.top > newY) {
+        // New y coordinate is too high, stop going further
+        elem.style.top = boundary.top + 'px';
+    } else if (boundary.bot > newY) {
+        // New y coordinate is too low, stop going further
+        elem.style.top = boundary.bot + 'px';
+    } else {
+        // Icon ended up outside of boundary... put it back inside
+        elem.style.top = boundary.bot + 'px';
+    }
+    // console.log("arrived at: ("+dragElem.style.left+","+dragElem.style.top+")");
+}
+
 function saveBackgroundSize() {
     var computedBkgd = window.getComputedStyle(bkgdImg);
     const backRect = bkgdImg.getBoundingClientRect();
@@ -107,45 +138,10 @@ function mouseMove(e) {
     coordinate.startY = e.clientY;
     // console.log("curr start XY: ("+coordinate.startX+", "+coordinate.startY+")");
 
-    // Before moving the element, check it's inside the boundary
+    // Before moving the element, check it's inside the boundary and then move
     moveToX = (dragElem.offsetLeft - coordinate.newX);
     moveToY = (dragElem.offsetTop - coordinate.newY);
-
-    // this lets icons move all over the place without boundary
-    // dragElem.style.left = moveToX + 'px';
-    // dragElem.style.top = moveToY + 'px';
-    // console.log("moved to: ("+(dragElem.offsetTop - coordinate.newY)+", "+(dragElem.offsetLeft - coordinate.newX)+")");
-
-    // Move x coordinate inside the boundary
-    if ((boundary.left <= moveToX) && (moveToX <= boundary.right)) {
-        // New x coordinate is inside the moveable area
-        dragElem.style.left = moveToX + 'px';
-    } else if (boundary.left > moveToX) {
-        // New x coordinate is too left, stop going further
-        dragElem.style.left = boundary.left + 'px';
-    } else if (boundary.right > moveToX) {
-        // New x coordinate is too right, stop going further
-        dragElem.style.left = boundary.right + 'px';
-    } else {
-        // Icon ended up outside of boundary... put it back inside
-        dragElem.style.left = boundary.right + 'px';
-    }
-
-    // Move y coordinate inside the boundary
-    if ((boundary.top <= moveToY) && (moveToY <= boundary.bot)) {
-        // New y coordinate is inside the moveable area
-        dragElem.style.top = moveToY + 'px';
-    } else if (boundary.top > moveToY) {
-        // New y coordinate is too high, stop going further
-        dragElem.style.top = boundary.top + 'px';
-    } else if (boundary.bot > moveToY) {
-        // New y coordinate is too low, stop going further
-        dragElem.style.top = boundary.bot + 'px';
-    } else {
-        // Icon ended up outside of boundary... put it back inside
-        dragElem.style.top = boundary.bot + 'px';
-    }
-    // console.log("arrived at: ("+dragElem.style.left+","+dragElem.style.top+")");
+    moveInsideBoundary(dragElem, moveToX, moveToY);
 }
 
 function mouseUp(e) {
@@ -200,10 +196,10 @@ function repositionIcons() {
     // Calculate & change coordinates
     moveX = (winSize.newWidth*currX) / winSize.oldWidth;
     moveY = ((winSize.newHeight)*currY) / winSize.oldHeight;
-    console.log("NEW COORDINATES: "+moveX+","+moveY);
-    // currElem.style.left = moveX+'px';
+    // console.log("NEW COORDINATES: "+moveX+","+moveY);
+    currElem.style.left = moveX+'px';
     // currElem.style.top = moveY+'px';
-    currElem.style.top = (currElem.style.top + backY) + 'px';
+    // currElem.style.top = (currElem.style.top + backY) + 'px';
 }
 
 // On loading and resizing of window, change icons' size and location too
