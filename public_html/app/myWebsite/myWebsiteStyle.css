@@ -24,7 +24,7 @@ body {
     background-image: repeating-linear-gradient(0deg, #fff, #fff 2px, transparent 1px, transparent 40px),
                     repeating-linear-gradient(-90deg, #fff, #fff 2px, transparent 1px, transparent 40px);
     /* !cursor not staying as custom curser! */
-    /* cursor: url('../../resources/img/myWebsite/xp_cursor.png'), auto; */
+    cursor: url('../../resources/img/myWebsite/xp_cursor.png'), auto;    
 }
 
 /* disable interacting with images (like saving them) */
@@ -66,16 +66,15 @@ figcaption {
     text-align: center;
 }
 
+#linkIcon:hover {
+    cursor: url('../../resources/img/myWebsite/xp_cursor_red.png'), auto;
+}
+
 #linkIcon_aboutme {
-    /* Place the icon depending on background size */
     z-index: 10;
     position: absolute;
-    top: 100px;
-    left: 150px;
-    /* top: 5vh;
-    left: 10vw; */
-
-    cursor: move;
+    top: 30%;
+    left: 30%;
 }
 
 #bulletList {

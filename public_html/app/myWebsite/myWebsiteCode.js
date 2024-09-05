@@ -224,7 +224,7 @@ window.addEventListener('resize', repositionIcons);
 // window.addEventListener('resize', setBoundary);
 
 
-/*  TODO: stick icon coordinate according to background image ratio
-            CANNOT DRAG OR CLICK ON MOBILE WEB
-            as more icons are added use loops to make all icons resized & repositioned
+/*  TODO: CANNOT DRAG OR CLICK ON MOBILE WEB
+        as more icons are added use loops to make all icons resized & repositioned
+        on double click open icon pages
 */
