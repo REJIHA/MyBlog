@@ -1,5 +1,5 @@
 /* 
-    This is the css for myWebsite.
+    This is the css for myWebsite.html
 */
 
 /* Using free to use font "sillkscreen" by Jason Kottke.
@@ -120,6 +120,7 @@ figcaption {
     text-decoration: underline;
 }
 
-/* ANIMATION: make each part (title, main, list) show opacity 0 -> 100
+/* TODO: ANIMATION - make each part (title, main, list) show opacity 0 -> 100
     and from below to up
+                - or make it like old window xp booting process
 */

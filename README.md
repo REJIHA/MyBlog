@@ -19,6 +19,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
 
 ## :fish: To-Do
 - [x] link to other pages (like linktree)
+    - [x] website animation
     - [x] first link: my website
     - [x] second link: shop
     - [x] third link: instagram (shop)
@@ -26,6 +27,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
     - [x] fifth link: tiktok
     - [ ] sixth link: animal frens (description)
 - [x] main - my website page
+    - [ ] website animation
     - [ ] about me page
     - [ ] courses taken
         - [ ] comp sci (major)
@@ -34,6 +36,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
     - [ ] link to resume
     - [x] link to link page
     - [ ] version tracking page (gif of me typing)
+    - [ ] report bug button?
 - [ ] funsies
     - [ ] animal frens profile maker & popularity poll (using cookie)
     - [ ] QR code generaor
