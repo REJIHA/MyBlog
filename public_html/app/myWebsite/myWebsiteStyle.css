@@ -70,11 +70,36 @@ figcaption {
     cursor: url('../../resources/img/myWebsite/xp_cursor_red.png'), auto;
 }
 
+/* Below are series of icon stylization (ADD NEW ID HERE) */
 #linkIcon_aboutme {
     z-index: 10;
     position: absolute;
     top: 30%;
     left: 30%;
+}
+#linkIcon_school {
+    z-index: 10;
+    position: absolute;
+    top: 30%;
+    left: 75%;
+}
+#linkIcon_projects {
+    z-index: 10;
+    position: absolute;
+    top: 30%;
+    left: 110%;
+}
+#linkIcon_resume {
+    z-index: 10;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+}
+#linkIcon_linkpage {
+    z-index: 10;
+    position: absolute;
+    top: 60%;
+    left: 90%;
 }
 
 #bulletList {

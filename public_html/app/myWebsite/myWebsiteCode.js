@@ -175,53 +175,69 @@ function repositionIcons() {
     // Save new background size & xy coordinates
     saveBackgroundInfo();
 
-    // Elements for resizing
-    // TODO: for all icons!
-    // const iconImgs = ["aboutmeImg"];
-    // for (let i=0; i<iconImgs.length; i++) {
-    //     curr = iconImgs[i];
-    // }
-    const aboutmeImg = document.getElementById("aboutmeImg");
-
-    // Get height of background img and change icon size correspondingly
+    // Elements for resizing (ADD NEW ID HERE)
+    const iconImgs = ["aboutmeIconImg", "schoolIconImg", "projectsIconImg", "resumeIconImg", "linkpageIconImg"];
     const bkgdImgHeight = bkgdImg.offsetHeight;
     // console.log("background size: "+bkgdImgWidth+" "+bkgdImgHeight);
-    aboutmeImg.style.width = (bkgdImgHeight * imgRatio) + "px";
-    aboutmeImg.style.height = (bkgdImgHeight * imgRatio) + "px";
-    // console.log("about me: "+aboutmeImg.offsetWidth+" "+aboutmeImg.offsetHeight);
+    for (let i=0; i<iconImgs.length; i++) {
+        curr = iconImgs[i];
+        currIcon =document.getElementById(curr);
+
+        currIcon.style.width = (bkgdImgHeight * imgRatio) + "px";
+        currIcon.style.height = (bkgdImgHeight * imgRatio) + "px";
+        // console.log("about me: "+currIcon.offsetWidth+" "+currIcon.offsetHeight);
+    }
+
+    // const aboutmeIconImg = document.getElementById("aboutmeIconImg");
+    // // Get height of background img and change icon size correspondingly
+    // const bkgdImgHeight = bkgdImg.offsetHeight;
+    // // console.log("background size: "+bkgdImgWidth+" "+bkgdImgHeight);
+    // aboutmeIconImg.style.width = (bkgdImgHeight * imgRatio) + "px";
+    // aboutmeIconImg.style.height = (bkgdImgHeight * imgRatio) + "px";
+    // // console.log("about me: "+aboutmeIconImg.offsetWidth+" "+aboutmeIconImg.offsetHeight);
 
     // After resizing the icon related to window size, calculate boundary area
     // (why it's called here is because it needs changed icon size)
     setBoundary();
 
 
-    // Change location of icon in relation to current window size
-    const currElem = document.getElementById("linkIcon_aboutme");
-    const currElemRect = currElem.getBoundingClientRect();
-    
-    // const iconsAt = ["linkIcon_aboutme"];
-    // for (let i=0; i<iconsAt.length; i++) {
-    //      curr = iconsAt[i];
-    // }
+    // Change location of icon in relation to current window size (ADD NEW ID HERE)
+    const iconsAt = ["linkIcon_aboutme", "linkIcon_school", "linkIcon_projects", "linkIcon_resume", "linkIcon_linkpage"];
+    for (let i=0; i<iconsAt.length; i++) {
+        curr = iconsAt[i];
+        currElem = document.getElementById(curr);
+        currElemRect = currElem.getBoundingClientRect();
 
+        // Get current location of icon
+        currX = currElemRect.left;
+        currY = currElemRect.top;
+        // console.log("currently at: "+currX+","+currY);
 
-    // Get current location of icon
-    currX = currElemRect.left;
-    currY = currElemRect.top;
-    // console.log("currently at: "+currX+","+currY);
+        // Calculate & change coordinates
+        moveX = (winSize.newWidth*currX) / winSize.oldWidth;
+        moveY = currY + (winSize.newY - winSize.oldY);
+        // console.log("NEW COORDINATES: "+moveX+","+moveY);
+        moveInsideBoundary(currElem, moveX, moveY);
+    }
 
-    // Calculate & change coordinates
-    moveX = (winSize.newWidth*currX) / winSize.oldWidth;
-    moveY = currY + (winSize.newY - winSize.oldY);
-    // console.log("NEW COORDINATES: "+moveX+","+moveY);
-    moveInsideBoundary(currElem, moveX, moveY);
+    // const currElem = document.getElementById("linkIcon_aboutme");
+    // const currElemRect = currElem.getBoundingClientRect();
+
+    // // Get current location of icon
+    // currX = currElemRect.left;
+    // currY = currElemRect.top;
+    // // console.log("currently at: "+currX+","+currY);
+
+    // // Calculate & change coordinates
+    // moveX = (winSize.newWidth*currX) / winSize.oldWidth;
+    // moveY = currY + (winSize.newY - winSize.oldY);
+    // // console.log("NEW COORDINATES: "+moveX+","+moveY);
+    // moveInsideBoundary(currElem, moveX, moveY);
 }
 
 // On loading and resizing of window, change icons' size and location too
 window.addEventListener('load', repositionIcons);
-// window.addEventListener('load', setBoundary);
 window.addEventListener('resize', repositionIcons);
-// window.addEventListener('resize', setBoundary);
 
 
 /*  TODO: CANNOT DRAG OR CLICK ON MOBILE WEB

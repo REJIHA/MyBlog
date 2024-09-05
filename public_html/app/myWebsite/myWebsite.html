@@ -15,9 +15,31 @@
         <img src="../../resources/img/myWebsite/xp_background.png" alt="XP Background" id="mainBackgroundImg">
 
         <div id="linkIcon">
+          <!-- 
+          FOR ADDING NEW ICON LINK YOU HAVE TO:
+            * add its css
+            * add two ids at two arrays in myWebsiteCode.js
+            (search "(ADD NEW ID HERE)" for locations)
+           -->
           <div id="linkIcon_aboutme" onmouseover="startDragging(this.id)">
-            <img src="../../resources/img/myWebsite/aboutme_icon.png" alt="aboutme icon" id="aboutmeImg">
+            <img src="../../resources/img/myWebsite/aboutme_icon.png" alt="aboutme icon" id="aboutmeIconImg">
             <figcaption>about me</figcaption>
+          </div>
+          <div id="linkIcon_school" onmouseover="startDragging(this.id)">
+            <img src="../../resources/img/myWebsite/school_icon.png" alt="school icon" id="schoolIconImg">
+            <figcaption>school</figcaption>
+          </div>
+          <div id="linkIcon_projects" onmouseover="startDragging(this.id)">
+            <img src="../../resources/img/myWebsite/projects_icon.png" alt="projects icon" id="projectsIconImg">
+            <figcaption>projects</figcaption>
+          </div>
+          <div id="linkIcon_resume" onmouseover="startDragging(this.id)">
+            <img src="../../resources/img/myWebsite/resume_icon.png" alt="resume icon" id="resumeIconImg">
+            <figcaption>resume</figcaption>
+          </div>
+          <div id="linkIcon_linkpage" onmouseover="startDragging(this.id)" ondblclick="location.href='../linkPage/linkPage.html'">
+            <img src="../../resources/img/myWebsite/linkpage_icon.png" alt="linkpage icon" id="linkpageIconImg">
+            <figcaption>link page</figcaption>
           </div>
         </div>
         <ul id="bulletList">
