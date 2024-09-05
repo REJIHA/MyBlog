@@ -1,7 +1,7 @@
 MyWebsite
 ------------
 
-<!-- Link: [click here]() -->
+Link: [](https://rejiha.github.io/MyWebsite/public_html/app/myWebsite/myWebsite.html)
 
 Author: Hyoseo Kwag [cloudymonkey@naver.com](mailto:cloudymonkey@naver.com)
 
@@ -57,3 +57,10 @@ Date: March 9,10 2024, August 28 2024 - Present
 * [Pixel Font "Silkscreen"](https://www.dafont.com/silkscreen.font)
 * [CSS position property](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
 * [Javascript - Drag & Drop](https://youtu.be/ymDjvycjgUM?si=UZUC14YY_Eu5hWJp)
+* [How to Deploy Static Website Using GitHub Pages](https://medium.com/flycode/how-to-deploy-a-static-website-for-free-using-github-pages-8eddc194853b)
+<!-- * Below are links I didn't end up using...
+* [Let's Encrypt](https://letsencrypt.org/) free SSL site
+* [Google Pages](https://cloud.google.com/storage/docs/hosting-static-website) free static web hosting from Google
+* [AWS](https://aws.amazon.com/getting-started/hands-on/host-static-website/) free static web hosting from Amazon
+
+-->
