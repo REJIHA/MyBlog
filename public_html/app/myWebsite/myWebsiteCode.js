@@ -25,11 +25,17 @@ var boundary = {
     right: 0
 };
 
+// Background window size & xy coordinates
 var winSize = {
     oldWidth: 0,
     oldHeight: 0,
     newWidth: 0,
-    newHeight: 0
+    newHeight: 0,
+
+    oldX: 0,
+    oldY: 0,
+    newX: 0,
+    newY: 0,
 };
 
 function setBoundary() {
@@ -47,6 +53,7 @@ function setBoundary() {
 }
 
 function moveInsideBoundary(elem, newX, newY) {
+    // Given the element from html and xy coordinates, move only inside the boundary
     if ((boundary.left <= newX) && (newX <= boundary.right)) {
         // New x coordinate is inside the moveabe area
         elem.style.left = newX + 'px';
@@ -77,21 +84,19 @@ function moveInsideBoundary(elem, newX, newY) {
     // console.log("arrived at: ("+dragElem.style.left+","+dragElem.style.top+")");
 }
 
-function saveBackgroundSize() {
+function saveBackgroundInfo() {
     var computedBkgd = window.getComputedStyle(bkgdImg);
     const backRect = bkgdImg.getBoundingClientRect();
+
     // Below calculation gives size without padding, border, and margins
     currWidth = bkgdImg.clientWidth - (parseFloat(computedBkgd.paddingLeft) + parseFloat(computedBkgd.paddingRight));
     currHeight = bkgdImg.clientHeight - (parseFloat(computedBkgd.paddingTop) + parseFloat(computedBkgd.paddingBottom));
     
-    // width is okay but height is movinig toooo much
-    // currWidth = backRect.left;
-    // currHeight = backRect.top;
+    // Below gives xy coordinates of current background window location
+    currX = Math.round(backRect.left);
+    currY = Math.round(backRect.top);
 
-
-
-
-
+    // Start with initializing/saving window size
     if ((winSize.oldWidth == 0) && (winSize.oldHeight == 0)) {
         // Initially the old size is original size
         winSize.oldWidth = bkgdImg.naturalWidth;
@@ -105,6 +110,22 @@ function saveBackgroundSize() {
         winSize.oldHeight = winSize.newHeight;
         winSize.newWidth = currWidth;
         winSize.newHeight = currHeight;
+        // console.log("OLD N NEW: "+JSON.stringify(winSize));
+    }
+    // Next initialize/save xy coordinates of window
+    if ((winSize.oldX == 0) && (winSize.oldY == 0)) {
+        // Initially the old xy is current location
+        winSize.oldX = currX;
+        winSize.oldY = currY;
+        winSize.newX = currX;
+        winSize.newY = currY;
+        // console.log("INIT: "+JSON.stringify(winSize));
+    } else {
+        // Keep previous xy coordinates as old and save new location as new
+        winSize.oldX = winSize.newX;
+        winSize.oldY = winSize.newY;
+        winSize.newX = currX;
+        winSize.newY = currY;
         // console.log("OLD N NEW: "+JSON.stringify(winSize));
     }
 }
@@ -151,8 +172,8 @@ function mouseUp(e) {
 }
 
 function repositionIcons() {
-    // Save new background size
-    saveBackgroundSize();
+    // Save new background size & xy coordinates
+    saveBackgroundInfo();
 
     // Elements for resizing
     // TODO: for all icons!
@@ -175,7 +196,6 @@ function repositionIcons() {
 
 
     // Change location of icon in relation to current window size
-    const backRect = bkgdImg.getBoundingClientRect();
     const currElem = document.getElementById("linkIcon_aboutme");
     const currElemRect = currElem.getBoundingClientRect();
     
@@ -183,23 +203,18 @@ function repositionIcons() {
     // for (let i=0; i<iconsAt.length; i++) {
     //      curr = iconsAt[i];
     // }
-    // TODO: ERROR HERE! getting null
+
+
     // Get current location of icon
-    backX = backRect.left;
-    backY = backRect.top;
-    // console.log("background img at: "+backX+","+backY);
     currX = currElemRect.left;
     currY = currElemRect.top;
     // console.log("currently at: "+currX+","+currY);
 
-    // TODO: on load doesnt change to new coordinates -> make initial winsize.old large?
     // Calculate & change coordinates
     moveX = (winSize.newWidth*currX) / winSize.oldWidth;
-    moveY = ((winSize.newHeight)*currY) / winSize.oldHeight;
+    moveY = currY + (winSize.newY - winSize.oldY);
     // console.log("NEW COORDINATES: "+moveX+","+moveY);
-    currElem.style.left = moveX+'px';
-    // currElem.style.top = moveY+'px';
-    // currElem.style.top = (currElem.style.top + backY) + 'px';
+    moveInsideBoundary(currElem, moveX, moveY);
 }
 
 // On loading and resizing of window, change icons' size and location too
