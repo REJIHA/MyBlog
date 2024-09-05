@@ -24,7 +24,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
     - [x] third link: instagram (shop)
     - [x] fourth link: instagram (art)
     - [x] fifth link: tiktok
-    - [x] sixth link: animal frens (description)
+    - [ ] sixth link: animal frens (description)
 - [x] main - my website page
     - [ ] about me page
     - [ ] courses taken
@@ -34,14 +34,13 @@ Date: March 9 & 10 2024, August 28 2024 - Present
     - [ ] link to resume
     - [x] link to link page
     - [ ] version tracking page (gif of me typing)
-- [ ] animal frens introduction page
 - [ ] funsies
     - [ ] animal frens profile maker & popularity poll (using cookie)
     - [ ] QR code generaor
 - [ ] WRAPPING UP
     - [x] make website ssl certificated <- automatically from github pages
     - [x] publish using github pages
-    - [ ] buy domain from...
+    - [ ] buy domain from... (namecheap.com/ name.com/ domain.com)
     - [ ] check responsiveness (desktop & mobile)
 
 ## :framed_picture: Sketches
