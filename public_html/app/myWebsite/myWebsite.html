@@ -1,12 +1,17 @@
 <!-- 
-    This is the main page of my website being my portfolio.
- -->
+    This is the main page of my website being my portfolio. In a Windows XP theme of this website,
+    users can click on icons to navigate through different parts of pages I made.
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width", initial-scale="1.0">
     <link rel="stylesheet" type="text/css" href="./myWebsiteStyle.css">
+
     <!-- add icon here -->
+    <!-- <link rel="icon" type="image/png" href="./icon.png"/> -->
+    <!-- <link rel="icon" type="image/x-icon" href="./favicon.ico"> -->
     <title>My Website</title>
   </head>
   <body>
@@ -25,11 +30,11 @@
           <img src="../../resources/img/myWebsite/aboutme_icon.png" alt="aboutme icon" id="aboutmeIconImg">
           <figcaption>about me</figcaption>
         </div>
-        <div id="linkIcon_school" onmouseover="startDragging(this.id)">
+        <div id="linkIcon_school" onmouseover="startDragging(this.id)" ondblclick="location.href='../school/school.html'">
           <img src="../../resources/img/myWebsite/school_icon.png" alt="school icon" id="schoolIconImg">
           <figcaption>school</figcaption>
         </div>
-        <div id="linkIcon_projects" onmouseover="startDragging(this.id)">
+        <div id="linkIcon_projects" onmouseover="startDragging(this.id)" ondblclick="location.href='../projects/projects.html'">
           <img src="../../resources/img/myWebsite/projects_icon.png" alt="projects icon" id="projectsIconImg">
           <figcaption>projects</figcaption>
         </div>
@@ -43,12 +48,8 @@
         </div>
       </div>
 
+      <!-- This window shows up when user clicks about me icon -->
       <div id="aboutmeWindow" onmouseover="startDragging(this.id)">
-        <!-- TODO:
-        enlarge button - make window fit screen
-        close button - close
-        add info inside
-        -->
         <div id="popupText">
           * ? - help popup<br>
           * [] - change window size<br>
@@ -62,7 +63,7 @@
         <img src="../../resources/img/myWebsite/xp_window.png" alt="aboutme window" id="aboutmeWindowImg">
         <div id="insideAboutMeWindow">
           <p>
-            <!-- TOOD: insert my photo? -->
+            <!-- TODO: insert my photo? or pixel drawing of it? -->
             Hello, my name's Hyoseo Kwag (Hyo for short)! I graduated UofA with a major in Computer Science and a minor
             in Studio Art. I am currently looking for a job as a software engineer, but I like to work with anything
             related to computer and art. I also have a little art shop but at the moment it's dead (I want to get back
@@ -84,7 +85,7 @@
       </ul>
     </main>
   </body>
-  <!-- Putting javascript here so it executes after page loads -->
+    <!-- Putting javascript here so it executes after page loads -->
     <!-- <script src="https://code.jquery.com/jquery-3.5.0.js"></script> -->
     <script src="myWebsiteCode.js"></script>
 </html>
