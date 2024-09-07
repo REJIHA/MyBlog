@@ -11,44 +11,77 @@
   </head>
   <body>
     <main>
-        <h1>Welcome to my website</h1>
-        <img src="../../resources/img/myWebsite/xp_background.png" alt="XP Background" id="mainBackgroundImg">
+      <h1>Welcome to my website</h1>
+      <img src="../../resources/img/myWebsite/xp_background.png" alt="XP Background" id="mainBackgroundImg">
 
-        <div id="linkIcon">
-          <!-- 
-          FOR ADDING NEW ICON LINK YOU HAVE TO:
-            * add its css
-            * add two ids at two arrays in myWebsiteCode.js
-            (search "(ADD NEW ID HERE)" for locations)
-           -->
-          <div id="linkIcon_aboutme" onmouseover="startDragging(this.id)">
-            <img src="../../resources/img/myWebsite/aboutme_icon.png" alt="aboutme icon" id="aboutmeIconImg">
-            <figcaption>about me</figcaption>
-          </div>
-          <div id="linkIcon_school" onmouseover="startDragging(this.id)">
-            <img src="../../resources/img/myWebsite/school_icon.png" alt="school icon" id="schoolIconImg">
-            <figcaption>school</figcaption>
-          </div>
-          <div id="linkIcon_projects" onmouseover="startDragging(this.id)">
-            <img src="../../resources/img/myWebsite/projects_icon.png" alt="projects icon" id="projectsIconImg">
-            <figcaption>projects</figcaption>
-          </div>
-          <div id="linkIcon_resume" onmouseover="startDragging(this.id)">
-            <img src="../../resources/img/myWebsite/resume_icon.png" alt="resume icon" id="resumeIconImg">
-            <figcaption>resume</figcaption>
-          </div>
-          <div id="linkIcon_linkpage" onmouseover="startDragging(this.id)" ondblclick="location.href='../linkPage/linkPage.html'">
-            <img src="../../resources/img/myWebsite/linkpage_icon.png" alt="linkpage icon" id="linkpageIconImg">
-            <figcaption>link page</figcaption>
-          </div>
+      <div id="linkIcon">
+        <!-- 
+        FOR ADDING NEW ICON LINK YOU HAVE TO:
+          * add its css
+          * add two ids at two arrays in myWebsiteCode.js
+          (search "(ADD NEW ID HERE)" for locations)
+         -->
+        <div id="linkIcon_aboutme" onmouseover="startDragging(this.id)" ondblclick="showWindow()">
+          <img src="../../resources/img/myWebsite/aboutme_icon.png" alt="aboutme icon" id="aboutmeIconImg">
+          <figcaption>about me</figcaption>
         </div>
-        <ul id="bulletList">
-          <li class="underlineText">use pc browser for best performance!</li>
-          <li>double click icons to open</li>
-          <li>drag to move the icons around</li>
-          <li>reload (F5) to reset</li>
-          <li>press F11 on pc for fullscreen</li>
-        </ul>
+        <div id="linkIcon_school" onmouseover="startDragging(this.id)">
+          <img src="../../resources/img/myWebsite/school_icon.png" alt="school icon" id="schoolIconImg">
+          <figcaption>school</figcaption>
+        </div>
+        <div id="linkIcon_projects" onmouseover="startDragging(this.id)">
+          <img src="../../resources/img/myWebsite/projects_icon.png" alt="projects icon" id="projectsIconImg">
+          <figcaption>projects</figcaption>
+        </div>
+        <div id="linkIcon_resume" onmouseover="startDragging(this.id)">
+          <img src="../../resources/img/myWebsite/resume_icon.png" alt="resume icon" id="resumeIconImg">
+          <figcaption>resume</figcaption>
+        </div>
+        <div id="linkIcon_linkpage" onmouseover="startDragging(this.id)" ondblclick="location.href='../linkPage/linkPage.html'">
+          <img src="../../resources/img/myWebsite/linkpage_icon.png" alt="linkpage icon" id="linkpageIconImg">
+          <figcaption>link page</figcaption>
+        </div>
+      </div>
+
+      <div id="aboutmeWindow" onmouseover="startDragging(this.id)">
+        <!-- TODO:
+        enlarge button - make window fit screen
+        close button - close
+        add info inside
+        -->
+        <div id="popupText">
+          * ? - help popup<br>
+          * [] - change window size<br>
+          * x - close window<br>
+          * Drag to move window around<br>
+          * Double clicking about me icon closes this window too
+        </div>
+        <button class="buttons" id="helpButton" onclick="popupWindow()">?</button>
+        <button class="buttons" id="enlargeButton" onclick="enlargeWindow()">[]</button>
+        <button class="buttons" id="closeButton" onclick="showWindow()">X</button>
+        <img src="../../resources/img/myWebsite/xp_window.png" alt="aboutme window" id="aboutmeWindowImg">
+        <div id="insideAboutMeWindow">
+          <p>
+            <!-- TOOD: insert my photo? -->
+            Hello, my name's Hyoseo Kwag (Hyo for short)! I graduated UofA with a major in Computer Science and a minor
+            in Studio Art. I am currently looking for a job as a software engineer, but I like to work with anything
+            related to computer and art. I also have a little art shop but at the moment it's dead (I want to get back
+            to it soon though).
+            <br><br>
+            For my background, I'm Korean American. I came to USA when I was in 5th grade, and I became a citizen after
+            the highschool graduation. So I'm confident to say I have a great communication skill as I have plenty of
+            experience from helping my parents in their business, translating between English and Korean.
+          </p>
+        </div>
+      </div>
+
+      <ul id="bulletList">
+        <li class="underlineText">use pc browser for best performance!</li>
+        <li>double click icons to open</li>
+        <li>drag to move the icons around</li>
+        <li>reload (F5) to reset</li>
+        <li>press F11 on pc for fullscreen</li>
+      </ul>
     </main>
   </body>
   <!-- Putting javascript here so it executes after page loads -->

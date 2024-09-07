@@ -5,9 +5,14 @@ window or moves the icon, they stay relative to changed aspects.
 */
 
 const bkgdImg = document.getElementById("mainBackgroundImg");
+const aboutmeWindow = document.getElementById("aboutmeWindow");
+const popupText = document.getElementById("popupText");
 const imgRatio = 0.15;
 const boundarySize = parseInt(window.getComputedStyle(bkgdImg).getPropertyValue("padding"));
 let dragElem = null;
+let isWindowEnlarged = false;
+let isWindowOpen = false;
+let isPopupOpen = false;
 
 // Object for mouse cursor coordinates upon click on draggable item
 var coordinate = {
@@ -53,35 +58,42 @@ function setBoundary() {
 }
 
 function moveInsideBoundary(elem, newX, newY) {
-    // Given the element from html and xy coordinates, move only inside the boundary
-    if ((boundary.left <= newX) && (newX <= boundary.right)) {
-        // New x coordinate is inside the moveabe area
-        elem.style.left = newX + 'px';
-    } else if (boundary.left > newX) {
-        // New x coordinate is too left, stop going further
-        elem.style.left = boundary.left + 'px';
-    } else if (boundary.right > newX) {
-        // New x coordinate is too right, stop going further
-        elem.style.left = boundary.right + 'px';
-    } else {
-        // Icon ended up outside of boundary... put it back inside
-        elem.style.left = boundary.right + 'px';
-    }
+    if (elem != aboutmeWindow) {
+        // Given the icon element from html and xy coordinates, move only inside the boundary
+        if ((boundary.left <= newX) && (newX <= boundary.right)) {
+            // New x coordinate is inside the moveabe area
+            elem.style.left = newX + 'px';
+        } else if (boundary.left > newX) {
+            // New x coordinate is too left, stop going further
+            elem.style.left = boundary.left + 'px';
+        } else if (boundary.right > newX) {
+            // New x coordinate is too right, stop going further
+            elem.style.left = boundary.right + 'px';
+        } else {
+            // Icon ended up outside of boundary... put it back inside
+            elem.style.left = boundary.right + 'px';
+        }
 
-    if ((boundary.top <= newY) && (newY <= boundary.bot)) {
-        // New y coordinate is inside the moveable area
-        elem.style.top = newY + 'px';
-    } else if (boundary.top > newY) {
-        // New y coordinate is too high, stop going further
-        elem.style.top = boundary.top + 'px';
-    } else if (boundary.bot > newY) {
-        // New y coordinate is too low, stop going further
-        elem.style.top = boundary.bot + 'px';
+        if ((boundary.top <= newY) && (newY <= boundary.bot)) {
+            // New y coordinate is inside the moveable area
+            elem.style.top = newY + 'px';
+        } else if (boundary.top > newY) {
+            // New y coordinate is too high, stop going further
+            elem.style.top = boundary.top + 'px';
+        } else if (boundary.bot > newY) {
+            // New y coordinate is too low, stop going further
+            elem.style.top = boundary.bot + 'px';
+        } else {
+            // Icon ended up outside of boundary... put it back inside
+            elem.style.top = boundary.bot + 'px';
+        }
+        // console.log("arrived at: ("+dragElem.style.left+","+dragElem.style.top+")");
     } else {
-        // Icon ended up outside of boundary... put it back inside
-        elem.style.top = boundary.bot + 'px';
+        // The dragging element is aboutme window that should drag without boundary but within window size
+        elem.style.left = newX + 'px';
+        elem.style.top = newY + 'px';
     }
-    // console.log("arrived at: ("+dragElem.style.left+","+dragElem.style.top+")");
+    
 }
 
 function saveBackgroundInfo() {
@@ -233,6 +245,49 @@ function repositionIcons() {
     // moveY = currY + (winSize.newY - winSize.oldY);
     // // console.log("NEW COORDINATES: "+moveX+","+moveY);
     // moveInsideBoundary(currElem, moveX, moveY);
+}
+
+function popupWindow() {
+    if (isPopupOpen == false) {
+        // Popup is hidden right now, show
+        popupText.style.visibility = 'visible';
+        isPopupOpen = true;
+    } else {
+        // Popup is visible right now, hide
+        popupText.style.visibility = 'hidden';
+        isPopupOpen = false;
+    }
+}
+
+function enlargeWindow() {
+    if (isWindowEnlarged == false) {
+        // The window is on default size, enlarge
+        aboutmeWindow.style.width = '100%';
+        isWindowEnlarged = true;
+    } else {
+        // The window is on full size, shrink
+        aboutmeWindow.style.width = '70%';
+        isWindowEnlarged = false;
+    }
+}
+
+function showWindow() {
+    if (isWindowOpen == false) {
+        // The window is hidden, open
+        aboutmeWindow.style.visibility = 'visible';
+        aboutmeWindow.style.left = '50%';
+        isWindowOpen = true;
+    } else {
+        // The window is open, close
+        aboutmeWindow.style.visibility = 'hidden';
+        isWindowOpen = false;
+        // In case help button was clicked, reset
+        popupText.style.visibility = 'hidden';
+        isPopupOpen = false;
+        // In case enlarge button was clicked, reset
+        aboutmeWindow.style.width = '70%';
+        isWindowEnlarged = false;
+    }
 }
 
 // On loading and resizing of window, change icons' size and location too
