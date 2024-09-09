@@ -37,6 +37,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
     - [x] link to link page
     - [ ] version tracking page (gif of me typing)
     - [ ] report bug button?
+    - [ ] contact me button?
 - [ ] funsies
     - [ ] animal frens profile maker & popularity poll (using cookie)
     - [ ] QR code generaor
