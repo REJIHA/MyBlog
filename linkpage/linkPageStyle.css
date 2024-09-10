@@ -8,9 +8,9 @@
     /* first method did not work in laptop but it worked in pc */
     /* src: url('rejiha_font-regular-MyWebsite\public_html\resources\font\webfontkit-20240309-135718\rejiha_font-regular-webfont.woff2.woff2') format('woff2'),
          url('rejiha_font-MyWebsite\public_html\resources\font\webfontkit-20240309-135718\rejiha_font-regular-webfont.woffregular-webfont.woff') format('woff'); */
-    src: url('../_resources/font/webfontkit-20240309-135718/rejiha_font-regular-webfont.woff') format('woff'),
-        url('../_resources/font/webfontkit-20240309-135718/rejiha_font-regular-webfont.woff2') format('woff2'),
-        url('../_resources/font/Rejiha_font-Regular.ttf') format('truetype');
+    src: url('../resources/font/webfontkit-20240309-135718/rejiha_font-regular-webfont.woff') format('woff'),
+        url('../resources/font/webfontkit-20240309-135718/rejiha_font-regular-webfont.woff2') format('woff2'),
+        url('../resources/font/Rejiha_font-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -23,7 +23,7 @@
 }
 
 body{
-    background-image: url('../_resources/img/linkPage/background.png');
+    background-image: url('../resources/img/linkPage/background.png');
     background-color: #fffa8a;
 }
 
@@ -54,7 +54,7 @@ img {
     padding-bottom: 60px;
     /* transform: translateY(50px); */
     text-align: center;
-    background-image: url('../_resources/img/linkPage/base_paper.png');
+    background-image: url('../resources/img/linkPage/base_paper.png');
     background-color: transparent;
     background-repeat: no-repeat;
     background-size: contain;
@@ -109,26 +109,26 @@ img {
 
 /* Styling for each links */
 #websiteLink{
-    background-image: url('../_resources/img/linkPage/purple_washi.png');
+    background-image: url('../resources/img/linkPage/purple_washi.png');
 }
 
 #shopLink{
-    background-image: url('../_resources/img/linkPage/orange_washi.png');
+    background-image: url('../resources/img/linkPage/orange_washi.png');
 }
 
 #instagramShopLink{
-    background-image: url('../_resources/img/linkPage/red_washi.png');
+    background-image: url('../resources/img/linkPage/red_washi.png');
 }
 
 
 #instagramArtLink{
-    background-image: url('../_resources/img/linkPage/pink_washi.png');
+    background-image: url('../resources/img/linkPage/pink_washi.png');
 }
 
 #tiktokLink{
-    background-image: url('../_resources/img/linkPage/blue_washi.png');
+    background-image: url('../resources/img/linkPage/blue_washi.png');
 }
 
 #frensLink{
-    background-image: url('../_resources/img/linkPage/green_washi.png');
+    background-image: url('../resources/img/linkPage/green_washi.png');
 }
