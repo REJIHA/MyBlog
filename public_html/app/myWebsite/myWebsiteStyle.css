@@ -88,6 +88,7 @@ figcaption {
     background-color: black;
 }
 
+/* Below are stylings for toolbar items */
 #toolbar {
     display:block;
     margin-left:auto;
@@ -97,6 +98,30 @@ figcaption {
     background-color: #566dcd;
     border: 5px solid black;
     border-top: none;
+}
+
+.tb_buttons {
+    margin: 3px;
+    padding: 5px;
+    background-color: #92a3e8;
+    border: none;
+    border-radius: 5px;
+    box-shadow:
+    inset 2px 2px 0px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 0px rgba(0, 0, 0, 0.6);
+}
+.tb_buttons:active {
+    filter: brightness(0.8);
+    box-shadow:
+    inset -2px -2px 0px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 0px rgba(0, 0, 0, 0.6);
+}
+.tb_buttons:hover {
+    cursor: url('../../resources/img/myWebsite/xp_cursor_red.png'), auto;
+}
+
+#startButton {
+    background-color: #6fd575;
 }
 
 #linkIcon {
