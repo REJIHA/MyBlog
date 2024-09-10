@@ -51,8 +51,7 @@
         <div class="dropup">
           <button class="tb_buttons" id="contactmeButton">CONTACT</button>
           <div class="dropup_content">
-            <!-- TODO: add email link -->
-            <a onclick="">
+            <a onclick="showEmailmeWindow()">
               <img src="./resources/img/myWebsite/email_icon.png" alt="email icon" class="tb_icons">
               Email
             </a>
@@ -134,6 +133,22 @@
           </p>
         </div>
       </div>
+
+      <!-- This window shows up when user clicks email icon -->
+      <div id="emailmeWindow" onmouseover="startDragging(this.id)">
+        <h2 id="emailmeHeader">Email me</h2>
+        <img src="./resources/img/myWebsite/xp_window.png" alt="emailme window" id="emailmeWindowImg">
+        <div id="insideEmailMeWindow">
+          <!-- TODO: fill in textfields here -->
+          <input type="text" class="inputFields" id="input_name" name="input_name" placeholder="Name">
+          <input type="email" class="inputFields" id="input_email" name="input_email" placeholder="Email">
+          <input type="text" class="inputFields" id="input_subject" name="input_subject" placeholder="Subject">
+          <input type="text" class="inputFields" id="input_message" name="input_message" placeholder="Message">
+          <button class="buttons" onclick="showEmailmeWindow()">cancel</button>
+          <input class="buttons" type="submit" value="Submit">
+        </div>
+      </div>
+
 
       <!-- Listings for website guide -->
       <ul id="bulletList">

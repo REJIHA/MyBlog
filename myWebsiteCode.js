@@ -4,16 +4,23 @@ appropriate ratio to background, so when the user resizes or refreshes the
 window or moves the icon, they stay relative to changed aspects.
 */
 
+// Global variables for draggable icons
 const bkgdImg = document.getElementById("mainBackgroundImg");
-const aboutmeWindow = document.getElementById("aboutmeWindow");
-const popupText = document.getElementById("popupText");
 const imgRatio = 0.15;
 const boundarySize = parseInt(window.getComputedStyle(bkgdImg).getPropertyValue("padding"));
 let dragElem = null;
-let isAboutmeEnlarged = false;
+
+// Global variables for aboutme window
+const aboutmeWindow = document.getElementById("aboutmeWindow");
+const popupText = document.getElementById("popupText");
 let isAboutmeOpen = false;
+let isAboutmeEnlarged = false;
 let isPopupOpen = false;
 let photoSwitched = false;
+
+// Global variables for emailme window
+const emailmeWindow = document.getElementById("emailmeWindow");
+let isEmailmeOpen = false;
 
 // Object for mouse cursor coordinates upon click on draggable item
 var coordinate = {
@@ -59,7 +66,7 @@ function setBoundary() {
 }
 
 function moveInsideBoundary(elem, newX, newY) {
-    if (elem != aboutmeWindow) {
+    if ((elem != aboutmeWindow) && (elem != emailmeWindow)) {
         // Given the icon element from html and xy coordinates, move only inside the boundary
         if ((boundary.left <= newX) && (newX <= boundary.right)) {
             // New x coordinate is inside the moveabe area
@@ -90,7 +97,7 @@ function moveInsideBoundary(elem, newX, newY) {
         }
         // console.log("arrived at: ("+dragElem.style.left+","+dragElem.style.top+")");
     } else {
-        // The dragging element is aboutme window that should drag without boundary but within window size
+        // The dragging element is aboutme or emailme window that should drag without boundary but within window size
         elem.style.left = newX + 'px';
         elem.style.top = newY + 'px';
     }
@@ -315,11 +322,20 @@ function switchPhoto() {
     }
 }
 
+function showEmailmeWindow() {
+    if (isEmailmeOpen == false) {
+        // The window is hidden, open
+        emailmeWindow.style.visibility = 'visible';
+        emailmeWindow.style.left = '50%';
+        isEmailmeOpen = true;
+    } else {
+        // The window is open, close
+        emailmeWindow.style.visibility = 'hidden';
+        isEmailmeOpen = false;
+    }
+}
+
 
 // On loading and resizing of window, change icons' size and location too
 window.addEventListener('load', repositionIcons);
 window.addEventListener('resize', repositionIcons);
-
-
-/*  TODO: CANNOT DRAG OR CLICK ON MOBILE WEB
-*/

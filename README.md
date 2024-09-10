@@ -39,6 +39,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
     - [] tool bar
         - [ ] start (has all links)
         - [ ] contact me
+        - [ ] version & date last updated
     - [ ] version tracking page (gif of me typing)?
 - [ ] funsies
     - [ ] animal frens profile maker & popularity poll (using cookie)
@@ -48,6 +49,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
     - [x] publish website (used github pages)
     - [ ] buy domain from... (namecheap.com/ name.com/ domain.com)
     - [ ] check responsiveness (desktop & mobile)
+    - [ ] commenting code is all done
 
 ## :framed_picture: Sketches
 <!-- <details>
@@ -63,7 +65,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
 * [Pixel Font "Silkscreen"](https://www.dafont.com/silkscreen.font)
 * [CSS position property](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
 * [CSS display property](https://developer.mozilla.org/en-US/docs/Web/CSS/display)
-* [CSS selector](https://www.w3schools.com/cssref/css_selectors.php)
+* [CSS selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_selectors)
 * [Javascript - Drag & Drop](https://youtu.be/ymDjvycjgUM?si=UZUC14YY_Eu5hWJp)
 * [How to Deploy Static Website Using GitHub Pages](https://medium.com/flycode/how-to-deploy-a-static-website-for-free-using-github-pages-8eddc194853b)
 * [HTML & CSS - Dropup](https://www.w3schools.com/howto/howto_css_dropup.asp)

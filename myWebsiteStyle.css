@@ -97,7 +97,6 @@ figcaption {
     border: 5px solid black;
     border-top: none;
 }
-
 .tb_buttons {
     display: inline;
     margin: 3px;
@@ -119,24 +118,23 @@ figcaption {
     filter: brightness(0.8);
     cursor: url('./resources/img/myWebsite/xp_cursor_red.png'), auto;
 }
-
 .tb_icons {
     width: 20px;
 }
 
-/* Below are stylings for start button & start button menu popup */
+/* Stylings for start button */
 #startButton {
     background-color: #6fd575;
     color: white;
     text-shadow: 0px 0 black, 0 2px black, 2px 0 black, 0 0px black;
 }
 
+
 /* Stylings for dropup menu */
 .dropup {
     position: relative;
     display: inline-block;
 }
-
 .dropup_content {
     z-index: 15;
     display: none;
@@ -147,24 +145,19 @@ figcaption {
     min-width: 190px;
     width: auto;
 }
-
 .dropup_content a {
     padding: 5px;
     text-decoration: none;
     display: block;
     border: 1px solid black;
 }
-
 .dropup_content a:hover {
     background-color: #ababab;
     cursor: url('./resources/img/myWebsite/xp_cursor_red.png'), auto;
 }
-
 .dropup:hover .dropup_content {
     display: block;
 }
-
-
 
 
 /* Below are stylings for draggable icons in the background */
@@ -217,13 +210,10 @@ figcaption {
     left: 50%;
     transform: translate(-50%, 0);
     width: 70%;
-    /* font-size: 20vw; */
 }
-
 #aboutmeWindowImg {
     width: 100%;
 }
-
 #aboutmeHeader{
     position: absolute;
     color: white;
@@ -233,6 +223,81 @@ figcaption {
     top: 2%;
     left: 15px;
 }
+/* TODO: need jquery for these to stay after active */
+#aboutmeWindow:active {
+    z-index: 30;
+}
+
+
+/* Styling for contents inside the aboutme window */
+#insideAboutMeWindow {
+    overflow: auto;
+    position: absolute;
+    left: 2%;
+    right: 2%;
+    top: 10%;
+    bottom: 5%;
+}
+
+#myPortrait {
+    padding: 10px;
+    width: 40%;
+    float: right;
+}
+#portraitButton {
+    float: right;
+}
+
+
+/* TODO: working on it */
+/* Styling for window that pops up on clicking email menu from toolbar */
+#emailmeWindow {
+    z-index: 20;
+    position: absolute;
+    /* TODO: turn off visibility after finishing implementation */
+    /* visibility: hidden; */
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 70%;
+}
+#emailmeWindowImg {
+    width: 100%;
+}
+#emailmeHeader {
+    position: absolute;
+    color: white;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    margin-top: 0;
+    margin-bottom: 0;
+    top: 2%;
+    left: 15px;
+}
+#insideEmailMeWindow {
+    overflow: auto;
+    position: absolute;
+    left: 2%;
+    right: 2%;
+    top: 15%;
+    bottom: 5%;
+}
+/* TODO: need jquery for these to stay after active */
+#emailmeWindow:active {
+    z-index: 30;
+}
+.inputFields {
+    font-family: 'rejiha_font';
+    width: 80%;
+    border: 1px solid black;
+    display: block;
+    margin:auto;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+input::placeholder {
+    font-family: 'silkscreen';
+}
+
 
 /* Styling for buttons */
 .buttons {
@@ -281,26 +346,8 @@ figcaption {
     font-size: 15px;
 }
 
-/* Styling for contents inside the aboutme window */
-#insideAboutMeWindow {
-    overflow: auto;
-    position: absolute;
-    left: 2%;
-    right: 2%;
-    top: 10%;
-    bottom: 5%;
-}
 
-#myPortrait {
-    padding: 10px;
-    width: 40%;
-    float: right;
-}
-
-#portraitButton {
-    float: right;
-}
-
+/* Styling for bullet list of the page */
 #bulletList {
     /* Center the list but keep bullets in line of left */
     position: relative; 
