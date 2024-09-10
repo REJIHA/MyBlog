@@ -53,8 +53,6 @@ p {
     font-size: 25px;
     color: black;
     text-decoration: none;
-    float: left;
-    width: 50%;
     padding: 10px;
 }
 
@@ -194,7 +192,6 @@ figcaption {
 
 /* Styling for buttons */
 .buttons {
-    position: absolute;
     border: 0;
     background-color: #b4b4b4;
     box-shadow:
@@ -211,14 +208,17 @@ figcaption {
 }
 
 #helpButton {
+    position: absolute;
     top: 2%;
     right: 95px;
 }
 #enlargeButton{
+    position: absolute;
     top: 2%;
     right: 55px;
 }
 #closeButton {
+    position: absolute;
     top: 2%;
     right: 15px;
 }
@@ -239,12 +239,12 @@ figcaption {
 
 /* Styling for contents inside the aboutme window */
 #insideAboutMeWindow {
+    overflow: auto;
     position: absolute;
     left: 2%;
     right: 2%;
     top: 10%;
     bottom: 5%;
-    overflow: auto;
 }
 
 #myPortrait {
@@ -254,8 +254,6 @@ figcaption {
 }
 
 #portraitButton {
-    right: 5%;
-    bottom: -30px;
     float: right;
 }
 
