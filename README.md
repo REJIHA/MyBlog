@@ -28,14 +28,14 @@ Date: March 9 & 10 2024, August 28 2024 - Present
     - [ ] sixth link: animal frens (description)
 - [x] main - my website page
     - [ ] website animation
-    - [ ] about me page
+    - [x] about me page
     - [ ] courses taken
         - [ ] comp sci (major)
         - [ ] art (minor)
     - [ ] coding projects showcase
     - [ ] link to resume
     - [x] link to link page
-    - [ ] version tracking page (gif of me typing)
+    - [ ] version tracking page (gif of me typing)?
     - [ ] report bug button?
     - [ ] contact me button?
 - [ ] funsies
@@ -43,7 +43,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
     - [ ] QR code generaor
 - [ ] WRAPPING UP
     - [x] make website ssl certificated <- automatically from github pages
-    - [x] publish using github pages
+    - [x] publish website (used github pages)
     - [ ] buy domain from... (namecheap.com/ name.com/ domain.com)
     - [ ] check responsiveness (desktop & mobile)
 

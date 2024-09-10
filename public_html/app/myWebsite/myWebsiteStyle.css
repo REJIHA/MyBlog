@@ -14,9 +14,6 @@ Could not convert ttf to woff so change upon malfunction */
 /* Setting my custom font. woff for browsers, ttf for mobile */
 @font-face {
     font-family: 'rejiha_font';
-    /* first method did not work in laptop but it worked in pc */
-    /* src: url('rejiha_font-regular-MyWebsite\public_html\resources\font\webfontkit-20240309-135718\rejiha_font-regular-webfont.woff2.woff2') format('woff2'),
-         url('rejiha_font-MyWebsite\public_html\resources\font\webfontkit-20240309-135718\rejiha_font-regular-webfont.woffregular-webfont.woff') format('woff'); */
     src: url('../../resources/font/webfontkit-20240309-135718/rejiha_font-regular-webfont.woff') format('woff'),
         url('../../resources/font/webfontkit-20240309-135718/rejiha_font-regular-webfont.woff2') format('woff2'),
         url('../../resources/font/Rejiha_font-Regular.ttf') format('truetype');
@@ -39,8 +36,8 @@ body {
     cursor: url('../../resources/img/myWebsite/xp_cursor.png'), auto;
 }
 
-/* disable interacting with images (like saving them) */
 img {
+    /* Disable interacting with images (like saving them) */
     pointer-events: none;
     /* Below disables blue hightlights on click/drag */
     -webkit-user-select: none;
@@ -50,6 +47,7 @@ img {
     user-select: none;
 }
 
+/* For p tag texts, use my font for readability */
 p {
     font-family: rejiha_font;
     font-size: 25px;
@@ -88,6 +86,17 @@ figcaption {
 
     padding: 5px;
     background-color: black;
+}
+
+#toolbar {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+
+    height: 40px;
+    background-color: #566dcd;
+    border: 5px solid black;
+    border-top: none;
 }
 
 #linkIcon {
@@ -190,7 +199,7 @@ figcaption {
 /* Styling for text that shows up on clicking ?(help) button */
 #popupText {
     position: absolute;
-    top: -110px;
+    top: -120px;
     right: 0px;
     padding: 10px;
     visibility: hidden;
@@ -211,10 +220,15 @@ figcaption {
     overflow: auto;
 }
 
-#pixelmeGif {
-    position: sticky;
+#myPortrait {
     padding: 10px;
     width: 40%;
+    float: right;
+}
+
+#portraitButton {
+    right: 5%;
+    bottom: -30px;
     float: right;
 }
 

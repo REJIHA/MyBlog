@@ -13,6 +13,7 @@ let dragElem = null;
 let isWindowEnlarged = false;
 let isWindowOpen = false;
 let isPopupOpen = false;
+let photoSwitched = false;
 
 // Object for mouse cursor coordinates upon click on draggable item
 var coordinate = {
@@ -184,6 +185,8 @@ function mouseUp(e) {
 }
 
 function repositionIcons() {
+    // Resize toolbar according to current background image width
+    resizeToolbar();
     // Save new background size & xy coordinates
     saveBackgroundInfo();
 
@@ -290,12 +293,32 @@ function showWindow() {
     }
 }
 
+// Dynamically change size of toolbar according to current background image size
+function resizeToolbar() {
+    toolbarElem = document.getElementById("toolbar");
+    bkgdWidth = bkgdImg.width;
+    toolbarElem.style.width = bkgdWidth+'px';
+}
+
+function switchPhoto() {
+    portraitElem = document.getElementById("myPortrait");
+    if (photoSwitched == false) {
+        // Current photo is pixel gif
+        portraitElem.src = "../../resources/img/myWebsite/real_me.jpeg"
+        photoSwitched = true;
+    } else {
+        // Current photo is real jpeg
+        portraitElem.src = "../../resources/img/myWebsite/pixel_me.gif"
+        photoSwitched = false;
+    }
+
+    
+}
+
 // On loading and resizing of window, change icons' size and location too
 window.addEventListener('load', repositionIcons);
 window.addEventListener('resize', repositionIcons);
 
 
 /*  TODO: CANNOT DRAG OR CLICK ON MOBILE WEB
-        as more icons are added use loops to make all icons resized & repositioned
-        on double click open icon pages
 */

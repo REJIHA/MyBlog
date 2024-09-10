@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="./myWebsiteStyle.css">
 
     <!-- add icon here -->
-    <!-- <link rel="icon" type="image/png" href="./icon.png"/> -->
+    <link rel="icon" type="image/png" href="../../resources/img/myWebsite/myWebsiteIcon.png"/>
     <!-- <link rel="icon" type="image/x-icon" href="./favicon.ico"> -->
     <title>My Website</title>
   </head>
@@ -18,6 +18,14 @@
     <main>
       <h1>Welcome to my website</h1>
       <img src="../../resources/img/myWebsite/xp_background.png" alt="XP Background" id="mainBackgroundImg">
+      <div id="toolbar">
+        <!-- 
+        TODO: remove start button?
+              contact me -> github, email, linkedin
+        -->
+        <button class="tb_buttons" id="startButton">START</button>
+        <button class="tb_buttons" id="contactmeButton">CONTACT</button>
+      </div>
 
       <div id="linkIcon">
         <!-- 
@@ -55,6 +63,7 @@
           * ? - help popup<br>
           * [] - change window size<br>
           * x - close window<br>
+          * switch - switch photo of me<br>
           * Drag to move window around<br>
           * Double clicking about me icon closes this window too
         </div>
@@ -63,13 +72,16 @@
         <button class="buttons" id="closeButton" onclick="showWindow()">X</button>
         <img src="../../resources/img/myWebsite/xp_window.png" alt="aboutme window" id="aboutmeWindowImg">
         <div id="insideAboutMeWindow">
-          <img src="../../resources/img/myWebsite/pixel_me.gif" alt="my portrait" id="pixelmeGif">
+          <img src="../../resources/img/myWebsite/pixel_me.gif" alt="my portrait" id="myPortrait">
+          
+          <!-- TODO: switches between pixel n live portrait of me -->
+          <button class="buttons" id="portraitButton" onclick="switchPhoto()">switch</button>
           <p>
-            <!-- TODO: insert my photo? or pixel drawing of it? -->
-            Hello, my name's Hyoseo Kwag (Hyo for short)! I graduated UofA with a major in Computer Science and a minor
-            in Studio Art. I am currently looking for a job as a software engineer, but I like to work with anything
-            related to computer or art. I also have a little art shop but at the moment it's dead (I want to get back
-            to it soon though).
+            Hello, my name's Hyoseo Kwag!
+            <br><br>
+            I graduated UofA with a major in Computer Science and a minor in Studio Art. I am currently looking for
+            a job as a software engineer, but I like to work with anything related to computer or art. I also have
+            a little art shop but at the moment it's dead (I want to get back to it soon though).
             <br><br>
             For my background, I'm Korean American. I came to USA when I was in 5th grade and I became a citizen after
             the highschool graduation. Thanks to this experience, I'm fluent in both English and Korean. Since my
