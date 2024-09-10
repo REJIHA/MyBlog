@@ -34,15 +34,15 @@
           * add two ids at two arrays in myWebsiteCode.js
           (search "(ADD NEW ID HERE)" for locations)
          -->
-        <div id="linkIcon_aboutme" onmouseover="startDragging(this.id)" ondblclick="showWindow()">
+        <div id="linkIcon_aboutme" onmouseover="startDragging(this.id)" ondblclick="showWindow()" ontouchstart="showWindow()">
           <img src="../../resources/img/myWebsite/aboutme_icon.png" alt="aboutme icon" id="aboutmeIconImg">
           <figcaption>about me</figcaption>
         </div>
-        <div id="linkIcon_school" onmouseover="startDragging(this.id)" ondblclick="location.href='../school/school.html'">
+        <div id="linkIcon_school" onmouseover="startDragging(this.id)" ondblclick="location.href='../school/school.html'" ontouchstart="location.href='../school/school.html'">
           <img src="../../resources/img/myWebsite/school_icon.png" alt="school icon" id="schoolIconImg">
           <figcaption>school</figcaption>
         </div>
-        <div id="linkIcon_projects" onmouseover="startDragging(this.id)" ondblclick="location.href='../projects/projects.html'">
+        <div id="linkIcon_projects" onmouseover="startDragging(this.id)" ondblclick="location.href='../projects/projects.html'" ontouchstart="location.href='../projects/projects.html'">
           <img src="../../resources/img/myWebsite/projects_icon.png" alt="projects icon" id="projectsIconImg">
           <figcaption>projects</figcaption>
         </div>
@@ -50,7 +50,7 @@
           <img src="../../resources/img/myWebsite/resume_icon.png" alt="resume icon" id="resumeIconImg">
           <figcaption>resume</figcaption>
         </div>
-        <div id="linkIcon_linkpage" onmouseover="startDragging(this.id)" ondblclick="location.href='../linkPage/linkPage.html'">
+        <div id="linkIcon_linkpage" onmouseover="startDragging(this.id)" ondblclick="location.href='../linkPage/linkPage.html'" ontouchstart="location.href='../linkPage/linkPage.html'">
           <img src="../../resources/img/myWebsite/linkpage_icon.png" alt="linkpage icon" id="linkpageIconImg">
           <figcaption>link page</figcaption>
         </div>
@@ -94,8 +94,8 @@
       <!-- Listings for website guide -->
       <ul id="bulletList">
         <li class="underlineText">use pc browser for best performance!</li>
-        <li>double click icons to open</li>
-        <li>drag to move the icons around</li>
+        <li>double click (pc) or touch (mobile) icons to open</li>
+        <li>drag to move the icons around (N/A in mobile)</li>
         <li>reload (F5) to reset</li>
         <li>press F11 on pc for fullscreen</li>
       </ul>
