@@ -21,12 +21,52 @@
       <img src="./resources/img/myWebsite/xp_background.png" alt="XP Background" id="mainBackgroundImg">
 
       <div id="toolbar">
-        <!-- 
-        TODO: remove start button?
-              contact me -> github, email, linkedin
-        -->
-        <button class="tb_buttons" id="startButton">START</button>
-        <button class="tb_buttons" id="contactmeButton">CONTACT</button>
+        <div class="dropup">
+          <!-- <button class="tb_buttons" id="startButton" onclick="showDropup('dropup_content')">START</button> -->
+          <button class="tb_buttons" id="startButton">START</button>
+          <div class="dropup_content">
+            <a onclick="showAboutmeWindow()">
+              <img src="./resources/img/myWebsite/aboutme_icon.png" alt="aboutme icon" class="tb_icons">
+               About Me
+            </a>
+            <a href="./school/">
+              <img src="./resources/img/myWebsite/school_icon.png" alt="school icon" class="tb_icons">
+              School
+            </a>
+            <a href="./projects/">
+              <img src="./resources/img/myWebsite/projects_icon.png" alt="projects icon" class="tb_icons">
+              Projects
+            </a>
+            <a>
+              <img src="./resources/img/myWebsite/resume_icon.png" alt="resume icon" class="tb_icons">
+              Resume
+            </a>
+            <a href="./linkpage/">
+              <img src="./resources/img/myWebsite/linkpage_icon.png" alt="linkpage icon" class="tb_icons">
+              Link Page
+            </a>
+          </div>
+        </div>
+        
+        <div class="dropup">
+          <button class="tb_buttons" id="contactmeButton">CONTACT</button>
+          <div class="dropup_content">
+            <!-- TODO: add email link -->
+            <a onclick="">
+              <img src="./resources/img/myWebsite/email_icon.png" alt="email icon" class="tb_icons">
+              Email
+            </a>
+            <a href="https://github.com/REJIHA">
+              <img src="./resources/img/myWebsite/github_icon.png" alt="github icon" class="tb_icons">
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/cloudymonkey">
+              <img src="./resources/img/myWebsite/linkedin_icon.png" alt="linkedin icon" class="tb_icons">
+              LinkedIn
+            </a>
+          </div>
+        </div>
+        
       </div>
 
       <div id="linkIcon">
@@ -36,7 +76,7 @@
           * add two ids at two arrays in myWebsiteCode.js
           (search "(ADD NEW ID HERE)" for locations)
          -->
-        <div id="linkIcon_aboutme" onmouseover="startDragging(this.id)" ondblclick="showWindow()" ontouchstart="showWindow()">
+        <div id="linkIcon_aboutme" onmouseover="startDragging(this.id)" ondblclick="showAboutmeWindow()" ontouchstart="showAboutmeWindow()">
           <img src="./resources/img/myWebsite/aboutme_icon.png" alt="aboutme icon" id="aboutmeIconImg">
           <figcaption>about me</figcaption>
         </div>
@@ -69,19 +109,21 @@
           * Drag to move window around<br>
           * Double clicking about me icon closes this window too
         </div>
-        <button class="buttons" id="helpButton" onclick="popupWindow()">?</button>
-        <button class="buttons" id="enlargeButton" onclick="enlargeWindow()">[]</button>
-        <button class="buttons" id="closeButton" onclick="showWindow()">X</button>
+        <button class="buttons" id="helpButton" onclick="popupAboutmeWindow()">?</button>
+        <button class="buttons" id="enlargeButton" onclick="enlargeAboutmeWindow()">[]</button>
+        <button class="buttons" id="closeButton" onclick="showAboutmeWindow()">X</button>
         <img src="./resources/img/myWebsite/xp_window.png" alt="aboutme window" id="aboutmeWindowImg">
         <div id="insideAboutMeWindow">
           <img src="./resources/img/myWebsite/pixel_me.gif" alt="my portrait" id="myPortrait">
           <button class="buttons" id="portraitButton" onclick="switchPhoto()">switch</button>
           <p>
-            Hello, my name's Hyoseo Kwag!
+            Hello, I'm Hyoseo Kwag!
+            <br>
+            (Currently living in Arizona, USA)
             <br><br>
             I graduated UofA with a major in Computer Science and a minor in Studio Art. I am currently looking for
             a job as a software engineer, but I like to work with anything related to computer or art. I also have
-            a little art shop but at the moment it's dead (I want to get back to it soon though).
+            a little art shop but at the moment it's dead... I want to get back to it soon though.
             <br><br>
             For my background, I'm Korean American. I came to USA when I was in 5th grade and I became a citizen after
             the highschool graduation. Thanks to this experience, I'm fluent in both English and Korean. Since my
@@ -98,7 +140,7 @@
         <li class="underlineText">use pc browser for best performance!</li>
         <li>double click (pc) or touch (mobile) icons to open</li>
         <li>drag to move the icons around (N/A in mobile)</li>
-        <li>reload (F5) to reset</li>
+        <li>reload (F5) page to reset</li>
         <li>press F11 on pc for fullscreen</li>
       </ul>
     </main>

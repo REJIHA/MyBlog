@@ -10,8 +10,8 @@ const popupText = document.getElementById("popupText");
 const imgRatio = 0.15;
 const boundarySize = parseInt(window.getComputedStyle(bkgdImg).getPropertyValue("padding"));
 let dragElem = null;
-let isWindowEnlarged = false;
-let isWindowOpen = false;
+let isAboutmeEnlarged = false;
+let isAboutmeOpen = false;
 let isPopupOpen = false;
 let photoSwitched = false;
 
@@ -250,7 +250,7 @@ function repositionIcons() {
     // moveInsideBoundary(currElem, moveX, moveY);
 }
 
-function popupWindow() {
+function popupAboutmeWindow() {
     if (isPopupOpen == false) {
         // Popup is hidden right now, show
         popupText.style.visibility = 'visible';
@@ -262,34 +262,36 @@ function popupWindow() {
     }
 }
 
-function enlargeWindow() {
-    if (isWindowEnlarged == false) {
+function enlargeAboutmeWindow() {
+    if (isAboutmeEnlarged == false) {
         // The window is on default size, enlarge
         aboutmeWindow.style.width = '100%';
-        isWindowEnlarged = true;
+        isAboutmeEnlarged = true;
     } else {
         // The window is on full size, shrink
         aboutmeWindow.style.width = '70%';
-        isWindowEnlarged = false;
+        isAboutmeEnlarged = false;
     }
 }
 
-function showWindow() {
-    if (isWindowOpen == false) {
+function showAboutmeWindow() {
+    if (isAboutmeOpen == false) {
         // The window is hidden, open
         aboutmeWindow.style.visibility = 'visible';
         aboutmeWindow.style.left = '50%';
-        isWindowOpen = true;
+        isAboutmeOpen = true;
     } else {
         // The window is open, close
         aboutmeWindow.style.visibility = 'hidden';
-        isWindowOpen = false;
+        isAboutmeOpen = false;
+        // In case window moved around, reset location
+        aboutmeWindow.style.top = '10%';
         // In case help button was clicked, reset
         popupText.style.visibility = 'hidden';
         isPopupOpen = false;
         // In case enlarge button was clicked, reset
         aboutmeWindow.style.width = '70%';
-        isWindowEnlarged = false;
+        isAboutmeEnlarged = false;
     }
 }
 
@@ -311,9 +313,8 @@ function switchPhoto() {
         portraitElem.src = "./resources/img/myWebsite/pixel_me.gif"
         photoSwitched = false;
     }
-
-    
 }
+
 
 // On loading and resizing of window, change icons' size and location too
 window.addEventListener('load', repositionIcons);

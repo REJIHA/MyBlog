@@ -14,6 +14,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
 * OS: Windows
 * Browser: Chrome
 * Language: HTML, CSS, Javascript
+* Framework: none
 * IDE: Visual Studio Code
 
 
@@ -35,9 +36,10 @@ Date: March 9 & 10 2024, August 28 2024 - Present
     - [ ] coding projects showcase
     - [ ] link to resume
     - [x] link to link page
+    - [] tool bar
+        - [ ] start (has all links)
+        - [ ] contact me
     - [ ] version tracking page (gif of me typing)?
-    - [ ] report bug button?
-    - [ ] contact me button?
 - [ ] funsies
     - [ ] animal frens profile maker & popularity poll (using cookie)
     - [ ] QR code generaor
@@ -61,8 +63,10 @@ Date: March 9 & 10 2024, August 28 2024 - Present
 * [Pixel Font "Silkscreen"](https://www.dafont.com/silkscreen.font)
 * [CSS position property](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
 * [CSS display property](https://developer.mozilla.org/en-US/docs/Web/CSS/display)
+* [CSS selector](https://www.w3schools.com/cssref/css_selectors.php)
 * [Javascript - Drag & Drop](https://youtu.be/ymDjvycjgUM?si=UZUC14YY_Eu5hWJp)
 * [How to Deploy Static Website Using GitHub Pages](https://medium.com/flycode/how-to-deploy-a-static-website-for-free-using-github-pages-8eddc194853b)
+* [HTML & CSS - Dropup](https://www.w3schools.com/howto/howto_css_dropup.asp)
 
 <!-- * Below are links I didn't end up using...
 * [Let's Encrypt](https://letsencrypt.org/) free SSL site
