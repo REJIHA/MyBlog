@@ -6,7 +6,7 @@
 Could not convert ttf to woff so change upon malfunction */
 @font-face {
     font-family: 'silkscreen';
-    src: url('./_resources/font/silkscreen/slkscr.ttf') format('truetype');
+    src: url('_resources/font/silkscreen/slkscr.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -14,9 +14,9 @@ Could not convert ttf to woff so change upon malfunction */
 /* Setting my custom font. woff for browsers, ttf for mobile */
 @font-face {
     font-family: 'rejiha_font';
-    src: url('./_resources/font/webfontkit-20240309-135718/rejiha_font-regular-webfont.woff') format('woff'),
-        url('./_resources/font/webfontkit-20240309-135718/rejiha_font-regular-webfont.woff2') format('woff2'),
-        url('./_resources/font/Rejiha_font-Regular.ttf') format('truetype');
+    src: url('_resources/font/webfontkit-20240309-135718/rejiha_font-regular-webfont.woff') format('woff'),
+        url('_resources/font/webfontkit-20240309-135718/rejiha_font-regular-webfont.woff2') format('woff2'),
+        url('_resources/font/Rejiha_font-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -33,7 +33,7 @@ body {
     background-size: 40px 40px;    
     background-image: repeating-linear-gradient(0deg, #fff, #fff 2px, transparent 1px, transparent 40px),
                     repeating-linear-gradient(-90deg, #fff, #fff 2px, transparent 1px, transparent 40px);
-    cursor: url('./_resources/img/myWebsite/xp_cursor.png'), auto;
+    cursor: url('_resources/img/myWebsite/xp_cursor.png'), auto;
 }
 
 img {
@@ -117,7 +117,7 @@ figcaption {
     inset 2px 2px 0px rgba(0, 0, 0, 0.6);
 }
 .tb_buttons:hover {
-    cursor: url('./_resources/img/myWebsite/xp_cursor_red.png'), auto;
+    cursor: url('_resources/img/myWebsite/xp_cursor_red.png'), auto;
 }
 
 #startButton {
@@ -131,7 +131,7 @@ figcaption {
 }
 
 #linkIcon:hover {
-    cursor: url('./_resources/img/myWebsite/xp_cursor_red.png'), auto;
+    cursor: url('_resources/img/myWebsite/xp_cursor_red.png'), auto;
 }
 
 /* Below are series of icon stylization (ADD NEW ID HERE) */
@@ -207,7 +207,7 @@ figcaption {
     inset 2px 2px 0px rgba(0, 0, 0, 0.6);
 }
 .buttons:hover {
-    cursor: url('./_resources/img/myWebsite/xp_cursor_red.png'), auto;
+    cursor: url('_resources/img/myWebsite/xp_cursor_red.png'), auto;
 }
 
 #helpButton {

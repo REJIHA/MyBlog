@@ -304,11 +304,11 @@ function switchPhoto() {
     portraitElem = document.getElementById("myPortrait");
     if (photoSwitched == false) {
         // Current photo is pixel gif
-        portraitElem.src = "./_resources/img/myWebsite/real_me.jpeg"
+        portraitElem.src = "_resources/img/myWebsite/real_me.jpeg"
         photoSwitched = true;
     } else {
         // Current photo is real jpeg
-        portraitElem.src = "./_resources/img/myWebsite/pixel_me.gif"
+        portraitElem.src = "_resources/img/myWebsite/pixel_me.gif"
         photoSwitched = false;
     }
 

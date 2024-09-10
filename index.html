@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="myWebsiteStyle.css">
 
     <!-- add icon here -->
-    <link rel="icon" type="image/png" href="./_resources/img/myWebsite/myWebsiteIcon.png"/>
+    <link rel="icon" type="image/png" href="_resources/img/myWebsite/myWebsiteIcon.png"/>
 
     <!-- <link rel="icon" type="image/x-icon" href="./favicon.ico"> -->
     <title>My Website</title>
@@ -18,7 +18,8 @@
   <body>
     <main>
       <h1>Welcome to my website</h1>
-      <img src="./_resources/img/myWebsite/xp_background.png" alt="XP Background" id="mainBackgroundImg">
+      <img src="_resources/img/myWebsite/xp_background.png" alt="XP Background" id="mainBackgroundImg">
+
       <div id="toolbar">
         <!-- 
         TODO: remove start button?
@@ -36,23 +37,23 @@
           (search "(ADD NEW ID HERE)" for locations)
          -->
         <div id="linkIcon_aboutme" onmouseover="startDragging(this.id)" ondblclick="showWindow()" ontouchstart="showWindow()">
-          <img src="./_resources/img/myWebsite/aboutme_icon.png" alt="aboutme icon" id="aboutmeIconImg">
+          <img src="_resources/img/myWebsite/aboutme_icon.png" alt="aboutme icon" id="aboutmeIconImg">
           <figcaption>about me</figcaption>
         </div>
-        <div id="linkIcon_school" onmouseover="startDragging(this.id)" ondblclick="location.href='./school/school.html'" ontouchstart="location.href='./school/school.html'">
-          <img src="./_resources/img/myWebsite/school_icon.png" alt="school icon" id="schoolIconImg">
+        <div id="linkIcon_school" onmouseover="startDragging(this.id)" ondblclick="location.href='school/index.html'" ontouchstart="location.href='school/index.html'">
+          <img src="_resources/img/myWebsite/school_icon.png" alt="school icon" id="schoolIconImg">
           <figcaption>school</figcaption>
         </div>
-        <div id="linkIcon_projects" onmouseover="startDragging(this.id)" ondblclick="location.href='./projects/projects.html'" ontouchstart="location.href='./projects/projects.html'">
-          <img src="./_resources/img/myWebsite/projects_icon.png" alt="projects icon" id="projectsIconImg">
+        <div id="linkIcon_projects" onmouseover="startDragging(this.id)" ondblclick="location.href='projects/index.html'" ontouchstart="location.href='projects/index.html'">
+          <img src="_resources/img/myWebsite/projects_icon.png" alt="projects icon" id="projectsIconImg">
           <figcaption>projects</figcaption>
         </div>
         <div id="linkIcon_resume" onmouseover="startDragging(this.id)">
-          <img src="./_resources/img/myWebsite/resume_icon.png" alt="resume icon" id="resumeIconImg">
+          <img src="_resources/img/myWebsite/resume_icon.png" alt="resume icon" id="resumeIconImg">
           <figcaption>resume</figcaption>
         </div>
-        <div id="linkIcon_linkpage" onmouseover="startDragging(this.id)" ondblclick="location.href='./linkPage/index.html'" ontouchstart="location.href='./linkPage/index.html'">
-          <img src="./_resources/img/myWebsite/linkpage_icon.png" alt="linkpage icon" id="linkpageIconImg">
+        <div id="linkIcon_linkpage" onmouseover="startDragging(this.id)" ondblclick="location.href='linkpage/index.html'" ontouchstart="location.href='linkpage/index.html'">
+          <img src="_resources/img/myWebsite/linkpage_icon.png" alt="linkpage icon" id="linkpageIconImg">
           <figcaption>link page</figcaption>
         </div>
       </div>
@@ -71,9 +72,9 @@
         <button class="buttons" id="helpButton" onclick="popupWindow()">?</button>
         <button class="buttons" id="enlargeButton" onclick="enlargeWindow()">[]</button>
         <button class="buttons" id="closeButton" onclick="showWindow()">X</button>
-        <img src="./_resources/img/myWebsite/xp_window.png" alt="aboutme window" id="aboutmeWindowImg">
+        <img src="_resources/img/myWebsite/xp_window.png" alt="aboutme window" id="aboutmeWindowImg">
         <div id="insideAboutMeWindow">
-          <img src="./_resources/img/myWebsite/pixel_me.gif" alt="my portrait" id="myPortrait">
+          <img src="_resources/img/myWebsite/pixel_me.gif" alt="my portrait" id="myPortrait">
           <button class="buttons" id="portraitButton" onclick="switchPhoto()">switch</button>
           <p>
             Hello, my name's Hyoseo Kwag!
