@@ -30,7 +30,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
 - [x] main - my website page
     - [ ] website animation
     - [x] about me page
-    - [ ] courses taken
+    - [ ] courses taken <- get rid of this page n replace with 'skills'?
         - [ ] comp sci (major)
         - [ ] art (minor)
     - [ ] coding projects showcase
@@ -69,6 +69,8 @@ Date: March 9 & 10 2024, August 28 2024 - Present
 * [Javascript - Drag & Drop](https://youtu.be/ymDjvycjgUM?si=UZUC14YY_Eu5hWJp)
 * [How to Deploy Static Website Using GitHub Pages](https://medium.com/flycode/how-to-deploy-a-static-website-for-free-using-github-pages-8eddc194853b)
 * [HTML & CSS - Dropup](https://www.w3schools.com/howto/howto_css_dropup.asp)
+* [CSS background animation](https://www.sliderrevolution.com/resources/css-animated-background/)
+* [CSS Tailwind Animated](https://www.tailwindcss-animated.com/configurator.html)
 
 <!-- * Below are links I didn't end up using...
 * [Let's Encrypt](https://letsencrypt.org/) free SSL site

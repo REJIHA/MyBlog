@@ -1,0 +1,76 @@
+/* 
+    This is the css for deny's index.html
+*/
+
+/* Setting my custom font. woff for browsers, ttf for mobile */
+@font-face {
+    font-family: 'rejiha_font';
+    src: url('../resources/font/webfontkit-20240309-135718/rejiha_font-regular-webfont.woff') format('woff'),
+        url('../resources/font/webfontkit-20240309-135718/rejiha_font-regular-webfont.woff2') format('woff2'),
+        url('../resources/font/Rejiha_font-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: rejiha_font;
+    font-size: 25px;
+    color: black;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+h1 {
+    /* font-family: 'Courier New', Courier, monospace; */
+    text-align: center;
+    margin: auto;
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+}
+
+img {
+    /* Disable interacting with images (like saving them) */
+    pointer-events: none;
+}
+
+body {
+    background-color: rgb(255, 65, 65);
+}
+
+#denyImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px;
+    width: 50%;
+}
+
+#warning {
+    z-index: -1;
+    position: absolute;
+    width: 100px;
+    top: 0px;
+    /* left: -130px; */
+    left: 0px;
+    animation: move_down 2s linear infinite;
+
+    /* animation-direction: alternate; */
+    /* animation-iteration-count: infinite; */
+}
+
+@keyframes move_down {
+    0% {
+      transform: translateY(-10vh);
+    }
+    100% {
+      transform: translateY(110vh);
+    }
+}
+
+@keyframes move_up {
+    0% {
+        transform: translateY(110vh);
+    }
+    100% {
+        transform: translateY(-10vh);
+    }
+}
