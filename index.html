@@ -139,13 +139,27 @@
         <h2 id="emailmeHeader">Email me</h2>
         <img src="./resources/img/myWebsite/xp_window.png" alt="emailme window" id="emailmeWindowImg">
         <div id="insideEmailMeWindow">
-          <!-- TODO: fill in textfields here -->
-          <input type="text" class="inputFields" id="input_name" name="input_name" placeholder="Name">
-          <input type="email" class="inputFields" id="input_email" name="input_email" placeholder="Email">
-          <input type="text" class="inputFields" id="input_subject" name="input_subject" placeholder="Subject">
-          <input type="text" class="inputFields" id="input_message" name="input_message" placeholder="Message">
-          <button class="buttons" onclick="showEmailmeWindow()">cancel</button>
-          <input class="buttons" type="submit" value="Submit">
+          <div id="emailLinkPart">
+            Click ⇨
+            <a id="emailLink" href="mailto: cloudymonkey@naver.com">
+              cloudymonkey@naver.com
+            </a><br>
+            or
+          </div>
+          <!-- TODO: send email -->
+           <!-- <form method="post" action="sendEmail.php"> -->
+          <form method="post" action="http://localhost/myWebsite/sendEmail.php">
+            <input type="text" class="inputFields" id="input_name" name="input_name" placeholder="Name" required>
+            <input type="email" class="inputFields" id="input_email" name="input_email" placeholder="Email" required>
+            <input type="text" class="inputFields" id="input_subject" name="input_subject" placeholder="Subject" required>
+            <textarea type="text" class="inputFields" id="input_message" name="input_message" placeholder="Message" rows="6" required></textarea>
+            <div id="emailmeButtons">
+              <button class="buttons" onclick="showEmailmeWindow()">cancel</button>
+              <input class="buttons" name="submit_button" type="submit" value="submit">
+            </div>
+           </form>
+          
+          
         </div>
       </div>
 
@@ -154,6 +168,7 @@
       <ul id="bulletList">
         <li class="underlineText">use pc browser for best performance!</li>
         <li>double click (pc) or touch (mobile) icons to open</li>
+        <li>click on 'start' to open icons also</li>
         <li>drag to move the icons around (N/A in mobile)</li>
         <li>reload (F5) page to reset</li>
         <li>press F11 on pc for fullscreen</li>

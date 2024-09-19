@@ -1,7 +1,14 @@
 /*
-First, this javascript code keeps icons inside windows xp style background in
-appropriate ratio to background, so when the user resizes or refreshes the
-window or moves the icon, they stay relative to changed aspects.
+First, this javascript code enables dragging of icon elements from myWebsite's
+index.html. This can happen from saving xy coordinate object of cursor upon
+clicking on thhe icon elements.
+Second, it saves screen size as object and uses it to calculate boundary area
+of icon elements and saves that also as object. By this icon elements move
+and be repositioned only inside this area.
+Third, it keeps boolean value of if the windows upon clicking icons have
+opened or not. If they are open, on clicking close button closes that window.
+Fourth, it also does miscellaneous things like calculating toolbar size from
+screen size and switching photos from clicking the button.
 */
 
 // Global variables for draggable icons

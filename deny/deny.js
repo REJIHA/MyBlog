@@ -1,6 +1,7 @@
 /*
 This javascript has functions to clone element in index.html to repeat across
-the page.
+the page. Keeping this javascript file even though I ended up not using just
+in case I can reuse some of these codes.
 */
 
 const warningDiv = document.getElementById("warnings");

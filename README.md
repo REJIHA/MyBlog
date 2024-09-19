@@ -15,6 +15,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
 * Browser: Chrome
 * Language: HTML, CSS, Javascript
 * Framework: none
+* Tools: XAMPP (php)
 * IDE: Visual Studio Code
 
 
@@ -40,7 +41,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
         - [ ] start (has all links)
         - [ ] contact me
         - [ ] version & date last updated
-    - [ ] version tracking page (gif of me typing)?
+    - [x] not accessible page (for unfinished pages)
 - [ ] funsies
     - [ ] animal frens profile maker & popularity poll (using cookie)
     - [ ] QR code generaor
@@ -72,6 +73,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
 * [CSS background animation](https://www.sliderrevolution.com/resources/css-animated-background/)
 * [CSS Tailwind Animated](https://www.tailwindcss-animated.com/configurator.html)
 * [CSS Bounce Animations](https://codepen.io/nelledejones/pen/gOOPWrK)
+* [PHP Send Email](https://mailtrap.io/blog/html-form-send-email/)
 
 <!-- * Below are links I didn't end up using...
 * [Let's Encrypt](https://letsencrypt.org/) free SSL site

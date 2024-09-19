@@ -1,5 +1,5 @@
 /* 
-    This is the css for myWebsite.html
+    This is the css for myWebsite's index.html
 */
 
 /* Using free to use font "sillkscreen" by Jason Kottke.
@@ -285,8 +285,24 @@ figcaption {
 #emailmeWindow:active {
     z-index: 30;
 }
-.inputFields {
-    font-family: 'rejiha_font';
+
+#emailLinkPart {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#emailLink {
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+}
+#emailLink:hover {
+    color: white;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    cursor: url('./resources/img/myWebsite/xp_cursor_red.png'), auto;
+}
+
+.inputFields, textarea {
+    font-family: 'Courier', monospace;
+    font-weight: bold;
     width: 80%;
     border: 1px solid black;
     display: block;
@@ -294,8 +310,19 @@ figcaption {
     margin-bottom: 10px;
     padding: 5px;
 }
+textarea {
+    resize: none;
+}
 input::placeholder {
     font-family: 'silkscreen';
+}
+textarea::placeholder {
+    font-family: 'silkscreen';
+}
+
+#emailmeButtons {
+    text-align: center;
+    margin: 10px;
 }
 
 
