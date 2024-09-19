@@ -71,6 +71,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
 * [HTML & CSS - Dropup](https://www.w3schools.com/howto/howto_css_dropup.asp)
 * [CSS background animation](https://www.sliderrevolution.com/resources/css-animated-background/)
 * [CSS Tailwind Animated](https://www.tailwindcss-animated.com/configurator.html)
+* [CSS Bounce Animations](https://codepen.io/nelledejones/pen/gOOPWrK)
 
 <!-- * Below are links I didn't end up using...
 * [Let's Encrypt](https://letsencrypt.org/) free SSL site

@@ -17,13 +17,13 @@
     font-size: 25px;
     color: black;
     text-decoration: none;
-    overflow: hidden;
+    margin: 0;
+    /* overflow: hidden; */
 }
 
-h1 {
+h1, figcaption {
     /* font-family: 'Courier New', Courier, monospace; */
     text-align: center;
-    margin: auto;
     text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
 }
 
@@ -36,6 +36,28 @@ body {
     background-color: rgb(255, 65, 65);
 }
 
+figcaption {
+    font-weight: bold;
+}
+
+#contents {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    min-width: 90%;
+}
+
+/* #warnings {
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+} */
+
 #denyImg {
     display: block;
     margin-left: auto;
@@ -44,33 +66,30 @@ body {
     width: 50%;
 }
 
+/* #warning {
+    width: 150px;
+    animation: size_updown 1s infinite ease-in-out alternate;
+}
+
+@keyframes size_updown {
+    from { transform: scale(0.8); }
+    to { transform: scale(1.2); }
+} */
+
 #warning {
-    z-index: -1;
-    position: absolute;
-    width: 100px;
-    top: 0px;
-    /* left: -130px; */
-    left: 0px;
-    animation: move_down 2s linear infinite;
-
-    /* animation-direction: alternate; */
-    /* animation-iteration-count: infinite; */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    max-width: 100px;
+    width: 50%;
+    animation: hithere 1s ease infinite;
 }
 
-@keyframes move_down {
-    0% {
-      transform: translateY(-10vh);
-    }
-    100% {
-      transform: translateY(110vh);
-    }
-}
-
-@keyframes move_up {
-    0% {
-        transform: translateY(110vh);
-    }
-    100% {
-        transform: translateY(-10vh);
-    }
+@keyframes hithere {
+    30% { transform: scale(1.2); }
+    40%, 60% { transform: rotate(-20deg) scale(1.2); }
+    50% { transform: rotate(20deg) scale(1.2); }
+    70% { transform: rotate(0deg) scale(1.2); }
+    100% { transform: scale(1); }
 }

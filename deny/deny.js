@@ -1,26 +1,21 @@
 /*
+This javascript has functions to clone element in index.html to repeat across
+the page.
 */
 
-const maxRepeat = 20;
-const tailRepeat = 50;
+const warningDiv = document.getElementById("warnings");
+const warningSize = 150;
+const distancePX = 200;
+let maxRepeat = 0;
 let idNum = 0;
 
-// Add more to its tail so it looks like a linen of elements
-function tailElement(elementId) {
-    var elem = document.getElementById(elementId)
-    var tailDiv = document.createElement('div');
-    document.body.appendChild(tailDiv);
-    
-    for (let i=0; i<tailRepeat; i++) {
-        var cloneElem = elem.cloneNode(true);
-        cloneElem.id = elem.id + idNum;
-        copyElemStyle(cloneElem);
-        cloneElem.style.left = elem.offsetLeft + 'px';
-        cloneElem.style.top = (elem.offsetTop + 100) + 'px';
-        tailDiv.appendChild(cloneElem);
-        // document.body.appendChild(cloneElem);
-        elem = cloneElem;
-    }
+// Set up maxRepeat depending on current screen size and clone warning elements
+function setup() {
+    const width = window.innerWidth;
+    maxRepeat = (width / (distancePX + warningSize)) + 1;
+
+
+    cloneElement("warning");
 }
 
 // Clone the element so they repeat across the page
@@ -35,41 +30,17 @@ function cloneElement(elementId) {
         cloneElem.id = "warning"+idNum;
         copyElemStyle(cloneElem);
         // console.log('LEFT: '+elem.offsetLeft);
-        cloneElem.style.left = (elem.offsetLeft + 100) + 'px';
+        cloneElem.style.left = (elem.offsetLeft + distancePX) + 'px';
 
-        document.body.appendChild(cloneElem);
+        warningDiv.appendChild(cloneElem);
         elem = cloneElem;
-
-        // tailElement(elem.id);
     }
 }
 
 // To keep same styles of cloned elements
 function copyElemStyle(elem) {
-    elem.style.zIndex = '-1';
-    elem.style.position = 'absolute';
-    elem.style.top = '0';
-    elem.style.width = '100px';
-
-    if (idNum % 2 == 0) {
-        // current idNum is even
-        elem.style.animation = 'move_down 2s linear infinite';
-    } else {
-        // current idNum is odd
-        elem.style.animation = 'move_up 2s linear infinite';
-    }
+    elem.style.width = '150px';
+    elem.style.animation = 'size_updown 1s infinite ease-in-out alternate';
 }
 
-
-cloneElement("warning");
-// tailElement("warning");
-
-/*
-    z-index: -1;
-    position: absolute;
-    width: 100px;
-    top: 0;
-    left: 0;
-    animation: move_down 2s linear infinite;
-    animation-iteration-count: infinite;
-*/
+setup();
