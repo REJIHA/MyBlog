@@ -8,30 +8,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width", initial-scale="1.0">
     <link rel="stylesheet" type="text/css" href="myWebsiteStyle.css">
-
-    <!-- add icon here -->
     <link rel="icon" type="image/png" href="./resources/img/myWebsite/myWebsiteIcon.png"/>
-
-    <!-- <link rel="icon" type="image/x-icon" href="./favicon.ico"> -->
     <title>My Website</title>
   </head>
   <body>
+    <img src="./resources/img/myWebsite/loading_logo.png" alt="loading" id="loadingImg">
+    <div id="blackScreen"></div>
     <main>
-      <h1>Welcome to my website</h1>
+      <h1 id="pageTitle">Welcome to my website</h1>
       <img src="./resources/img/myWebsite/xp_background.png" alt="XP Background" id="mainBackgroundImg">
 
       <div id="toolbar">
         <div class="dropup">
-          <!-- <button class="tb_buttons" id="startButton" onclick="showDropup('dropup_content')">START</button> -->
           <button class="tb_buttons" id="startButton">START</button>
           <div class="dropup_content">
             <a onclick="showAboutmeWindow()">
               <img src="./resources/img/myWebsite/aboutme_icon.png" alt="aboutme icon" class="tb_icons">
                About Me
             </a>
-            <a href="./school/">
-              <img src="./resources/img/myWebsite/school_icon.png" alt="school icon" class="tb_icons">
-              School
+            <a href="./skills/">
+              <img src="./resources/img/myWebsite/skills_icon.png" alt="skills icon" class="tb_icons">
+              skills
             </a>
             <a href="./projects/">
               <img src="./resources/img/myWebsite/projects_icon.png" alt="projects icon" class="tb_icons">
@@ -79,9 +76,9 @@
           <img src="./resources/img/myWebsite/aboutme_icon.png" alt="aboutme icon" id="aboutmeIconImg">
           <figcaption>about me</figcaption>
         </div>
-        <div id="linkIcon_school" onmouseover="startDragging(this.id)" ondblclick="location.href='./school/'" ontouchstart="location.href='./school/'">
-          <img src="./resources/img/myWebsite/school_icon.png" alt="school icon" id="schoolIconImg">
-          <figcaption>school</figcaption>
+        <div id="linkIcon_skills" onmouseover="startDragging(this.id)" ondblclick="location.href='./skills/'" ontouchstart="location.href='./skills/'">
+          <img src="./resources/img/myWebsite/skills_icon.png" alt="skills icon" id="skillsIconImg">
+          <figcaption>skills</figcaption>
         </div>
         <div id="linkIcon_projects" onmouseover="startDragging(this.id)" ondblclick="location.href='./projects/'" ontouchstart="location.href='./projects/'">
           <img src="./resources/img/myWebsite/projects_icon.png" alt="projects icon" id="projectsIconImg">
@@ -122,12 +119,12 @@
             <br><br>
             I graduated UofA with a major in Computer Science and a minor in Studio Art. I am currently looking for
             a job as a software engineer, but I like to work with anything related to computer or art. I also have
-            a little art shop but at the moment it's dead... I want to get back to it soon though.
+            a little art shop but at the moment it's closed (hope to reopen it soon though).
             <br><br>
-            For my background, I'm Korean American. I came to USA when I was in 5th grade and I became a citizen after
-            the highschool graduation. Thanks to this experience, I'm fluent in both English and Korean. Since my
-            parents aren't good in English, I became a translator for them when they needed help, which allowed me to
-            learn good amount of communication skills.
+            My family came to USA when I was in 5th grade (2010) and my twin brother and I became a citizen after the
+            highschool graduation (2018). Due to this I'm familiar with both country's life and culture, and I'm fluent
+            in English and Korean. This also led me to become my family's translator when my parents need help, and
+            from helping them, I learned a lot of communication skills.
             <br><br>
             By the way thanks for visiting my website! Feel free to play around and have a great day :)
           </p>
@@ -146,7 +143,6 @@
             </a><br>
             or
           </div>
-          <!-- TODO: send email -->
           <!-- <form method="post" action="sendEmail.php"> -->
           <!-- <form method="post" action="http://localhost/myWebsite/sendEmail.php"> -->
           <form method="post" action="https://api.web3forms.com/submit">
@@ -160,24 +156,21 @@
               <input class="buttons" name="submit_button" type="submit" value="submit">
             </div>
           </form>
-          
-          
         </div>
       </div>
-
 
       <!-- Listings for website guide -->
       <ul id="bulletList">
         <li class="underlineText">use pc browser for best performance!</li>
         <li>double click (pc) or touch (mobile) icons to open</li>
-        <li>click on 'start' to open icons also</li>
         <li>drag to move the icons around (N/A in mobile)</li>
         <li>reload (F5) page to reset</li>
-        <li>press F11 on pc for fullscreen</li>
       </ul>
+
+      <!-- version & last updated -->
+       <h2 id="info">v0.2 / 9.27.2024</h2>
     </main>
   </body>
     <!-- Putting javascript here so it executes after page loads -->
-    <!-- <script src="https://code.jquery.com/jquery-3.5.0.js"></script> -->
     <script src="myWebsiteCode.js"></script>
 </html>

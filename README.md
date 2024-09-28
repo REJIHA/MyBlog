@@ -39,8 +39,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
     - [x] link to link page
     - [x] tool bar
         - [ ] start (has all links)
-        - [ ] contact me
-        - [ ] version & date last updated
+        - [x] contact me
     - [x] not accessible page (for unfinished pages)
 - [ ] funsies
     - [ ] animal frens profile maker & popularity poll (using cookie)
