@@ -74,6 +74,52 @@ figcaption {
     text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
 }
 
+
+
+/* Animation for website header*/
+#pageTitle {
+    animation: title_move 1s steps(1, end) infinite;
+}
+@keyframes title_move {
+    0% {transform: translateY(0);}
+    25% {transform: translateY(5px);}
+    50% {transform: translateY(0);}
+    75% {transform: translateY(-5px);}
+    100% {transform: translateY(0);}
+}
+
+/* Styling for reloading */
+#loadingImg {
+    position: fixed;
+    height: 50vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    opacity: 0;
+    animation: fadeOut_ld 1.5s;
+}
+@keyframes fadeOut_ld {
+    0%, 80% {z-index: 100; opacity: 1;}
+    100% {z-index: 0; opacity: 0;}
+}
+
+#blackScreen {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: black;
+
+    opacity: 0;
+    animation: fadeOut_bl 1.5s;
+}
+@keyframes fadeOut_bl {
+    0%, 80% {z-index: 90; opacity: 1;}
+    100% {z-index: 0; opacity: 0;}
+}
+
 /* Styling of main background image (the windows xp) */
 #mainBackgroundImg {
     max-width: 90vw;
@@ -176,7 +222,7 @@ figcaption {
     top: 30%;
     left: 15%;
 }
-#linkIcon_school {
+#linkIcon_skills {
     z-index: 10;
     position: absolute;
     top: 30%;
@@ -390,6 +436,12 @@ textarea::placeholder {
 
 .underlineText {
     text-decoration: underline;
+}
+
+#info {
+    font-size: 10px;
+    text-align: right;
+    margin: 0;
 }
 
 /* TODO: ANIMATION - make each part (title, main, list) show opacity 0 -> 100

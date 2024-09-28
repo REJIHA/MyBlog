@@ -205,7 +205,7 @@ function repositionIcons() {
     saveBackgroundInfo();
 
     // Elements for resizing (ADD NEW ID HERE)
-    const iconImgs = ["aboutmeIconImg", "schoolIconImg", "projectsIconImg", "resumeIconImg", "linkpageIconImg"];
+    const iconImgs = ["aboutmeIconImg", "skillsIconImg", "projectsIconImg", "resumeIconImg", "linkpageIconImg"];
     const bkgdImgHeight = bkgdImg.offsetHeight;
     // console.log("background size: "+bkgdImgWidth+" "+bkgdImgHeight);
     for (let i=0; i<iconImgs.length; i++) {
@@ -231,7 +231,7 @@ function repositionIcons() {
 
 
     // Change location of icon in relation to current window size (ADD NEW ID HERE)
-    const iconsAt = ["linkIcon_aboutme", "linkIcon_school", "linkIcon_projects", "linkIcon_resume", "linkIcon_linkpage"];
+    const iconsAt = ["linkIcon_aboutme", "linkIcon_skills", "linkIcon_projects", "linkIcon_resume", "linkIcon_linkpage"];
     for (let i=0; i<iconsAt.length; i++) {
         curr = iconsAt[i];
         currElem = document.getElementById(curr);
@@ -342,6 +342,8 @@ function showEmailmeWindow() {
     }
 }
 
+// On load, erase texts in email input fields
+document.getElementById("forms").reset();
 
 // On loading and resizing of window, change icons' size and location too
 window.addEventListener('load', repositionIcons);

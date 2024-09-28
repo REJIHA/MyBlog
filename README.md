@@ -15,7 +15,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
 * Browser: Chrome
 * Language: HTML, CSS, Javascript, ~~PHP~~
 * Framework: none
-* Tools: XAMPP, Web3Forms
+* Tools: ~~XAMPP~~, Web3Forms
 * IDE: Visual Studio Code
 
 
@@ -29,9 +29,9 @@ Date: March 9 & 10 2024, August 28 2024 - Present
     - [x] fifth link: tiktok
     - [ ] sixth link: animal frens (description)
 - [x] main - my website page
-    - [ ] website animation
+    - [x] website animation
     - [x] about me page
-    - [ ] courses taken <- get rid of this page n replace with 'skills'?
+    - [ ] skills page
         - [ ] comp sci (major)
         - [ ] art (minor)
     - [ ] coding projects showcase
@@ -39,8 +39,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
     - [x] link to link page
     - [x] tool bar
         - [ ] start (has all links)
-        - [ ] contact me
-        - [ ] version & date last updated
+        - [x] contact me
     - [x] not accessible page (for unfinished pages)
 - [ ] funsies
     - [ ] animal frens profile maker & popularity poll (using cookie)
