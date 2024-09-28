@@ -254,8 +254,7 @@ figcaption {
 #emailmeWindow {
     z-index: 20;
     position: absolute;
-    /* TODO: turn off visibility after finishing implementation */
-    /* visibility: hidden; */
+    visibility: hidden;
     top: 10%;
     left: 50%;
     transform: translate(-50%, 0);

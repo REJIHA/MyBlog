@@ -13,9 +13,9 @@ Date: March 9 & 10 2024, August 28 2024 - Present
 **Environment**
 * OS: Windows
 * Browser: Chrome
-* Language: HTML, CSS, Javascript
+* Language: HTML, CSS, Javascript, ~~PHP~~
 * Framework: none
-* Tools: XAMPP (php)
+* Tools: XAMPP, Web3Forms
 * IDE: Visual Studio Code
 
 
@@ -37,7 +37,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
     - [ ] coding projects showcase
     - [ ] link to resume
     - [x] link to link page
-    - [] tool bar
+    - [x] tool bar
         - [ ] start (has all links)
         - [ ] contact me
         - [ ] version & date last updated
@@ -50,7 +50,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
     - [x] publish website (used github pages)
     - [ ] buy domain from... (namecheap.com/ name.com/ domain.com)
     - [ ] check responsiveness (desktop & mobile)
-    - [ ] commenting code is all done
+    - [ ] commenting all code
 
 ## :framed_picture: Sketches
 <!-- <details>
@@ -74,6 +74,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
 * [CSS Tailwind Animated](https://www.tailwindcss-animated.com/configurator.html)
 * [CSS Bounce Animations](https://codepen.io/nelledejones/pen/gOOPWrK)
 * [PHP Send Email](https://mailtrap.io/blog/html-form-send-email/)
+* [Web3Forms](https://web3forms.com/)
 
 <!-- * Below are links I didn't end up using...
 * [Let's Encrypt](https://letsencrypt.org/) free SSL site

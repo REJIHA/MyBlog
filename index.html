@@ -147,8 +147,10 @@
             or
           </div>
           <!-- TODO: send email -->
-           <!-- <form method="post" action="sendEmail.php"> -->
-          <form method="post" action="http://localhost/myWebsite/sendEmail.php">
+          <!-- <form method="post" action="sendEmail.php"> -->
+          <!-- <form method="post" action="http://localhost/myWebsite/sendEmail.php"> -->
+          <form method="post" action="https://api.web3forms.com/submit">
+            <input type="hidden" name="access_key" value="6f926fb4-b1cf-4b19-8c1f-aeb57889d279">
             <input type="text" class="inputFields" id="input_name" name="input_name" placeholder="Name" required>
             <input type="email" class="inputFields" id="input_email" name="input_email" placeholder="Email" required>
             <input type="text" class="inputFields" id="input_subject" name="input_subject" placeholder="Subject" required>
@@ -157,7 +159,7 @@
               <button class="buttons" onclick="showEmailmeWindow()">cancel</button>
               <input class="buttons" name="submit_button" type="submit" value="submit">
             </div>
-           </form>
+          </form>
           
           
         </div>
