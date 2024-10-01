@@ -1,7 +1,7 @@
 MyWebsite
 ------------
 
-[My Website Link](https://rejiha.github.io/MyWebsite/)
+[My Website Link](rejiha.online)
 
 Author: Hyoseo Kwag [cloudymonkey@naver.com](mailto:cloudymonkey@naver.com)
 
@@ -47,7 +47,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
 - [ ] WRAPPING UP
     - [x] make website ssl certificated <- automatically from github pages
     - [x] publish website (used github pages)
-    - [ ] buy domain from... (namecheap.com/ name.com/ domain.com)
+    - [x] buy domain from... (namecheap.com - rejiha.online)
     - [ ] check responsiveness (desktop & mobile)
     - [ ] commenting all code
 
@@ -74,6 +74,9 @@ Date: March 9 & 10 2024, August 28 2024 - Present
 * [CSS Bounce Animations](https://codepen.io/nelledejones/pen/gOOPWrK)
 * [PHP Send Email](https://mailtrap.io/blog/html-form-send-email/)
 * [Web3Forms](https://web3forms.com/)
+* [Linking Namecheap's domain to GitHub Pages](https://gist.github.com/plembo/84f80c920bb5ac6f19e53fe6f8db1ff7)
+* [DNS Propagation](https://www.namecheap.com/support/knowledgebase/article.aspx/9622/10/dns-propagation-explained/)
+* [Google Suite Toolbox](https://toolbox.googleapps.com/apps/dig/)
 
 <!-- * Below are links I didn't end up using...
 * [Let's Encrypt](https://letsencrypt.org/) free SSL site
