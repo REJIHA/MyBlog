@@ -362,8 +362,16 @@ function clickToolbarButton(elem) {
     // Check which toolbar button is clicked, then change visibility
     if (elem == "start_dropup") {
         startButtonOpen = changeDisplay(toolbarButton, startButtonOpen);
+        if (startButtonOpen == true) {
+            // only have one dropup show at a time; close contact
+            contactButtonOpen = changeDisplay(document.getElementById("contact_dropup"), true);
+        }
     } else if (elem == "contact_dropup") {
         contactButtonOpen = changeDisplay(toolbarButton, contactButtonOpen);
+        if (contactButtonOpen == true) {
+            // only have one dropup show at a time; close start
+            startButtonOpen = changeDisplay(document.getElementById("start_dropup"), true);
+        }
     }
 }
 
@@ -383,7 +391,6 @@ function changeDisplay(elem, bool) {
 
 function disableAnimation(elem) {
     // Disable animation & change gif to still images
-    // titleMoving = document.getElementById("pageTitle");
     const animations = document.getAnimations();
     gifImg = document.getElementById("myPortrait");
     if (animationOn == true) {
@@ -395,7 +402,6 @@ function disableAnimation(elem) {
         gifImg.src = "./resources/img/myWebsite/pixel_me.png";
         
         animationOn = false;
-        changeColorOfButton(elem, animationOn);
     } else {
         // Animations are off; turn them on
         animations.forEach(animation => {
@@ -405,13 +411,8 @@ function disableAnimation(elem) {
         gifImg.src = "./resources/img/myWebsite/pixel_me.gif";
 
         animationOn = true;
-        changeColorOfButton(elem, animationOn);
     }
-}
-
-function disableDrag(elem) {
-    // Disable drag and fix location of icons
-    console.log("DISABLE DRAG");
+    changeColorOfButton(elem, animationOn);
 }
 
 function changeColorOfButton(elem, bool) {
