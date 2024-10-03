@@ -15,12 +15,12 @@ Date: March 9 & 10 2024, August 28 2024 - Present
 * Browser: Chrome
 * Language: HTML, CSS, Javascript, ~~PHP~~
 * Framework: none
-* Tools: ~~XAMPP~~, Web3Forms, Namecheap
+* Tools: GitHub Pages, ~~XAMPP~~, Web3Forms, Namecheap
 * IDE: Visual Studio Code
 
 
 ## :fish: To-Do
-- [x] link to other pages (like linktree)
+- [x] link page (like linktree)
     - [x] website animation
     - [x] first link: my website
     - [x] second link: shop
@@ -28,21 +28,21 @@ Date: March 9 & 10 2024, August 28 2024 - Present
     - [x] fourth link: instagram (art)
     - [x] fifth link: tiktok
     ~~- [ ] sixth link: animal frens (description)~~
-    - [ ] ADA compliance check
+    - [x] ADA compliance check
 - [x] main - my website page
     - [x] website animation
     - [x] about me page
     - [ ] skills page
-        - [ ] comp sci (major)
-        - [ ] art (minor)
-    - [ ] coding projects showcase
+        - [ ] programming
+        - [ ] art
+    - [ ] projects showcase
     - [x] link to resume
     - [x] link to link page
     - [x] tool bar
         - [x] start (has all links)
         - [x] contact me
-    - [x] not accessible page (for unfinished pages)
-    - [ ] ADA compliance check
+    - [x] denied access page (for unfinished pages)
+    - [x] ADA compliance check
 - [ ] funsies
     - [ ] animal frens profile maker & popularity poll (using cookie)
     - [ ] QR code generaor
