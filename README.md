@@ -29,7 +29,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
     - [x] fifth link: tiktok
     - [ ] ~~sixth link: animal frens (description)~~
     - [x] ADA compliance check
-- [x] main - my website page
+- [x] my website - main page
     - [x] website animation
     - [x] about me page
     - [ ] skills page

@@ -25,6 +25,11 @@ let isAboutmeEnlarged = false;
 let isPopupOpen = false;
 let photoSwitched = false;
 
+// TODO:
+// Global variables for skills window
+const skillsWindow = document.getElementById("skillsWindow");
+
+
 // Global variables for emailme window
 const emailmeWindow = document.getElementById("emailmeWindow");
 let isEmailmeOpen = false;
@@ -315,6 +320,11 @@ function showAboutmeWindow() {
         aboutmeWindow.style.width = '70%';
         isAboutmeEnlarged = false;
     }
+}
+
+// TODO: skills window
+function showSkillsWindow() {
+    
 }
 
 // Dynamically change size of toolbar according to current background image size

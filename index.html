@@ -23,11 +23,11 @@
           <button class="tb_buttons" id="startButton" onclick="clickToolbarButton('start_dropup')" aria-expanded="false">START</button>
           <div class="dropup_content" id="start_dropup">
             <!-- ADD NEW ID HERE -->
-            <a onclick="showAboutmeWindow()" href="#"  aria-modal="true" role="dialog">
+            <a onclick="showAboutmeWindow()" href="#" aria-modal="true" role="dialog">
               <img src="./resources/img/myWebsite/aboutme_icon.png" alt="aboutme icon" class="tb_icons">
                About Me
             </a>
-            <a href="./skills/">
+            <a onclick="showSkillsWindow()" href="#" aria-modal="true" role="dialog">
               <img src="./resources/img/myWebsite/skills_icon.png" alt="skills icon" class="tb_icons">
               skills
             </a>
@@ -78,7 +78,7 @@
           <img src="./resources/img/myWebsite/aboutme_icon.png" alt="aboutme icon" id="aboutmeIconImg">
           <figcaption>about me</figcaption>
         </div>
-        <div id="linkIcon_skills" onmouseover="startDragging(this.id)" ondblclick="location.href='./skills/'" ontouchstart="location.href='./skills/'">
+        <div id="linkIcon_skills" onmouseover="startDragging(this.id)" ondblclick="showSkillsWindow()" ontouchstart="showSkillsWindow()" aria-modal="true" role="dialog">
           <img src="./resources/img/myWebsite/skills_icon.png" alt="skills icon" id="skillsIconImg">
           <figcaption>skills</figcaption>
         </div>
@@ -98,7 +98,7 @@
 
       <!-- This window shows up when user clicks about me icon -->
       <div id="aboutmeWindow" onmouseover="startDragging(this.id)">
-        <h2 id="aboutmeHeader">ABOUT ME</h2>
+        <h2 class="windowHeader">ABOUT ME</h2>
         <div id="popupText">
           * ? - help popup<br>
           * [] - change window size<br>
@@ -110,7 +110,7 @@
         <button class="buttons" id="helpButton" onclick="popupAboutmeWindow()">?</button>
         <button class="buttons" id="enlargeButton" onclick="enlargeAboutmeWindow()">[]</button>
         <button class="buttons" id="closeButton" onclick="showAboutmeWindow()">X</button>
-        <img src="./resources/img/myWebsite/xp_window.png" alt="aboutme window" id="aboutmeWindowImg">
+        <img src="./resources/img/myWebsite/xp_window.png" alt="aboutme window" class="windowImg">
         <div id="insideAboutMeWindow">
           <img src="./resources/img/myWebsite/pixel_me.gif" alt="my portrait" id="myPortrait">
           <button class="buttons" id="portraitButton" onclick="switchPhoto()">switch</button>
@@ -133,10 +133,18 @@
         </div>
       </div>
 
+      <!-- TODO: This window shows up when user clicks skills icon -->
+      <div id="skillsWindow" onmouseover="startDragging(this.id)">
+        <h2 class="windowHeader">SKILLS</h2>
+
+        <img src="./resources/img/myWebsite/xp_window.png" alt="skills window" class="windowImg">
+        
+      </div>
+
       <!-- This window shows up when user clicks email icon -->
       <div id="emailmeWindow" onmouseover="startDragging(this.id)">
-        <h2 id="emailmeHeader">Email me</h2>
-        <img src="./resources/img/myWebsite/xp_window.png" alt="emailme window" id="emailmeWindowImg">
+        <h2 class="windowHeader">Email me</h2>
+        <img src="./resources/img/myWebsite/xp_window.png" alt="emailme window" class="windowImg">
         <div id="insideEmailMeWindow">
           <div id="emailLinkPart">
             Click ⇨
@@ -181,7 +189,7 @@
       </ul>
 
       <!-- version & last updated -->
-       <h2 id="info">v0.2 / 10.3.2024</h2>
+       <h2 id="info">v0.3 / 10.3.2024</h2>
     </main>
   </body>
     <!-- Putting javascript here so it executes after page loads -->

@@ -247,6 +247,20 @@ figcaption {
     left: 80%;
 }
 
+/* Styling for icon windows */
+.windowHeader {
+    position: absolute;
+    color: white;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    margin-top: 0;
+    margin-bottom: 0;
+    top: 2%;
+    left: 15px;
+}
+.windowImg {
+    width: 100%;
+}
+
 /* Styling for window that pops up on double clicking aboutme icon */
 #aboutmeWindow {
     z-index: 20;
@@ -257,25 +271,11 @@ figcaption {
     transform: translate(-50%, 0);
     width: 70%;
 }
-#aboutmeWindowImg {
-    width: 100%;
-}
-#aboutmeHeader{
-    position: absolute;
-    color: white;
-    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-    margin-top: 0;
-    margin-bottom: 0;
-    top: 2%;
-    left: 15px;
-}
 /* TODO: need jquery for these to stay after active */
 #aboutmeWindow:active {
     z-index: 30;
 }
 
-
-/* Styling for contents inside the aboutme window */
 #insideAboutMeWindow {
     overflow: auto;
     position: absolute;
@@ -284,7 +284,6 @@ figcaption {
     top: 10%;
     bottom: 5%;
 }
-
 #myPortrait {
     padding: 10px;
     width: 40%;
@@ -295,7 +294,31 @@ figcaption {
 }
 
 
-/* TODO: working on it */
+
+
+/* Styling for window that pops up on double clicking skills icon*/
+#skillsWindow {
+    z-index: 20;
+    position: absolute;
+    visibility: hidden;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 70%;
+}
+/* TODO: need jquery for these to stay after active */
+#aboutmeWindow:active {
+    z-index: 30;
+}
+
+/* TODO: Styling for contents inside the skills window */
+
+
+
+
+
+
+
 /* Styling for window that pops up on clicking email menu from toolbar */
 #emailmeWindow {
     z-index: 20;
@@ -306,18 +329,7 @@ figcaption {
     transform: translate(-50%, 0);
     width: 70%;
 }
-#emailmeWindowImg {
-    width: 100%;
-}
-#emailmeHeader {
-    position: absolute;
-    color: white;
-    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-    margin-top: 0;
-    margin-bottom: 0;
-    top: 2%;
-    left: 15px;
-}
+
 #insideEmailMeWindow {
     overflow: auto;
     position: absolute;
