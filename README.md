@@ -80,6 +80,8 @@ Date: March 9 & 10 2024, August 28 2024 - Present
 * [Linking Namecheap's domain to GitHub Pages](https://gist.github.com/plembo/84f80c920bb5ac6f19e53fe6f8db1ff7)
 * [DNS Propagation](https://www.namecheap.com/support/knowledgebase/article.aspx/9622/10/dns-propagation-explained/)
 * [Google Suite Toolbox](https://toolbox.googleapps.com/apps/dig/)
+* [Center a Div](https://www.joshwcomeau.com/css/center-a-div/)
+* [ADA Compliance Checker](https://www.accessibilitychecker.org/)
 
 <!-- * Below are links I didn't end up using...
 * [Let's Encrypt](https://letsencrypt.org/) free SSL site

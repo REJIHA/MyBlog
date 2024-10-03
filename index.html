@@ -162,11 +162,13 @@
       </div>
 
       <!-- TODO: Options -->
-       <div id="options">
-        <h2>turn off:</h2>
-        <button class="off_buttons" id="offAnimation" type="button">animation</button>
-        <button class="off_buttons" id="offDrag" type="button">drag</button>
-       </div>
+      <div id="options">
+        <h3>turn off:</h3>
+        <button class="off_buttons" id="offAnimation" onclick="disableAnimation(this.id)">animation</button>
+        <!-- <button class="off_buttons" id="offDrag" onclick="disableDrag(this.id)">drag</button> -->
+      </div>
+
+      
        
 
       <!-- Listings for website guide -->
@@ -179,7 +181,7 @@
       </ul>
 
       <!-- version & last updated -->
-       <h2 id="info">v0.2 / 9.27.2024</h2>
+       <h2 id="info">v0.2 / 10.3.2024</h2>
     </main>
   </body>
     <!-- Putting javascript here so it executes after page loads -->

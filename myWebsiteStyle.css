@@ -117,7 +117,7 @@ figcaption {
 }
 @keyframes fadeOut_bl {
     0%, 80% {z-index: 90; opacity: 1;}
-    100% {z-index: 0; opacity: 0;}
+    100% {z-index: -10; opacity: 0;}
 }
 
 /* Styling of main background image (the windows xp) */
@@ -422,10 +422,10 @@ textarea::placeholder {
 /* Styling for bullet list of the page */
 #bulletList {
     /* Center the list but keep bullets in line of left */
-    position: relative; 
-	display: inline-block; 
-	padding-left: 1em; 
-	left: 50%; 
+    position: relative;
+	display: inline-block;
+	padding-left: 1em;
+	left: 50%;
 	transform: translateX(-50%);
 
     padding-top: 15px;
@@ -445,5 +445,43 @@ textarea::placeholder {
 }
 
 #options {
-    
+    position: relative;
+    display: block;
+    margin: 10px;
+    max-width: fit-content;
+    margin-inline: auto;
+    text-align: center;
 }
+
+h3 {
+    display: inline-block;
+    margin: 0;
+}
+
+.off_buttons {
+    display: inline-block;
+    border: 0;
+    /* background-color: #448685; */
+    background-color: #55abaa;
+    box-shadow:
+    inset 2px 2px 0px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 0px rgba(0, 0, 0, 0.6);
+}
+/* .off_buttons:active{
+    box-shadow:
+    inset -2px -2px 0px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 0px rgba(0, 0, 0, 0.6);
+} */
+.off_buttons:hover {
+    cursor: url('./resources/img/myWebsite/xp_cursor_red.png'), auto;
+}
+
+/*
+.buttons:active {
+    box-shadow:
+    inset -2px -2px 0px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 0px rgba(0, 0, 0, 0.6);
+}
+.buttons:hover {
+    cursor: url('./resources/img/myWebsite/xp_cursor_red.png'), auto;
+} */

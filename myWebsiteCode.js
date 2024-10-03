@@ -29,9 +29,13 @@ let photoSwitched = false;
 const emailmeWindow = document.getElementById("emailmeWindow");
 let isEmailmeOpen = false;
 
-// Global variables for options
+// Global variables for toolbar
 let startButtonOpen = false;
 let contactButtonOpen = false;
+
+// Global variables for turn offs
+let animationOn = true;
+let dragOn = true;
 
 // Object for mouse cursor coordinates upon click on draggable item
 var coordinate = {
@@ -328,7 +332,14 @@ function switchPhoto() {
         photoSwitched = true;
     } else {
         // Current photo is real jpeg
-        portraitElem.src = "./resources/img/myWebsite/pixel_me.gif"
+        if (animationOn == true) {
+            // Animation option is on
+            portraitElem.src = "./resources/img/myWebsite/pixel_me.gif"
+        } else {
+            // Animation option is off
+            portraitElem.src = "./resources/img/myWebsite/pixel_me.png"
+        }
+        
         photoSwitched = false;
     }
 }
@@ -366,6 +377,50 @@ function changeDisplay(elem, bool) {
         elem.style.display = 'none';
         return false;
     }
+}
+
+function disableAnimation(elem) {
+    // Disable animation & change gif to still images
+    // titleMoving = document.getElementById("pageTitle");
+    const animations = document.getAnimations();
+    gifImg = document.getElementById("myPortrait");
+    if (animationOn == true) {
+        // Animations are on; turn them off
+        animations.forEach(animation => {
+            animation.pause();
+        });
+        // Change pixel me portrait from gif to png
+        gifImg.src = "./resources/img/myWebsite/pixel_me.png";
+        
+        animationOn = false;
+        changeColorOfButton(elem, animationOn);
+    } else {
+        // Animations are off; turn them on
+        animations.forEach(animation => {
+            animation.play();
+        });
+        // Change pixel me portrait from png to gif
+        gifImg.src = "./resources/img/myWebsite/pixel_me.gif";
+
+        animationOn = true;
+        changeColorOfButton(elem, animationOn);
+    }
+}
+
+function disableDrag(elem) {
+    // Disable drag and fix location of icons
+    console.log("DISABLE DRAG");
+}
+
+function changeColorOfButton(elem, bool) {
+    // Signify if the option is on or off by color
+    curr_button = document.getElementById(elem);
+    if (bool == true) {
+        curr_button.style.backgroundColor = '#55abaa';
+    } else {
+        curr_button.style.backgroundColor = '#448685'; 
+    }
+    
 }
 
 // On load, erase texts in email input fields
