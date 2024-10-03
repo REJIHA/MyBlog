@@ -22,6 +22,7 @@
         <div class="dropup">
           <button class="tb_buttons" id="startButton">START</button>
           <div class="dropup_content">
+            <!-- ADD NEW ID HERE -->
             <a onclick="showAboutmeWindow()">
               <img src="./resources/img/myWebsite/aboutme_icon.png" alt="aboutme icon" class="tb_icons">
                About Me
@@ -34,7 +35,7 @@
               <img src="./resources/img/myWebsite/projects_icon.png" alt="projects icon" class="tb_icons">
               Projects
             </a>
-            <a>
+            <a onclick="window.open('./resources/file/HyoseoK_Resume.pdf', '_blank')">
               <img src="./resources/img/myWebsite/resume_icon.png" alt="resume icon" class="tb_icons">
               Resume
             </a>
@@ -70,6 +71,7 @@
         FOR ADDING NEW ICON LINK YOU HAVE TO:
           * add its css
           * add two ids at two arrays in myWebsiteCode.js
+          * add to dropup toolbar
           (search "(ADD NEW ID HERE)" for locations)
          -->
         <div id="linkIcon_aboutme" onmouseover="startDragging(this.id)" ondblclick="showAboutmeWindow()" ontouchstart="showAboutmeWindow()">
@@ -84,7 +86,7 @@
           <img src="./resources/img/myWebsite/projects_icon.png" alt="projects icon" id="projectsIconImg">
           <figcaption>projects</figcaption>
         </div>
-        <div id="linkIcon_resume" onmouseover="startDragging(this.id)">
+        <div id="linkIcon_resume" onmouseover="startDragging(this.id)" ondblclick="window.open('./resources/file/HyoseoK_Resume.pdf', '_blank')" ontouchstart="window.open('./resources/file/HyoseoK_Resume.pdf', '_blank')" target="_blank">
           <img src="./resources/img/myWebsite/resume_icon.png" alt="resume icon" id="resumeIconImg">
           <figcaption>resume</figcaption>
         </div>

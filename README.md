@@ -15,7 +15,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
 * Browser: Chrome
 * Language: HTML, CSS, Javascript, ~~PHP~~
 * Framework: none
-* Tools: ~~XAMPP~~, Web3Forms
+* Tools: ~~XAMPP~~, Web3Forms, Namecheap
 * IDE: Visual Studio Code
 
 
@@ -35,15 +35,16 @@ Date: March 9 & 10 2024, August 28 2024 - Present
         - [ ] comp sci (major)
         - [ ] art (minor)
     - [ ] coding projects showcase
-    - [ ] link to resume
+    - [x] link to resume
     - [x] link to link page
     - [x] tool bar
-        - [ ] start (has all links)
+        - [x] start (has all links)
         - [x] contact me
     - [x] not accessible page (for unfinished pages)
 - [ ] funsies
     - [ ] animal frens profile maker & popularity poll (using cookie)
     - [ ] QR code generaor
+    - [ ] song of the day (from spotify)
 - [ ] WRAPPING UP
     - [x] make website ssl certificated <- automatically from github pages
     - [x] publish website (used github pages)
