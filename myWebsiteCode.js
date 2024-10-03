@@ -371,10 +371,12 @@ function changeDisplay(elem, bool) {
     if (bool == false) {
         // Current element's display is hidden, open
         elem.style.display = 'block';
+        elem.setAttribute("aria-expanded", true);
         return true;
     } else {
         // Current element's display is open, close
         elem.style.display = 'none';
+        elem.setAttribute("aria-expanded", false);
         return false;
     }
 }

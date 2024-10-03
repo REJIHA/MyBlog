@@ -345,6 +345,10 @@ figcaption {
     cursor: url('./resources/img/myWebsite/xp_cursor_red.png'), auto;
 }
 
+label {
+    margin-left: 10%;
+}
+
 .inputFields, textarea {
     font-family: 'Courier', monospace;
     font-weight: bold;
@@ -439,7 +443,7 @@ textarea::placeholder {
 }
 
 #info {
-    font-size: 10px;
+    font-size: 11px;
     text-align: right;
     margin: 0;
 }

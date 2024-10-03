@@ -20,10 +20,10 @@
 
       <div id="toolbar">
         <div class="dropup">
-          <button class="tb_buttons" id="startButton" onclick="clickToolbarButton('start_dropup')">START</button>
+          <button class="tb_buttons" id="startButton" onclick="clickToolbarButton('start_dropup')" aria-expanded="false">START</button>
           <div class="dropup_content" id="start_dropup">
             <!-- ADD NEW ID HERE -->
-            <a onclick="showAboutmeWindow()" href="#">
+            <a onclick="showAboutmeWindow()" href="#"  aria-modal="true" role="dialog">
               <img src="./resources/img/myWebsite/aboutme_icon.png" alt="aboutme icon" class="tb_icons">
                About Me
             </a>
@@ -35,7 +35,7 @@
               <img src="./resources/img/myWebsite/projects_icon.png" alt="projects icon" class="tb_icons">
               Projects
             </a>
-            <a onclick="window.open('./resources/file/HyoseoK_Resume.pdf', '_blank')" href="#">
+            <a onclick="window.open('./resources/file/HyoseoK_Resume.pdf', '_blank')" href="#" aria-label="link opens in a new tab">
               <img src="./resources/img/myWebsite/resume_icon.png" alt="resume icon" class="tb_icons">
               Resume
             </a>
@@ -47,7 +47,7 @@
         </div>
         
         <div class="dropup">
-          <button class="tb_buttons" id="contactmeButton" onclick="clickToolbarButton('contact_dropup')">CONTACT</button>
+          <button class="tb_buttons" id="contactmeButton" onclick="clickToolbarButton('contact_dropup')" aria-expanded="false">CONTACT</button>
           <div class="dropup_content" id="contact_dropup">
             <a onclick="showEmailmeWindow()" href="#">
               <img src="./resources/img/myWebsite/email_icon.png" alt="email icon" class="tb_icons">
@@ -74,7 +74,7 @@
           * add to dropup toolbar
           (search "(ADD NEW ID HERE)" for locations)
          -->
-        <div id="linkIcon_aboutme" onmouseover="startDragging(this.id)" ondblclick="showAboutmeWindow()" ontouchstart="showAboutmeWindow()">
+        <div id="linkIcon_aboutme" onmouseover="startDragging(this.id)" ondblclick="showAboutmeWindow()" ontouchstart="showAboutmeWindow()" aria-modal="true" role="dialog">
           <img src="./resources/img/myWebsite/aboutme_icon.png" alt="aboutme icon" id="aboutmeIconImg">
           <figcaption>about me</figcaption>
         </div>
@@ -86,7 +86,7 @@
           <img src="./resources/img/myWebsite/projects_icon.png" alt="projects icon" id="projectsIconImg">
           <figcaption>projects</figcaption>
         </div>
-        <div id="linkIcon_resume" onmouseover="startDragging(this.id)" ondblclick="window.open('./resources/file/HyoseoK_Resume.pdf', '_blank')" ontouchstart="window.open('./resources/file/HyoseoK_Resume.pdf', '_blank')" target="_blank">
+        <div id="linkIcon_resume" onmouseover="startDragging(this.id)" ondblclick="window.open('./resources/file/HyoseoK_Resume.pdf', '_blank')" ontouchstart="window.open('./resources/file/HyoseoK_Resume.pdf', '_blank')" target="_blank"  aria-label="link opens in a new tab">
           <img src="./resources/img/myWebsite/resume_icon.png" alt="resume icon" id="resumeIconImg">
           <figcaption>resume</figcaption>
         </div>
@@ -149,10 +149,14 @@
           <!-- <form method="post" action="http://localhost/myWebsite/sendEmail.php"> -->
           <form method="post" action="https://api.web3forms.com/submit" id="forms">
             <input type="hidden" name="access_key" value="6f926fb4-b1cf-4b19-8c1f-aeb57889d279">
-            <input type="text" class="inputFields" id="input_name" name="input_name" placeholder="Name" required>
-            <input type="email" class="inputFields" id="input_email" name="input_email" placeholder="Email" required>
-            <input type="text" class="inputFields" id="input_subject" name="input_subject" placeholder="Subject" required>
-            <textarea type="text" class="inputFields" id="input_message" name="input_message" placeholder="Message" rows="6" required></textarea>
+            <label for="input_name">Name</label>
+            <input type="text" class="inputFields" id="input_name" name="input_name" placeholder="First & Last Name" required aria-required="true">
+            <label for="input_email">Email</label>
+            <input type="email" class="inputFields" id="input_email" name="input_email" placeholder="email@email.com" required aria-required="true">
+            <label for="input_subject">Subject</label>
+            <input type="text" class="inputFields" id="input_subject" name="input_subject" placeholder="..." required aria-required="true">
+            <label for="input_message">Message</label>
+            <textarea type="text" class="inputFields" id="input_message" name="input_message" placeholder="..." rows="6" required aria-required="true"></textarea>
             <div id="emailmeButtons">
               <button class="buttons" type="button" onclick="showEmailmeWindow()">cancel</button>
               <input class="buttons" name="submit_button" type="submit" value="submit">
