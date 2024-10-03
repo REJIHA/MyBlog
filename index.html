@@ -20,8 +20,8 @@
 
       <div id="toolbar">
         <div class="dropup">
-          <button class="tb_buttons" id="startButton">START</button>
-          <div class="dropup_content">
+          <button class="tb_buttons" id="startButton" onclick="clickToolbarButton('start_dropup')">START</button>
+          <div class="dropup_content" id="start_dropup">
             <!-- ADD NEW ID HERE -->
             <a onclick="showAboutmeWindow()">
               <img src="./resources/img/myWebsite/aboutme_icon.png" alt="aboutme icon" class="tb_icons">
@@ -47,8 +47,8 @@
         </div>
         
         <div class="dropup">
-          <button class="tb_buttons" id="contactmeButton">CONTACT</button>
-          <div class="dropup_content">
+          <button class="tb_buttons" id="contactmeButton" onclick="clickToolbarButton('contact_dropup')">CONTACT</button>
+          <div class="dropup_content" id="contact_dropup">
             <a onclick="showEmailmeWindow()">
               <img src="./resources/img/myWebsite/email_icon.png" alt="email icon" class="tb_icons">
               Email
@@ -160,6 +160,11 @@
           </form>
         </div>
       </div>
+
+      <!-- Options -->
+       <h2>turn off:</h2>
+       <button class="off_buttons" id="offAnimation" type="button">animation</button>
+       <button class="off_buttons" id="offDrag" type="button">drag</button>
 
       <!-- Listings for website guide -->
       <ul id="bulletList">

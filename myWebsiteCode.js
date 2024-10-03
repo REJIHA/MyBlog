@@ -29,6 +29,10 @@ let photoSwitched = false;
 const emailmeWindow = document.getElementById("emailmeWindow");
 let isEmailmeOpen = false;
 
+// Global variables for options
+let startButtonOpen = false;
+let contactButtonOpen = false;
+
 // Object for mouse cursor coordinates upon click on draggable item
 var coordinate = {
     newX: 0,
@@ -339,6 +343,28 @@ function showEmailmeWindow() {
         // The window is open, close
         emailmeWindow.style.visibility = 'hidden';
         isEmailmeOpen = false;
+    }
+}
+
+function clickToolbarButton(elem) {
+    toolbarButton = document.getElementById(elem);
+    // Check which toolbar button is clicked, then change visibility
+    if (elem == "start_dropup") {
+        startButtonOpen = changeDisplay(toolbarButton, startButtonOpen);
+    } else if (elem == "contact_dropup") {
+        contactButtonOpen = changeDisplay(toolbarButton, contactButtonOpen);
+    }
+}
+
+function changeDisplay(elem, bool) {
+    if (bool == false) {
+        // Current element's display is hidden, open
+        elem.style.display = 'block';
+        return true;
+    } else {
+        // Current element's display is open, close
+        elem.style.display = 'none';
+        return false;
     }
 }
 

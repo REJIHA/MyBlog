@@ -201,9 +201,9 @@ figcaption {
     background-color: #ababab;
     cursor: url('./resources/img/myWebsite/xp_cursor_red.png'), auto;
 }
-.dropup:hover .dropup_content {
+/* .dropup:hover .dropup_content {
     display: block;
-}
+} */
 
 
 /* Below are stylings for draggable icons in the background */
