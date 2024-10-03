@@ -1,7 +1,7 @@
 MyWebsite
 ------------
 
-[My Website Link](rejiha.online)
+[My Website Link](https://rejiha.online/)
 
 Author: Hyoseo Kwag [cloudymonkey@naver.com](mailto:cloudymonkey@naver.com)
 
@@ -27,7 +27,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
     - [x] third link: instagram (shop)
     - [x] fourth link: instagram (art)
     - [x] fifth link: tiktok
-    ~~- [ ] sixth link: animal frens (description)~~
+    - [ ] ~~sixth link: animal frens (description)~~
     - [x] ADA compliance check
 - [x] main - my website page
     - [x] website animation
@@ -35,7 +35,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
     - [ ] skills page
         - [ ] programming
         - [ ] art
-    - [ ] projects showcase
+    - [ ] link to projects
     - [x] link to resume
     - [x] link to link page
     - [x] tool bar
@@ -43,6 +43,9 @@ Date: March 9 & 10 2024, August 28 2024 - Present
         - [x] contact me
     - [x] denied access page (for unfinished pages)
     - [x] ADA compliance check
+- [ ] projects
+    - [ ] programming
+    - [ ] art
 - [ ] funsies
     - [ ] animal frens profile maker & popularity poll (using cookie)
     - [ ] QR code generaor
