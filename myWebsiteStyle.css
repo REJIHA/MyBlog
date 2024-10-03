@@ -444,7 +444,6 @@ textarea::placeholder {
     margin: 0;
 }
 
-/* TODO: ANIMATION - make each part (title, main, list) show opacity 0 -> 100
-    and from below to up
-                - or make it like old window xp booting process
-*/
+#options {
+    
+}

@@ -90,6 +90,7 @@ img {
 
 /* Styling for link boxes */
 .linkBox{
+    display: block;
     margin: auto;
     margin-bottom: 5px;
     width: 40%;

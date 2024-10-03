@@ -27,7 +27,8 @@ Date: March 9 & 10 2024, August 28 2024 - Present
     - [x] third link: instagram (shop)
     - [x] fourth link: instagram (art)
     - [x] fifth link: tiktok
-    - [ ] sixth link: animal frens (description)
+    ~~- [ ] sixth link: animal frens (description)~~
+    - [ ] ADA compliance check
 - [x] main - my website page
     - [x] website animation
     - [x] about me page
@@ -41,6 +42,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
         - [x] start (has all links)
         - [x] contact me
     - [x] not accessible page (for unfinished pages)
+    - [ ] ADA compliance check
 - [ ] funsies
     - [ ] animal frens profile maker & popularity poll (using cookie)
     - [ ] QR code generaor

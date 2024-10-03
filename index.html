@@ -23,7 +23,7 @@
           <button class="tb_buttons" id="startButton" onclick="clickToolbarButton('start_dropup')">START</button>
           <div class="dropup_content" id="start_dropup">
             <!-- ADD NEW ID HERE -->
-            <a onclick="showAboutmeWindow()">
+            <a onclick="showAboutmeWindow()" href="#">
               <img src="./resources/img/myWebsite/aboutme_icon.png" alt="aboutme icon" class="tb_icons">
                About Me
             </a>
@@ -35,7 +35,7 @@
               <img src="./resources/img/myWebsite/projects_icon.png" alt="projects icon" class="tb_icons">
               Projects
             </a>
-            <a onclick="window.open('./resources/file/HyoseoK_Resume.pdf', '_blank')">
+            <a onclick="window.open('./resources/file/HyoseoK_Resume.pdf', '_blank')" href="#">
               <img src="./resources/img/myWebsite/resume_icon.png" alt="resume icon" class="tb_icons">
               Resume
             </a>
@@ -49,7 +49,7 @@
         <div class="dropup">
           <button class="tb_buttons" id="contactmeButton" onclick="clickToolbarButton('contact_dropup')">CONTACT</button>
           <div class="dropup_content" id="contact_dropup">
-            <a onclick="showEmailmeWindow()">
+            <a onclick="showEmailmeWindow()" href="#">
               <img src="./resources/img/myWebsite/email_icon.png" alt="email icon" class="tb_icons">
               Email
             </a>
@@ -161,14 +161,18 @@
         </div>
       </div>
 
-      <!-- Options -->
-       <h2>turn off:</h2>
-       <button class="off_buttons" id="offAnimation" type="button">animation</button>
-       <button class="off_buttons" id="offDrag" type="button">drag</button>
+      <!-- TODO: Options -->
+       <div id="options">
+        <h2>turn off:</h2>
+        <button class="off_buttons" id="offAnimation" type="button">animation</button>
+        <button class="off_buttons" id="offDrag" type="button">drag</button>
+       </div>
+       
 
       <!-- Listings for website guide -->
       <ul id="bulletList">
         <li class="underlineText">use pc browser for best performance!</li>
+        <li>start button -> shortcut for all icons</li>
         <li>double click (pc) or touch (mobile) icons to open</li>
         <li>drag to move the icons around (N/A in mobile)</li>
         <li>reload (F5) page to reset</li>
