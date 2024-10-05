@@ -74,6 +74,9 @@ var winSize = {
     newY: 0,
 };
 
+/*
+    BOUNDARY CODE
+*/
 function setBoundary() {
     // Get the changed icon size (base -> aboutme icon)
     computedWidth = document.getElementById("linkIcon_aboutme").clientWidth;
@@ -89,7 +92,7 @@ function setBoundary() {
 }
 
 function moveInsideBoundary(elem, newX, newY) {
-    if ((elem != aboutmeWindow) && (elem != emailmeWindow)) {
+    if ((elem != aboutmeWindow) && (elem != emailmeWindow) && (elem != skillsWindow)) {
         // Given the icon element from html and xy coordinates, move only inside the boundary
         if ((boundary.left <= newX) && (newX <= boundary.right)) {
             // New x coordinate is inside the moveabe area
@@ -124,7 +127,6 @@ function moveInsideBoundary(elem, newX, newY) {
         elem.style.left = newX + 'px';
         elem.style.top = newY + 'px';
     }
-    
 }
 
 function saveBackgroundInfo() {
@@ -173,6 +175,10 @@ function saveBackgroundInfo() {
     }
 }
 
+
+/* 
+    DRAGGING ICONS CODE
+*/
 function startDragging(id) {
     // Fetch the element to drag from html and start tracking mouse movements
     dragElem = document.getElementById(id);
@@ -214,6 +220,224 @@ function mouseUp(e) {
     // console.log("NO MORE DRAGGING");
 }
 
+
+/*
+    ABOUT ME CODE
+*/
+function popupAboutmeWindow() {
+    if (isAboutmePopupOpen == false) {
+        // Popup is hidden right now, show
+        popupText.style.visibility = 'visible';
+        isAboutmePopupOpen = true;
+    } else {
+        // Popup is visible right now, hide
+        popupText.style.visibility = 'hidden';
+        isAboutmePopupOpen = false;
+    }
+}
+
+function enlargeAboutmeWindow() {
+    if (isAboutmeEnlarged == false) {
+        // The window is on default size, enlarge
+        aboutmeWindow.style.width = '100%';
+        isAboutmeEnlarged = true;
+    } else {
+        // The window is on full size, shrink
+        aboutmeWindow.style.width = '70%';
+        isAboutmeEnlarged = false;
+    }
+}
+
+function showAboutmeWindow() {
+    if (isAboutmeOpen == false) {
+        // The window is hidden, open
+        aboutmeWindow.style.visibility = 'visible';
+        aboutmeWindow.style.left = '50%';
+        isAboutmeOpen = true;
+    } else {
+        // The window is open, close
+        aboutmeWindow.style.visibility = 'hidden';
+        isAboutmeOpen = false;
+        // In case window moved around, reset location
+        aboutmeWindow.style.top = '10%';
+        // In case help button was clicked, reset
+        popupText.style.visibility = 'hidden';
+        isAboutmePopupOpen = false;
+        // In case enlarge button was clicked, reset
+        aboutmeWindow.style.width = '70%';
+        isAboutmeEnlarged = false;
+    }
+}
+
+function switchPhoto() {
+    portraitElem = document.getElementById("myPortrait");
+    if (photoSwitched == false) {
+        // Current photo is pixel gif
+        portraitElem.src = "./resources/img/myWebsite/real_me.jpeg"
+        photoSwitched = true;
+    } else {
+        // Current photo is real jpeg
+        if (animationOn == true) {
+            // Animation option is on
+            portraitElem.src = "./resources/img/myWebsite/pixel_me.gif"
+        } else {
+            // Animation option is off
+            portraitElem.src = "./resources/img/myWebsite/pixel_me.png"
+        }
+        photoSwitched = false;
+    }
+}
+
+
+/*
+    SKILLS CODE
+*/
+function enlargeSkillsWindow() {
+    if (isSkillsEnglarged == false) {
+        // The window is on default size, enlarge
+        skillsWindow.style.width = '100%';
+        isSkillsEnglarged = true;
+    } else {
+        // The window is on full size, shrink
+        skillsWindow.style.width = '70%';
+        isSkillsEnglarged = false;
+    }
+}
+
+function showSkillsWindow() {
+    if (isSkillsOpen == false) {
+        // The window is hidden, open
+        skillsWindow.style.visibility = 'visible';
+        skillsWindow.style.left = '50%';
+        isSkillsOpen = true;
+    } else {
+        // The window is open, close
+        skillsWindow.style.visibility = 'hidden';
+        isSkillsOpen = false;
+        // In case window moved around, reset location
+        skillsWindow.style.top = '10%';
+        // In case enlarge button was clicked, reset
+        skillsWindow.style.width = '70%';
+        isSkillsEnglarged = false;
+    }
+}
+
+
+/*
+    EMAIL ME CODE
+*/
+function enlargeEmailmeWindow(){
+    if (isEmailmeEnlarged == false) {
+        // The window is on default size, enlarge
+        emailmeWindow.style.width = '100%';
+        isEmailmeEnlarged = true;
+    } else {
+        // The window is on full size, shrink
+        emailmeWindow.style.width = '70%';
+        isEmailmeEnlarged = false;
+    }
+}
+
+function showEmailmeWindow() {
+    if (isEmailmeOpen == false) {
+        // The window is hidden, open
+        emailmeWindow.style.visibility = 'visible';
+        emailmeWindow.style.left = '50%';
+        isEmailmeOpen = true;
+    } else {
+        // The window is open, close
+        emailmeWindow.style.visibility = 'hidden';
+        isEmailmeOpen = false;
+    }
+}
+
+
+/*
+    TOOLBAR CODE
+*/
+function resizeToolbar() {
+    // Dynamically change size of toolbar according to current background image size
+    toolbarElem = document.getElementById("toolbar");
+    bkgdWidth = bkgdImg.width;
+    toolbarElem.style.width = bkgdWidth+'px';
+}
+
+function clickToolbarButton(elem) {
+    toolbarButton = document.getElementById(elem);
+    // Check which toolbar button is clicked, then change visibility
+    if (elem == "start_dropup") {
+        startButtonOpen = changeDisplay(toolbarButton, startButtonOpen);
+        if (startButtonOpen == true) {
+            // only have one dropup show at a time; close contact
+            contactButtonOpen = changeDisplay(document.getElementById("contact_dropup"), true);
+        }
+    } else if (elem == "contact_dropup") {
+        contactButtonOpen = changeDisplay(toolbarButton, contactButtonOpen);
+        if (contactButtonOpen == true) {
+            // only have one dropup show at a time; close start
+            startButtonOpen = changeDisplay(document.getElementById("start_dropup"), true);
+        }
+    }
+}
+
+function changeDisplay(elem, bool) {
+    if (bool == false) {
+        // Current element's display is hidden, open
+        elem.style.display = 'block';
+        elem.setAttribute("aria-expanded", true);
+        return true;
+    } else {
+        // Current element's display is open, close
+        elem.style.display = 'none';
+        elem.setAttribute("aria-expanded", false);
+        return false;
+    }
+}
+
+
+/*
+    TURN OFF OPTION CODE
+*/
+function disableAnimation(elem) {
+    // Disable animation & change gif to still images
+    const animations = document.getAnimations();
+    gifImg = document.getElementById("myPortrait");
+    if (animationOn == true) {
+        // Animations are on; turn them off
+        animations.forEach(animation => {
+            animation.pause();
+        });
+        // Change pixel me portrait from gif to png
+        gifImg.src = "./resources/img/myWebsite/pixel_me.png";
+        
+        animationOn = false;
+    } else {
+        // Animations are off; turn them on
+        animations.forEach(animation => {
+            animation.play();
+        });
+        // Change pixel me portrait from png to gif
+        gifImg.src = "./resources/img/myWebsite/pixel_me.gif";
+
+        animationOn = true;
+    }
+    changeColorOfButton(elem, animationOn);
+}
+
+function changeColorOfButton(elem, bool) {
+    // Signify if the option is on or off by color
+    curr_button = document.getElementById(elem);
+    if (bool == true) {
+        curr_button.style.backgroundColor = '#55abaa';
+    } else {
+        curr_button.style.backgroundColor = '#448685'; 
+    }
+}
+
+
+/*
+    REPOSITIONING & RESIZING ICONS ON WINDOW RESIZE & RELOAD
+*/
 function repositionIcons() {
     // Resize toolbar according to current background image width
     resizeToolbar();
@@ -280,203 +504,10 @@ function repositionIcons() {
     // moveInsideBoundary(currElem, moveX, moveY);
 }
 
-function popupAboutmeWindow() {
-    if (isAboutmePopupOpen == false) {
-        // Popup is hidden right now, show
-        popupText.style.visibility = 'visible';
-        isAboutmePopupOpen = true;
-    } else {
-        // Popup is visible right now, hide
-        popupText.style.visibility = 'hidden';
-        isAboutmePopupOpen = false;
-    }
-}
 
-function enlargeAboutmeWindow() {
-    if (isAboutmeEnlarged == false) {
-        // The window is on default size, enlarge
-        aboutmeWindow.style.width = '100%';
-        isAboutmeEnlarged = true;
-    } else {
-        // The window is on full size, shrink
-        aboutmeWindow.style.width = '70%';
-        isAboutmeEnlarged = false;
-    }
-}
-
-function showAboutmeWindow() {
-    if (isAboutmeOpen == false) {
-        // The window is hidden, open
-        aboutmeWindow.style.visibility = 'visible';
-        aboutmeWindow.style.left = '50%';
-        isAboutmeOpen = true;
-    } else {
-        // The window is open, close
-        aboutmeWindow.style.visibility = 'hidden';
-        isAboutmeOpen = false;
-        // In case window moved around, reset location
-        aboutmeWindow.style.top = '10%';
-        // In case help button was clicked, reset
-        popupText.style.visibility = 'hidden';
-        isAboutmePopupOpen = false;
-        // In case enlarge button was clicked, reset
-        aboutmeWindow.style.width = '70%';
-        isAboutmeEnlarged = false;
-    }
-}
-
-function enlargeSkillsWindow() {
-    // if (isAboutmeEnlarged == false) {
-    //     // The window is on default size, enlarge
-    //     aboutmeWindow.style.width = '100%';
-    //     isAboutmeEnlarged = true;
-    // } else {
-    //     // The window is on full size, shrink
-    //     aboutmeWindow.style.width = '70%';
-    //     isAboutmeEnlarged = false;
-    // }
-}
-
-// TODO: skills window
-function showSkillsWindow() {
-    if (isSkillsOpen == false) {
-        // The window is hidden, open
-        skillsWindow.style.visibility = 'visible';
-        skillsWindow.style.left = '50%';
-        isSkillsOpen = true;
-    } else {
-        // The window is open, close
-        skillsWindow.style.visibility = 'hidden';
-        isSkillsOpen = false;
-        // In case window moved around, reset location
-        skillsWindow.style.top = '10%';
-        // In case enlarge button was clicked, reset
-        skillsWindow.style.width = '70%';
-        isSkillsEnglarged = false;
-    }
-}
-
-// Dynamically change size of toolbar according to current background image size
-function resizeToolbar() {
-    toolbarElem = document.getElementById("toolbar");
-    bkgdWidth = bkgdImg.width;
-    toolbarElem.style.width = bkgdWidth+'px';
-}
-
-function switchPhoto() {
-    portraitElem = document.getElementById("myPortrait");
-    if (photoSwitched == false) {
-        // Current photo is pixel gif
-        portraitElem.src = "./resources/img/myWebsite/real_me.jpeg"
-        photoSwitched = true;
-    } else {
-        // Current photo is real jpeg
-        if (animationOn == true) {
-            // Animation option is on
-            portraitElem.src = "./resources/img/myWebsite/pixel_me.gif"
-        } else {
-            // Animation option is off
-            portraitElem.src = "./resources/img/myWebsite/pixel_me.png"
-        }
-        
-        photoSwitched = false;
-    }
-}
-
-function enlargeEmailmeWindow(){
-    if (isEmailmeEnlarged == false) {
-        // The window is on default size, enlarge
-        emailmeWindow.style.width = '100%';
-        isEmailmeEnlarged = true;
-    } else {
-        // The window is on full size, shrink
-        emailmeWindow.style.width = '70%';
-        isEmailmeEnlarged = false;
-    }
-}
-
-function showEmailmeWindow() {
-    if (isEmailmeOpen == false) {
-        // The window is hidden, open
-        emailmeWindow.style.visibility = 'visible';
-        emailmeWindow.style.left = '50%';
-        isEmailmeOpen = true;
-    } else {
-        // The window is open, close
-        emailmeWindow.style.visibility = 'hidden';
-        isEmailmeOpen = false;
-    }
-}
-
-function clickToolbarButton(elem) {
-    toolbarButton = document.getElementById(elem);
-    // Check which toolbar button is clicked, then change visibility
-    if (elem == "start_dropup") {
-        startButtonOpen = changeDisplay(toolbarButton, startButtonOpen);
-        if (startButtonOpen == true) {
-            // only have one dropup show at a time; close contact
-            contactButtonOpen = changeDisplay(document.getElementById("contact_dropup"), true);
-        }
-    } else if (elem == "contact_dropup") {
-        contactButtonOpen = changeDisplay(toolbarButton, contactButtonOpen);
-        if (contactButtonOpen == true) {
-            // only have one dropup show at a time; close start
-            startButtonOpen = changeDisplay(document.getElementById("start_dropup"), true);
-        }
-    }
-}
-
-function changeDisplay(elem, bool) {
-    if (bool == false) {
-        // Current element's display is hidden, open
-        elem.style.display = 'block';
-        elem.setAttribute("aria-expanded", true);
-        return true;
-    } else {
-        // Current element's display is open, close
-        elem.style.display = 'none';
-        elem.setAttribute("aria-expanded", false);
-        return false;
-    }
-}
-
-function disableAnimation(elem) {
-    // Disable animation & change gif to still images
-    const animations = document.getAnimations();
-    gifImg = document.getElementById("myPortrait");
-    if (animationOn == true) {
-        // Animations are on; turn them off
-        animations.forEach(animation => {
-            animation.pause();
-        });
-        // Change pixel me portrait from gif to png
-        gifImg.src = "./resources/img/myWebsite/pixel_me.png";
-        
-        animationOn = false;
-    } else {
-        // Animations are off; turn them on
-        animations.forEach(animation => {
-            animation.play();
-        });
-        // Change pixel me portrait from png to gif
-        gifImg.src = "./resources/img/myWebsite/pixel_me.gif";
-
-        animationOn = true;
-    }
-    changeColorOfButton(elem, animationOn);
-}
-
-function changeColorOfButton(elem, bool) {
-    // Signify if the option is on or off by color
-    curr_button = document.getElementById(elem);
-    if (bool == true) {
-        curr_button.style.backgroundColor = '#55abaa';
-    } else {
-        curr_button.style.backgroundColor = '#448685'; 
-    }
-    
-}
-
+/**
+    WINDOW CODE
+*/
 // On load, erase texts in email input fields
 document.getElementById("forms").reset();
 
