@@ -294,13 +294,11 @@ figcaption {
 }
 
 
-
-
 /* Styling for window that pops up on double clicking skills icon*/
 #skillsWindow {
     z-index: 20;
     position: absolute;
-    visibility: hidden;
+    /* visibility: hidden; */
     top: 10%;
     left: 50%;
     transform: translate(-50%, 0);
@@ -312,10 +310,78 @@ figcaption {
 }
 
 /* TODO: Styling for contents inside the skills window */
+#insideSkillsWindow {
+    overflow: auto;
+    position: absolute;
+    left: 2%;
+    right: 2%;
+    top: 15%;
+    bottom: 5%;
+    text-align: center;
+    /* width: fit-content; */
+    padding: 10px;
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+}
 
+#category_programming {
+    border: solid #336a38;
+    border-radius: 10px;
+    margin: 10px;
+}
 
+#category_programmingHeader {
+    color: #336a38;
+}
+#category_programmingHeader:hover {
+    color: white;
+    text-shadow: -2px 0 #336a38, 0 2px #336a38, 2px 0 #336a38, 0 -2px #336a38;
+}
 
+#category_programmingInside {
+    font-size: 20px;
+    display: none;
+    text-shadow: none;
+}
 
+#category_art {
+    border: solid #c25353;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+#category_artHeader {
+    color: #c25353;
+}
+#category_artHeader:hover {
+    color: white;
+    text-shadow: -2px 0 #c25353, 0 2px #c25353, 2px 0 #c25353, 0 -2px #c25353;
+}
+
+#category_artInside {
+    font-size: 20px;
+    display: none;
+    text-shadow: none;
+}
+
+#category_other {
+    border: solid #e4ce5f;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+#category_otherHeader {
+    color: #e4ce5f;
+}
+#category_otherHeader:hover {
+    color: white;
+    text-shadow: -2px 0 #e4ce5f, 0 2px #e4ce5f, 2px 0 #e4ce5f, 0 -2px #e4ce5f;
+}
+
+#category_otherInside {
+    font-size: 20px;
+    display: none;
+    text-shadow: none;
+}
 
 
 

@@ -139,11 +139,29 @@
         <button class="buttons enlargeButton" onclick="enlargeSkillsWindow()">[]</button>
         <button class="buttons closeButton" onclick="showSkillsWindow()">X</button>
         <img src="./resources/img/myWebsite/xp_window.png" alt="skills window" class="windowImg">
-        
-
-
-
-
+        <div id="insideSkillsWindow">
+          <div id="category_programming">
+            <h3 id="category_programmingHeader" onclick="showContents('programming')">► Programming ◀</h3>
+            <div id="category_programmingInside">
+              Python ★★☆<br>
+              Java ★★☆<br>
+            </div>
+          </div>
+          <div id="category_art">
+            <h3 id="category_artHeader" onclick="showContents('art')">► Art ◀</h3>
+            <div id="category_artInside">
+              Photoshop ★☆☆<br>
+              AfterEffects ★☆☆<br>
+            </div>
+          </div>
+          <div id="category_other">
+            <h3 id="category_otherHeader" onclick="showContents('other')">► Other ◀</h3>
+            <div id="category_otherInside">
+              Korean ★★★<br>
+              Data structures ★★☆<br>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- This window shows up when user clicks email icon -->

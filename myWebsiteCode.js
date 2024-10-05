@@ -11,6 +11,10 @@ Fourth, it also does miscellaneous things like calculating toolbar size from
 screen size and switching photos from clicking the button.
 */
 
+
+/*
+    GLOBAL VARIABLES
+*/
 // Global variables for draggable icons
 const bkgdImg = document.getElementById("mainBackgroundImg");
 const imgRatio = 0.15;
@@ -25,7 +29,6 @@ let isAboutmeEnlarged = false;
 let isAboutmePopupOpen = false;
 let photoSwitched = false;
 
-// TODO:
 // Global variables for skills window
 const skillsWindow = document.getElementById("skillsWindow");
 let isSkillsOpen = false;
@@ -45,7 +48,11 @@ let contactButtonOpen = false;
 let animationOn = true;
 let dragOn = true;
 
-// Object for mouse cursor coordinates upon click on draggable item
+
+/*
+    OBJECT INITIALIZERS
+*/
+// Mouse cursor coordinates upon click on draggable item
 var coordinate = {
     newX: 0,
     newY: 0,
@@ -73,6 +80,8 @@ var winSize = {
     newX: 0,
     newY: 0,
 };
+
+
 
 /*
     BOUNDARY CODE
@@ -319,6 +328,27 @@ function showSkillsWindow() {
         // In case enlarge button was clicked, reset
         skillsWindow.style.width = '70%';
         isSkillsEnglarged = false;
+    }
+}
+
+function showContents(whichOne) {
+    let theOne;
+    // Get the correct one trying to open
+    if (whichOne == 'programming') {
+        theOne = 'category_programmingInside';
+    } else if (whichOne == 'art') {
+        theOne = 'category_artInside';
+    } else if (whichOne == 'other') {
+        theOne = 'category_otherInside';
+    }
+
+    let showElem = document.getElementById(theOne);
+    if (window.getComputedStyle(showElem).display == 'none') {
+        // The element is hidden; show
+        showElem.style.display = 'block';
+    } else {
+        // The element is shown; hide
+        showElem.style.display = 'none';
     }
 }
 
