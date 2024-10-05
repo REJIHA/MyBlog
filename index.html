@@ -107,9 +107,9 @@
           * Drag to move window around<br>
           * Double clicking about me icon closes this window too
         </div>
-        <button class="buttons" id="helpButton" onclick="popupAboutmeWindow()">?</button>
-        <button class="buttons" id="enlargeButton" onclick="enlargeAboutmeWindow()">[]</button>
-        <button class="buttons" id="closeButton" onclick="showAboutmeWindow()">X</button>
+        <button class="buttons helpButton" onclick="popupAboutmeWindow()">?</button>
+        <button class="buttons enlargeButton" onclick="enlargeAboutmeWindow()">[]</button>
+        <button class="buttons closeButton" onclick="showAboutmeWindow()">X</button>
         <img src="./resources/img/myWebsite/xp_window.png" alt="aboutme window" class="windowImg">
         <div id="insideAboutMeWindow">
           <img src="./resources/img/myWebsite/pixel_me.gif" alt="my portrait" id="myPortrait">
@@ -144,6 +144,8 @@
       <!-- This window shows up when user clicks email icon -->
       <div id="emailmeWindow" onmouseover="startDragging(this.id)">
         <h2 class="windowHeader">Email me</h2>
+        <button class="buttons enlargeButton" onclick="enlargeEmailmeWindow()">[]</button>
+        <button class="buttons closeButton" onclick="showEmailmeWindow()">X</button>
         <img src="./resources/img/myWebsite/xp_window.png" alt="emailme window" class="windowImg">
         <div id="insideEmailMeWindow">
           <div id="emailLinkPart">
@@ -166,7 +168,7 @@
             <label for="input_message">Message</label>
             <textarea type="text" class="inputFields" id="input_message" name="input_message" placeholder="..." rows="6" required aria-required="true"></textarea>
             <div id="emailmeButtons">
-              <button class="buttons" type="button" onclick="showEmailmeWindow()">cancel</button>
+              <!-- <button class="buttons" type="button" onclick="showEmailmeWindow()">cancel</button> -->
               <input class="buttons" name="submit_button" type="submit" value="submit">
             </div>
           </form>

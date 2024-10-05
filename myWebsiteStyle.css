@@ -404,17 +404,17 @@ textarea::placeholder {
     cursor: url('./resources/img/myWebsite/xp_cursor_red.png'), auto;
 }
 
-#helpButton {
+.helpButton {
     position: absolute;
     top: 2%;
     right: 95px;
 }
-#enlargeButton{
+.enlargeButton{
     position: absolute;
     top: 2%;
     right: 55px;
 }
-#closeButton {
+.closeButton {
     position: absolute;
     top: 2%;
     right: 15px;

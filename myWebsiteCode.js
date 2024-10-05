@@ -22,17 +22,20 @@ const aboutmeWindow = document.getElementById("aboutmeWindow");
 const popupText = document.getElementById("popupText");
 let isAboutmeOpen = false;
 let isAboutmeEnlarged = false;
-let isPopupOpen = false;
+let isAboutmePopupOpen = false;
 let photoSwitched = false;
 
 // TODO:
 // Global variables for skills window
 const skillsWindow = document.getElementById("skillsWindow");
-
+let isSkillsOpen = false;
+let isSkillsEnglarged = false;
+let isSkillsPopupOpen = false;
 
 // Global variables for emailme window
 const emailmeWindow = document.getElementById("emailmeWindow");
 let isEmailmeOpen = false;
+let isEmailmeEnlarged = false;
 
 // Global variables for toolbar
 let startButtonOpen = false;
@@ -278,14 +281,14 @@ function repositionIcons() {
 }
 
 function popupAboutmeWindow() {
-    if (isPopupOpen == false) {
+    if (isAboutmePopupOpen == false) {
         // Popup is hidden right now, show
         popupText.style.visibility = 'visible';
-        isPopupOpen = true;
+        isAboutmePopupOpen = true;
     } else {
         // Popup is visible right now, hide
         popupText.style.visibility = 'hidden';
-        isPopupOpen = false;
+        isAboutmePopupOpen = false;
     }
 }
 
@@ -315,16 +318,42 @@ function showAboutmeWindow() {
         aboutmeWindow.style.top = '10%';
         // In case help button was clicked, reset
         popupText.style.visibility = 'hidden';
-        isPopupOpen = false;
+        isAboutmePopupOpen = false;
         // In case enlarge button was clicked, reset
         aboutmeWindow.style.width = '70%';
         isAboutmeEnlarged = false;
     }
 }
 
+function enlargeSkillsWindow() {
+    // if (isAboutmeEnlarged == false) {
+    //     // The window is on default size, enlarge
+    //     aboutmeWindow.style.width = '100%';
+    //     isAboutmeEnlarged = true;
+    // } else {
+    //     // The window is on full size, shrink
+    //     aboutmeWindow.style.width = '70%';
+    //     isAboutmeEnlarged = false;
+    // }
+}
+
 // TODO: skills window
 function showSkillsWindow() {
-    
+    if (isSkillsOpen == false) {
+        // The window is hidden, open
+        skillsWindow.style.visibility = 'visible';
+        skillsWindow.style.left = '50%';
+        isSkillsOpen = true;
+    } else {
+        // The window is open, close
+        skillsWindow.style.visibility = 'hidden';
+        isSkillsOpen = false;
+        // In case window moved around, reset location
+        skillsWindow.style.top = '10%';
+        // In case enlarge button was clicked, reset
+        skillsWindow.style.width = '70%';
+        isSkillsEnglarged = false;
+    }
 }
 
 // Dynamically change size of toolbar according to current background image size
@@ -351,6 +380,18 @@ function switchPhoto() {
         }
         
         photoSwitched = false;
+    }
+}
+
+function enlargeEmailmeWindow(){
+    if (isEmailmeEnlarged == false) {
+        // The window is on default size, enlarge
+        emailmeWindow.style.width = '100%';
+        isEmailmeEnlarged = true;
+    } else {
+        // The window is on full size, shrink
+        emailmeWindow.style.width = '70%';
+        isEmailmeEnlarged = false;
     }
 }
 
