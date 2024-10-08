@@ -2,6 +2,10 @@
     This is the css for myWebsite's index.html
 */
 
+
+/*
+    CUSTOM FONT DECLARATIONS
+*/
 /* Using free to use font "sillkscreen" by Jason Kottke.
 Could not convert ttf to woff so change upon malfunction */
 @font-face {
@@ -21,6 +25,10 @@ Could not convert ttf to woff so change upon malfunction */
     font-style: normal;
 }
 
+
+/*
+    ALL ELEMENTS
+*/
 * {
     font-family: silkscreen;
     font-size: 25px;
@@ -79,19 +87,9 @@ li {
 }
 
 
-
-/* Animation for website header*/
-#pageTitle {
-    animation: title_move 1s steps(1, end) infinite;
-}
-@keyframes title_move {
-    0% {transform: translateY(0);}
-    25% {transform: translateY(5px);}
-    50% {transform: translateY(0);}
-    75% {transform: translateY(-5px);}
-    100% {transform: translateY(0);}
-}
-
+/*
+    RELOADING ELEMENTS
+*/
 /* Styling for reloading */
 #loadingImg {
     position: fixed;
@@ -124,6 +122,22 @@ li {
     100% {z-index: -10; opacity: 0;}
 }
 
+
+/*
+    MAIN PAGE ELEMENTS
+*/
+/* Animation for website header*/
+#pageTitle {
+    animation: title_move 1s steps(1, end) infinite;
+}
+@keyframes title_move {
+    0% {transform: translateY(0);}
+    25% {transform: translateY(5px);}
+    50% {transform: translateY(0);}
+    75% {transform: translateY(-5px);}
+    100% {transform: translateY(0);}
+}
+
 /* Styling of main background image (the windows xp) */
 #mainBackgroundImg {
     max-width: 90vw;
@@ -136,6 +150,10 @@ li {
     background-color: black;
 }
 
+
+/*
+    TOOL BAR ELEMENTS
+*/
 /* Below are stylings for toolbar items */
 #toolbar {
     display:block;
@@ -179,7 +197,6 @@ li {
     text-shadow: 0px 0 black, 0 2px black, 2px 0 black, 0 0px black;
 }
 
-
 /* Stylings for dropup menu */
 .dropup {
     position: relative;
@@ -210,6 +227,9 @@ li {
 } */
 
 
+/*
+    ICON ELEMENTS
+*/
 /* Below are stylings for draggable icons in the background */
 #linkIcon {
     text-align: center;
@@ -251,6 +271,10 @@ li {
     left: 80%;
 }
 
+
+/*
+    WINDOW ELEMENTS
+*/
 /* Styling for icon windows */
 .windowHeader {
     position: absolute;
@@ -274,10 +298,6 @@ li {
     left: 50%;
     transform: translate(-50%, 0);
     width: 70%;
-}
-/* TODO: need jquery for these to stay after active */
-#aboutmeWindow:active {
-    z-index: 30;
 }
 
 #insideAboutMeWindow {
@@ -308,12 +328,8 @@ li {
     transform: translate(-50%, 0);
     width: 70%;
 }
-/* TODO: need jquery for these to stay after active */
-/* #aboutmeWindow:active {
-    z-index: 30;
-} */
 
-/* TODO: Styling for contents inside the skills window */
+/* Styling for contents inside the skills window */
 #insideSkillsWindow {
     overflow: auto;
     position: absolute;
@@ -414,7 +430,6 @@ li {
 }
 
 
-
 /* Styling for window that pops up on clicking email menu from toolbar */
 #emailmeWindow {
     z-index: 20;
@@ -433,10 +448,6 @@ li {
     right: 2%;
     top: 15%;
     bottom: 5%;
-}
-/* TODO: need jquery for these to stay after active */
-#emailmeWindow:active {
-    z-index: 30;
 }
 
 #emailLinkPart {
@@ -483,6 +494,9 @@ textarea::placeholder {
 }
 
 
+/*
+    BUTTON ELEMENTS
+*/
 /* Styling for buttons */
 .buttons {
     border: 0;
@@ -516,6 +530,10 @@ textarea::placeholder {
     right: 15px;
 }
 
+
+/*
+    HELP POPUP ELEMENTS
+*/
 /* Styling for text that shows up on clicking ?(help) button */
 #popupText {
     position: absolute;
@@ -531,6 +549,9 @@ textarea::placeholder {
 }
 
 
+/*
+    BULLET LIST ELEMENTS
+*/
 /* Styling for bullet list of the page */
 #bulletList {
     /* Center the list but keep bullets in line of left */
@@ -550,6 +571,10 @@ textarea::placeholder {
     text-decoration: underline;
 }
 
+
+/*
+    VERSION HISTORY & DATE LAST UPDATED ELEMENTS
+*/
 #info {
     font-size: 11px;
     text-align: right;
@@ -570,6 +595,10 @@ h3 {
     margin: 0;
 }
 
+
+/*
+    TURNING OFF OPTION ELEMENTS
+*/
 .off_buttons {
     display: inline-block;
     border: 0;
@@ -587,13 +616,3 @@ h3 {
 .off_buttons:hover {
     cursor: url('./resources/img/myWebsite/xp_cursor_red.png'), auto;
 }
-
-/*
-.buttons:active {
-    box-shadow:
-    inset -2px -2px 0px rgba(255, 255, 255, 0.6),
-    inset 2px 2px 0px rgba(0, 0, 0, 0.6);
-}
-.buttons:hover {
-    cursor: url('./resources/img/myWebsite/xp_cursor_red.png'), auto;
-} */

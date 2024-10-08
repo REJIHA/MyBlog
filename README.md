@@ -60,7 +60,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
     <summary>main link page</summary>
     ![img1](https://github.com/REJIHA/MyWebsite/blob/0.1/public_html/resources/img/readme_img/main_link%20page%201.png?raw=true)
 </details> -->
-[click here to view](https://github.com/REJIHA/MyWebsite/tree/0.1/public_html/resources/img/readme_img)
+[click here to view](https://github.com/REJIHA/MyWebsite/tree/main/public_html/resources/img/readme_img)
 
 ## :shamrock: Links Used to Implement
 * [Readme Emoji Cheatsheet](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md)
