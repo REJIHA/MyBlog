@@ -349,7 +349,7 @@ li {
 }
 
 #category_programmingInside {
-    font-family: 'Courier', monospace;
+    font-family: rejiha_font;
     font-size: 20px;
     display: none;
     text-shadow: none;
@@ -372,7 +372,7 @@ li {
 }
 
 #category_artInside {
-    font-family: 'Courier', monospace;
+    font-family: rejiha_font;
     font-size: 20px;
     display: none;
     text-shadow: none;
@@ -395,7 +395,7 @@ li {
 }
 
 #category_otherInside {
-    font-family: 'Courier', monospace;
+    font-family: rejiha_font;
     font-size: 20px;
     display: none;
     text-shadow: none;

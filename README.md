@@ -32,9 +32,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
 - [x] my website - main page
     - [x] website animation
     - [x] about me page
-    - [ ] skills page
-        - [ ] programming
-        - [ ] art
+    - [x] skills page
     - [ ] link to projects
     - [x] link to resume
     - [x] link to link page
