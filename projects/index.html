@@ -7,20 +7,26 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="projects.css">
+    <link rel="stylesheet" type="text/css" href="projectsStyle.css">
     <link rel="icon" type="image/png" href="../resources/img/myWebsite/projects_icon.png"/>
     <title>Projects</title>
   </head>
   <body>
     <main>
-        <h1>PROJECT SHOWCASE</h1>  
-        <div id="Programming">
-
+        <h1>PROJECTs</h1>  
+        <div id="programming" onmouseover="expandAnimation(this.id)" onmouseleave="resetAnimation(this.id)" onclick="clickSection(this.id)">
+          programming
+          <div id="programming_contents">
+            this is coding sectionnn
+          </div>
         </div>
-        <div id="Art">
-
+        <div id="art" onmouseover="expandAnimation(this.id)" onmouseleave="resetAnimation(this.id)"  onclick="clickSection(this.id)">
+          art
+          <div id="art_contents">
+            this is art partttttt
+          </div>
         </div>
     </main>
   </body>
-  <!-- <script src="javascript.js"></script> -->
+  <script src="projectsCode.js"></script>
 </html>

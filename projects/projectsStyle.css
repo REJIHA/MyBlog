@@ -1,0 +1,119 @@
+/* 
+    This is the css for projects's index.html
+*/
+
+
+/*
+    CUSTOM FONT DECLARATIONS
+*/
+/* Using free to use font "sillkscreen" by Jason Kottke.
+Could not convert ttf to woff so change upon malfunction */
+@font-face {
+    font-family: 'silkscreen';
+    src: url('../resources/font/silkscreen/slkscr.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* @font-face {
+    font-family: 'rejiha_font';
+    src: url('./resources/font/webfontkit-20240309-135718/rejiha_font-regular-webfont.woff') format('woff'),
+        url('./resources/font/webfontkit-20240309-135718/rejiha_font-regular-webfont.woff2') format('woff2'),
+        url('./resources/font/Rejiha_font-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+} */
+
+
+/*
+    ALL ELEMENTS
+*/
+* {
+    font-family: silkscreen;
+    font-size: 25px;
+    color: black;
+    text-decoration: none;
+    margin: 0;
+}
+
+/* Styling of the website header */
+h1 {
+    font-family: silkscreen;
+    font-size: 50px;
+    color: white;
+    text-shadow: -2px 0 black, 0 5px black, 5px 0 black, 0 -2px black;
+    text-align: center;
+    height: 10vh;
+    background-color: yellow;
+}
+
+
+/*
+    PROGRAMMING ELEMENTS
+*/
+#programming {
+    background-color: blue;
+    float: left;
+    width: 50%;
+    height: 90vh;
+}
+
+#programming_contents {
+    display: none;
+}
+
+
+/*
+    ART ELEMENTS
+*/
+#art {
+    background-color: red;
+    float: right;
+    width: 50%;
+    height: 90vh;
+}
+
+#art_contents {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+/*
+    ANIMATIONS
+*/
+@keyframes expand {
+    0% {width: 50%;}
+    100% {width: 75%;}
+}
+
+@keyframes shrink {
+    0% {width: 50%;}
+    100% {width: 25%;}
+}
+
+@keyframes reset_expand {
+    0% {width: 75%;}
+    100% {width: 50%;}
+}
+
+@keyframes reset_shrink {
+    0% {width: 25%;}
+    100% {width: 50%;}
+}
+
+@keyframes wholePage {
+    0% {width: 75%;}
+    100% {width: 90%;}
+}
+
+@keyframes subPage {
+    0% {width: 25%;}
+    100% {width: 10%;}
+}

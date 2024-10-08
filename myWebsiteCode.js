@@ -88,8 +88,8 @@ var winSize = {
 */
 function setBoundary() {
     // Get the changed icon size (base -> aboutme icon)
-    computedWidth = document.getElementById("linkIcon_aboutme").clientWidth;
-    computedHeight = document.getElementById("linkIcon_aboutme").clientHeight;
+    const computedWidth = document.getElementById("linkIcon_aboutme").clientWidth;
+    const computedHeight = document.getElementById("linkIcon_aboutme").clientHeight;
     // console.log("ICON SIZE w,h: "+computedWidth+","+computedHeight);
 
     // Set boundary of draggable icons
@@ -143,12 +143,12 @@ function saveBackgroundInfo() {
     const backRect = bkgdImg.getBoundingClientRect();
 
     // Below calculation gives size without padding, border, and margins
-    currWidth = bkgdImg.clientWidth - (parseFloat(computedBkgd.paddingLeft) + parseFloat(computedBkgd.paddingRight));
-    currHeight = bkgdImg.clientHeight - (parseFloat(computedBkgd.paddingTop) + parseFloat(computedBkgd.paddingBottom));
+    let currWidth = bkgdImg.clientWidth - (parseFloat(computedBkgd.paddingLeft) + parseFloat(computedBkgd.paddingRight));
+    let currHeight = bkgdImg.clientHeight - (parseFloat(computedBkgd.paddingTop) + parseFloat(computedBkgd.paddingBottom));
     
     // Below gives xy coordinates of current background window location
-    currX = Math.round(backRect.left);
-    currY = Math.round(backRect.top);
+    let currX = Math.round(backRect.left);
+    let currY = Math.round(backRect.top);
 
     // Start with initializing/saving window size
     if ((winSize.oldWidth == 0) && (winSize.oldHeight == 0)) {
@@ -279,7 +279,7 @@ function showAboutmeWindow() {
 }
 
 function switchPhoto() {
-    portraitElem = document.getElementById("myPortrait");
+    const portraitElem = document.getElementById("myPortrait");
     if (photoSwitched == false) {
         // Current photo is pixel gif
         portraitElem.src = "./resources/img/myWebsite/real_me.jpeg"
@@ -387,13 +387,13 @@ function showEmailmeWindow() {
 */
 function resizeToolbar() {
     // Dynamically change size of toolbar according to current background image size
-    toolbarElem = document.getElementById("toolbar");
-    bkgdWidth = bkgdImg.width;
+    const toolbarElem = document.getElementById("toolbar");
+    let bkgdWidth = bkgdImg.width;
     toolbarElem.style.width = bkgdWidth+'px';
 }
 
 function clickToolbarButton(elem) {
-    toolbarButton = document.getElementById(elem);
+    let toolbarButton = document.getElementById(elem);
     // Check which toolbar button is clicked, then change visibility
     if (elem == "start_dropup") {
         startButtonOpen = changeDisplay(toolbarButton, startButtonOpen);
@@ -431,7 +431,7 @@ function changeDisplay(elem, bool) {
 function disableAnimation(elem) {
     // Disable animation & change gif to still images
     const animations = document.getAnimations();
-    gifImg = document.getElementById("myPortrait");
+    const gifImg = document.getElementById("myPortrait");
     if (animationOn == true) {
         // Animations are on; turn them off
         animations.forEach(animation => {
@@ -456,7 +456,7 @@ function disableAnimation(elem) {
 
 function changeColorOfButton(elem, bool) {
     // Signify if the option is on or off by color
-    curr_button = document.getElementById(elem);
+    let curr_button = document.getElementById(elem);
     if (bool == true) {
         curr_button.style.backgroundColor = '#55abaa';
     } else {
@@ -479,8 +479,8 @@ function repositionIcons() {
     const bkgdImgHeight = bkgdImg.offsetHeight;
     // console.log("background size: "+bkgdImgWidth+" "+bkgdImgHeight);
     for (let i=0; i<iconImgs.length; i++) {
-        curr = iconImgs[i];
-        currIcon =document.getElementById(curr);
+        let curr = iconImgs[i];
+        let currIcon =document.getElementById(curr);
 
         currIcon.style.width = (bkgdImgHeight * imgRatio) + "px";
         currIcon.style.height = (bkgdImgHeight * imgRatio) + "px";
@@ -503,18 +503,18 @@ function repositionIcons() {
     // Change location of icon in relation to current window size (ADD NEW ID HERE)
     const iconsAt = ["linkIcon_aboutme", "linkIcon_skills", "linkIcon_projects", "linkIcon_resume", "linkIcon_linkpage"];
     for (let i=0; i<iconsAt.length; i++) {
-        curr = iconsAt[i];
-        currElem = document.getElementById(curr);
-        currElemRect = currElem.getBoundingClientRect();
+        let curr = iconsAt[i];
+        let currElem = document.getElementById(curr);
+        let currElemRect = currElem.getBoundingClientRect();
 
         // Get current location of icon
-        currX = currElemRect.left;
-        currY = currElemRect.top;
+        let currX = currElemRect.left;
+        let currY = currElemRect.top;
         // console.log("currently at: "+currX+","+currY);
 
         // Calculate & change coordinates
-        moveX = (winSize.newWidth*currX) / winSize.oldWidth;
-        moveY = currY + (winSize.newY - winSize.oldY);
+        let moveX = (winSize.newWidth*currX) / winSize.oldWidth;
+        let moveY = currY + (winSize.newY - winSize.oldY);
         // console.log("NEW COORDINATES: "+moveX+","+moveY);
         moveInsideBoundary(currElem, moveX, moveY);
     }
