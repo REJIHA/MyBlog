@@ -44,6 +44,7 @@ h1 {
     text-shadow: -2px 0 black, 0 5px black, 5px 0 black, 0 -2px black;
     text-align: center;
     height: 10vh;
+
     background-color: yellow;
 }
 
@@ -59,6 +60,7 @@ h1 {
 }
 
 #programming_contents {
+    background-color: lightblue;
     display: none;
 }
 
@@ -74,14 +76,24 @@ h1 {
 }
 
 #art_contents {
+    background-color: lightpink;
     display: none;
 }
 
 
 
 
+.header {
+    display: block;
+    text-align: center;
+    /* padding: 50% 0; */
+    
+}
 
-
+.contents {
+    margin: 10px;
+    height: 87vh;
+}
 
 
 

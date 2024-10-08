@@ -13,16 +13,23 @@
   </head>
   <body>
     <main>
+      <!-- TODO: cannot tab them -->
         <h1>PROJECTs</h1>  
         <div id="programming" onmouseover="expandAnimation(this.id)" onmouseleave="resetAnimation(this.id)" onclick="clickSection(this.id)">
-          programming
-          <div id="programming_contents">
+          <div class="header" id="programming_header">
+            <!-- TODO: working on centering header & adding images too -->
+            <img src="../resources/img/myWebsite/projects_icon.png" alt="programming icon">
+            programming
+          </div>
+          <div class="contents" id="programming_contents">
             this is coding sectionnn
           </div>
         </div>
         <div id="art" onmouseover="expandAnimation(this.id)" onmouseleave="resetAnimation(this.id)"  onclick="clickSection(this.id)">
-          art
-          <div id="art_contents">
+          <div class="header" id="art_header">
+            art
+          </div>
+          <div class="contents" id="art_contents">
             this is art partttttt
           </div>
         </div>
