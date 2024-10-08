@@ -345,7 +345,7 @@ function showContents(whichOne) {
     let showElem = document.getElementById(theOne);
     if (window.getComputedStyle(showElem).display == 'none') {
         // The element is hidden; show
-        showElem.style.display = 'block';
+        showElem.style.display = 'inline-block';
     } else {
         // The element is shown; hide
         showElem.style.display = 'none';
