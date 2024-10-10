@@ -14,26 +14,26 @@
   <body>
     <main>
       <!-- TODO: cannot tab them -->
-        <h1>PROJECTs</h1>  
-        <div id="programming" onmouseover="expandAnimation(this.id)" onmouseleave="resetAnimation(this.id)" onclick="clickSection(this.id)">
+        <h1>PROJECTs</h1>
+        <a id="programming" onmouseover="expandAnimation(this.id)" onmouseleave="resetAnimation(this.id)" onclick="clickSection(this.id)" tabindex="0" href="#">
           <div class="header" id="programming_header">
             <!-- TODO: working on centering header & adding images too -->
             <img src="../resources/img/projects/programming.png" alt="programming icon" id="programmingImg">
-            <p id="programming_caption">programming</p>
+            <p class="p_captions" id="programming_caption">programming</p>
           </div>
           <div class="contents" id="programming_contents">
             this is coding sectionnn
           </div>
-        </div>
-        <div id="art" onmouseover="expandAnimation(this.id)" onmouseleave="resetAnimation(this.id)"  onclick="clickSection(this.id)">
+        </a>
+        <a id="art" onmouseover="expandAnimation(this.id)" onmouseleave="resetAnimation(this.id)"  onclick="clickSection(this.id)" tabindex="0" href="#">
           <div class="header" id="art_header">
             <img src="../resources/img/projects/art.png" alt="art icon" id="artImg">
-            <p id="art_caption">art</p>
+            <p class="p_captions" id="art_caption">art</p>
           </div>
           <div class="contents" id="art_contents">
             this is art partttttt
           </div>
-        </div>
+        </a>
     </main>
   </body>
   <script src="projectsCode.js"></script>

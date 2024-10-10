@@ -349,8 +349,12 @@ li {
     font-size: 22px;
 }
 
+.categoryHeader:hover {
+    cursor: url('./resources/img/myWebsite/xp_cursor_red.png'), auto;
+}
+
 #category_programming {
-    border: solid #336a38;
+    border: solid #428948;
     border-radius: 10px;
     margin: 10px;
 }

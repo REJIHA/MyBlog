@@ -84,6 +84,8 @@ Date: March 9 & 10 2024, August 28 2024 - Present
 * [Center a Div](https://www.joshwcomeau.com/css/center-a-div/)
 * [ADA Compliance Checker - Accessibility Checker](https://www.accessibilitychecker.org/)
 * [ADA Compliance Checker - accessScan](https://accessibe.com/accessscan)
+* [CSS Gradient Generator](https://cssgradient.io/)
+* [CSS Pixel Art](https://css-tricks.com/fun-times-css-pixel-art/)
 
 <!-- * Below are links I didn't end up using...
 * [Let's Encrypt](https://letsencrypt.org/) free SSL site

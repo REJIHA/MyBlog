@@ -76,16 +76,20 @@ function resetAnimation(thisOne) {
     elem.style.width = '50%';
     elem.style.writingMode = null;
     elem_header.style.display = 'block'
+    elem_header.style.transform = 'translateY(20vh)';
     elem_img.style.width = '30%';
     elem_img.style.margin = '10px';
+    elem_caption.style.display = 'block';
     elem_content.style.display = 'none';
 
     otherElem.style.animation = "reset_shrink 0.5s forwards";
     otherElem.width = '50%';
     otherElem.style.writingMode = null;
     otherElem_header.style.display = 'block';
+    otherElem_header.style.transform = 'translateY(20vh)';
     otherElem_img.style.width = '30%';
     otherElem_img.style.margin = '10px';
+    otherElem_caption.style.display = 'block';
     otherElem_content.style.display = 'none';
 }
 
@@ -119,6 +123,7 @@ function clickSection(thisOne) {
         otherElem.style.writingMode = 'vertical-lr';
         otherElem.style.textOrientation = 'upright';
         otherElem_header.style.display = 'block';
+        otherElem_header.style.transform = 'none';
         otherElem_img.style.width = '20px';
         otherElem_img.style.margin = '0';
         otherElem_caption.style.display = 'inline-block';
