@@ -17,9 +17,9 @@ Could not convert ttf to woff so change upon malfunction */
 
 /* @font-face {
     font-family: 'rejiha_font';
-    src: url('./resources/font/webfontkit-20240309-135718/rejiha_font-regular-webfont.woff') format('woff'),
-        url('./resources/font/webfontkit-20240309-135718/rejiha_font-regular-webfont.woff2') format('woff2'),
-        url('./resources/font/Rejiha_font-Regular.ttf') format('truetype');
+    src: url('../resources/font/webfontkit-20240309-135718/rejiha_font-regular-webfont.woff') format('woff'),
+        url('../resources/font/webfontkit-20240309-135718/rejiha_font-regular-webfont.woff2') format('woff2'),
+        url('../resources/font/Rejiha_font-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 } */
@@ -44,13 +44,6 @@ body {
 h1 {
     font-family: silkscreen;
     font-size: 50px;
-    color: white;
-    /* text-shadow: -2px 0 white, 0 5px white, 5px 0 white, 0 -2px white; */
-    text-align: center;
-    height: 10vh;
-    /* padding-top: 10px;
-    padding-bottom: 10px; */
-    background-color: black;
 }
 
 img {
@@ -65,52 +58,31 @@ img {
 
     margin: 10px;
     width: 30%;
-    box-shadow: 0px 0px 10px black;
+    box-shadow: 0px 0px 5px black;
 }
 
 
-
-/*
-    PROGRAMMING ELEMENTS
+/* 
+    TITLE ELEMENTS
 */
-#programming {
-    background-color: #5460c8;
-    /* background: radial-gradient(circle, rgba(84,96,200,1) 0%, rgba(27,37,128,1) 100%); */
-    float: left;
-    width: 50%;
-    height: 90vh;
-}
+#ProjectsTitle {
+    color: white;
+    /* text-shadow: -2px 0 white, 0 5px white, 5px 0 white, 0 -2px white; */
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: black;
 
-#programming_header {
-    
 }
-
-#programming_contents {
-    background-color: lightblue;
-    display: none;
+#ProjectsTitle:hover {
+    color: black;
+    text-shadow: -2px 0 white, 0 5px white, 5px 0 white, 0 -2px white;
+    cursor: url('../resources/img/myWebsite/xp_cursor_red.png'), auto;
 }
 
 
 /*
-    ART ELEMENTS
-*/
-#art {
-    background-color: #e65d84;
-    /* background: radial-gradient(circle, rgba(230,93,132,1) 0%, rgba(158,38,72,1) 100%); */
-    float: right;
-    width: 50%;
-    height: 90vh;
-}
-
-#art_contents {
-    background-color: lightpink;
-    display: none;
-}
-
-
-
-/*
-    BOTH ELEMENTS
+    BOTH HEADER ELEMENTS
 */
 .header {
     display: block;
@@ -127,10 +99,131 @@ img {
 
 .contents {
     margin: 10px;
-    height: 87vh;
-    overflow-y: auto;
+    height: 90vh;
+    /* overflow-y: auto; */
 }
 
+
+/*
+    PROGRAMMING HEADER ELEMENTS
+*/
+#programming {
+    background-color: #5460c8;
+    /* background: radial-gradient(circle, rgba(84,96,200,1) 0%, rgba(27,37,128,1) 100%); */
+    float: left;
+    width: 50%;
+    height: 93vh;
+}
+
+#programming_contents {
+    background-color: lightblue;
+    display: none;
+}
+
+
+/*
+    ART HEADER ELEMENTS
+*/
+#art {
+    background-color: #e65d84;
+    /* background: radial-gradient(circle, rgba(230,93,132,1) 0%, rgba(158,38,72,1) 100%); */
+    float: right;
+    width: 50%;
+    height: 93vh;
+}
+
+#art_contents {
+    background-color: lightpink;
+    display: none;
+}
+
+
+/*
+    CONTENT ELEMENTS
+*/
+.categoryHeader {
+    /* text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white; */
+    background-color: #ffffff90;
+    border-radius: 10px;
+    margin: 10px;
+    text-align: center;
+}
+.categoryHeader:hover {
+    cursor: url('../resources/img/myWebsite/xp_cursor_red.png'), auto;
+    filter: brightness(130%);
+}
+
+.individualContents {
+    /* font-family: 'rejiha_font'; */
+    font-family: Garamond, serif;
+    /* background-color: #ffffff90; */
+    box-shadow: 0px 0px 2px black;
+    /* border-radius: 10px; */
+    display: none;
+    margin: 10px;
+}
+
+
+/*
+    CONTENT-PROGRAMMING ELEMENTS
+*/
+#coding2024Header {
+    border: solid #1e2893;
+    color: #1e2893;
+}
+
+#coding2024_content {
+    background-color: #1e289350;
+}
+
+#coding2021Header {
+    border: solid #66ae23;
+    color: #66ae23;
+}
+
+#coding2021_content {
+    background-color: #66ae2350;
+}
+
+#coding2020Header {
+    border: solid #1e8b93;
+    color: #1e8b93;
+}
+
+#coding2020_content {
+    background-color: #1e8b9350;
+}
+
+
+/*
+    CONTENT-ART ELEMENTS
+*/
+#illustrationHeader {
+    border: solid #9c2626;
+    color: #9c2626;
+}
+
+#illustration_content {
+    background-color: #9c262650;
+}
+
+#animationHeader {
+    border: solid #ec9830;
+    color: #ec9830;
+}
+
+#animation_content {
+    background-color: #ec983050;
+}
+
+#modelingHeader {
+    border: solid #ae2397;
+    color: #ae2397;
+}
+
+#modeling_content {
+    background-color: #ae239750;
+}
 
 
 /*

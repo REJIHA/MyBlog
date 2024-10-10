@@ -19,34 +19,34 @@ screen size and switching photos from clicking the button.
 const bkgdImg = document.getElementById("mainBackgroundImg");
 const imgRatio = 0.15;
 const boundarySize = parseInt(window.getComputedStyle(bkgdImg).getPropertyValue("padding"));
-let dragElem = null;
+var dragElem = null;
 
 // Global variables for aboutme window
 const aboutmeWindow = document.getElementById("aboutmeWindow");
 const popupText = document.getElementById("popupText");
-let isAboutmeOpen = false;
-let isAboutmeEnlarged = false;
-let isAboutmePopupOpen = false;
-let photoSwitched = false;
+var isAboutmeOpen = false;
+var isAboutmeEnlarged = false;
+var isAboutmePopupOpen = false;
+var photoSwitched = false;
 
 // Global variables for skills window
 const skillsWindow = document.getElementById("skillsWindow");
-let isSkillsOpen = false;
-let isSkillsEnglarged = false;
-let isSkillsPopupOpen = false;
+var isSkillsOpen = false;
+var isSkillsEnglarged = false;
+var isSkillsPopupOpen = false;
 
 // Global variables for emailme window
 const emailmeWindow = document.getElementById("emailmeWindow");
-let isEmailmeOpen = false;
-let isEmailmeEnlarged = false;
+var isEmailmeOpen = false;
+var isEmailmeEnlarged = false;
 
 // Global variables for toolbar
-let startButtonOpen = false;
-let contactButtonOpen = false;
+var startButtonOpen = false;
+var contactButtonOpen = false;
 
 // Global variables for turn offs
-let animationOn = true;
-let dragOn = true;
+var animationOn = true;
+var dragOn = true;
 
 
 /*

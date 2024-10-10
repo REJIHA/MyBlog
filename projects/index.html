@@ -14,7 +14,7 @@
   <body>
     <main>
       <!-- TODO: cannot tab them -->
-        <h1>PROJECTs</h1>
+        <h1 id="ProjectsTitle" onclick="titleClick()">PROJECTs</h1>
         <a id="programming" onmouseover="expandAnimation(this.id)" onmouseleave="resetAnimation(this.id)" onclick="clickSection(this.id)" tabindex="0" href="#">
           <div class="header" id="programming_header">
             <!-- TODO: working on centering header & adding images too -->
@@ -22,7 +22,20 @@
             <p class="p_captions" id="programming_caption">programming</p>
           </div>
           <div class="contents" id="programming_contents">
-            this is coding sectionnn
+            <!-- Clicking on buttons... -->
+            <button class="categoryHeader" id="coding2024Header" onclick="showContent(this.id, 'coding2024_content', '#1e2893')">2024 ▼</button>
+            <button class="categoryHeader" id="coding2021Header" onclick="showContent(this.id, 'coding2021_content', '#66ae23')">2021 ▼</button>
+            <button class="categoryHeader" id="coding2020Header" onclick="showContent(this.id, 'coding2020_content', '#1e8b93')">2020 ▼</button>
+            <!-- ...Shows below contents -->
+            <div class="individualContents" id="coding2024_content">
+              2024 stuff
+            </div>
+            <div class="individualContents" id="coding2021_content">
+              2021 stuff
+            </div>
+            <div class="individualContents" id="coding2020_content">
+              2020 stuff
+            </div>
           </div>
         </a>
         <a id="art" onmouseover="expandAnimation(this.id)" onmouseleave="resetAnimation(this.id)"  onclick="clickSection(this.id)" tabindex="0" href="#">
@@ -31,7 +44,20 @@
             <p class="p_captions" id="art_caption">art</p>
           </div>
           <div class="contents" id="art_contents">
-            this is art partttttt
+            <!-- Clicking on buttons... -->
+            <button class="categoryHeader" id="illustrationHeader" onclick="showContent(this.id, 'illustration_content', '#9c2626')">Illustration ▼</button>
+            <button class="categoryHeader" id="animationHeader" onclick="showContent(this.id, 'animation_content', '#ec9830')">Animation ▼</button>
+            <button class="categoryHeader" id="modelingHeader" onclick="showContent(this.id, 'modeling_content', '#ae2397')">3D Modeling ▼</button>
+            <!-- ...Shows below contents -->
+            <div class="individualContents" id="illustration_content">
+              illustration
+            </div>
+            <div class="individualContents" id="animation_content">
+              animation
+            </div>
+            <div class="individualContents" id="modeling_content">
+              3d modeling
+            </div>
           </div>
         </a>
     </main>

@@ -17,9 +17,30 @@ const artElem_img = document.getElementById("artImg");
 const artElem_caption = document.getElementById("art_caption");
 const artElem_content = document.getElementById("art_contents");
 
+var currentClicked;
 
 /*
-    GETTER CODE
+    TITLE CODE
+*/
+function titleClick() {
+    // When title is clicked, it resets expand/shrink of headers
+    if (currentClicked != null) {
+        let [elem, otherElem, elem_header, otherElem_header, elem_content, otherElem_content,
+        elem_img, otherElem_img, elem_caption, otherElem_caption] = getWhichOne(currentClicked);
+
+        // Reset the sections in case they were expanded
+        resetAnimation(currentClicked);
+        //  Reassign mouseover & mouseleave
+        elem.onmouseover = function() {expandAnimation(this.id)};
+        elem.onmouseleave = function() {resetAnimation(this.id)};
+        otherElem.onmouseover = function() {expandAnimation(this.id)};
+        otherElem.onmouseleave = function() {resetAnimation(this.id)};
+    }
+}
+
+
+/*
+    HEADER GETTER CODE
 */
 function getWhichOne(theOne) {
     let elem, otherElem, elem_header, otherElem_header, elem_content, otherElem_content,
@@ -56,7 +77,7 @@ function getWhichOne(theOne) {
 
 
 /*
-    ON HOVER CODE
+    HEADER ON HOVER CODE
 */
 function expandAnimation(thisOne) {
     let [elem, otherElem, elem_header, otherElem_header, elem_content, otherElem_content,
@@ -95,44 +116,57 @@ function resetAnimation(thisOne) {
 
 
 /*
-    ON CLICK CODE
+    HEADER ON CLICK CODE
 */
 function clickSection(thisOne) {
     let [elem, otherElem, elem_header, otherElem_header, elem_content, otherElem_content,
         elem_img, otherElem_img, elem_caption, otherElem_caption] = getWhichOne(thisOne);
+    currentClicked = thisOne;
 
-    if (elem.style.width == '90%') {
-        // The section has been expanded; close
-        resetAnimation(thisOne);
-        //  Reassign mouseover & mouseleave
-        elem.onmouseover = function() {expandAnimation(this.id)};
-        elem.onmouseleave = function() {resetAnimation(this.id)};
-        otherElem.onmouseover = function() {expandAnimation(this.id)};
-        otherElem.onmouseleave = function() {resetAnimation(this.id)};
+    // On click, expand to show contents inside
+    elem.style.animation = "wholePage 0.5s forwards";
+    elem.style.width = '90%';
+    elem.style.writingMode = null;
+    elem_header.style.display = 'none';
+    elem_content.style.display = 'block';
+    elem_content.style.animation = "fadeIn 0.5s forwards";
+
+    otherElem.style.animation = "subPage 0.5s forwards";
+    otherElem.style.width = '10%';
+    otherElem.style.writingMode = 'vertical-lr';
+    otherElem.style.textOrientation = 'upright';
+    otherElem_header.style.display = 'block';
+    otherElem_header.style.transform = 'none';
+    otherElem_img.style.width = '20px';
+    otherElem_img.style.margin = '0';
+    otherElem_caption.style.display = 'inline-block';
+    otherElem_content.style.display = 'none';
+
+    // Remove mouseover & mouseleave
+    elem.onmouseover = null;
+    elem.onmouseleave = null;
+    otherElem.onmouseover = null;
+    otherElem.onmouseleave = null;
+}
+
+
+/*
+    CONTENT CODE
+*/
+function showContent(header, content, color) {
+    let showContent = document.getElementById(content);
+    let showHeader = document.getElementById(header)
+    if ((showContent.style.display == '') || (showContent.style.display == 'none')) {
+        // Show content
+        showContent.style.display = 'block';
+        showContent.style.animation = "fadeIn 0.5s forwards";
+        showHeader.style.color = '#ffffff90';
+        showHeader.style.backgroundColor = color;
     } else {
-        // On click, expand to show contents inside
-        elem.style.animation = "wholePage 0.5s forwards";
-        elem.style.width = '90%';
-        elem.style.writingMode = null;
-        elem_header.style.display = 'none';
-        elem_content.style.display = 'block';
-        elem_content.style.animation = "fadeIn 0.5s forwards";
-
-        otherElem.style.animation = "subPage 0.5s forwards";
-        otherElem.style.width = '10%';
-        otherElem.style.writingMode = 'vertical-lr';
-        otherElem.style.textOrientation = 'upright';
-        otherElem_header.style.display = 'block';
-        otherElem_header.style.transform = 'none';
-        otherElem_img.style.width = '20px';
-        otherElem_img.style.margin = '0';
-        otherElem_caption.style.display = 'inline-block';
-        otherElem_content.style.display = 'none';
-
-        // Remove mouseover & mouseleave
-        elem.onmouseover = null;
-        elem.onmouseleave = null;
-        otherElem.onmouseover = null;
-        otherElem.onmouseleave = null;
+        // Hide content
+        showContent.style.display = 'none';
+        showHeader.style.color = color;
+        showHeader.style.backgroundColor = '';
     }
+    
 }
