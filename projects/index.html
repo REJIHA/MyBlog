@@ -13,11 +13,9 @@
   </head>
   <body>
     <main>
-      <!-- TODO: cannot tab them -->
         <h1 id="ProjectsTitle" onclick="titleClick()">PROJECTs</h1>
         <a id="programming" onmouseover="expandAnimation(this.id)" onmouseleave="resetAnimation(this.id)" onclick="clickSection(this.id)" tabindex="0" href="#">
           <div class="header" id="programming_header">
-            <!-- TODO: working on centering header & adding images too -->
             <img src="../resources/img/projects/programming.png" alt="programming icon" id="programmingImg">
             <p class="p_captions" id="programming_caption">programming</p>
           </div>
@@ -50,7 +48,12 @@
             <button class="categoryHeader" id="modelingHeader" onclick="showContent(this.id, 'modeling_content', '#ae2397')">3D Modeling ▼</button>
             <!-- ...Shows below contents -->
             <div class="individualContents" id="illustration_content">
-              illustration
+              <!-- TODO: finish & add containers -->
+              <button class="container" style="background-image: url('../resources/img/projects/art/HSR_Sparkle.png');">
+                <div class="overlay">Digital</div>
+              </button>
+              
+              
             </div>
             <div class="individualContents" id="animation_content">
               animation
