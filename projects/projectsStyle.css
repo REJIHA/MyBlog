@@ -45,7 +45,28 @@ h1 {
     text-align: center;
     height: 10vh;
 
-    background-color: yellow;
+    background-color: rgb(96, 96, 96);
+}
+
+img {
+    /* Disable interacting with images (like saving them) */
+    pointer-events: none;
+    /* Below disables blue hightlights on click/drag */
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+
+    /* display: block; */
+    /* margin-left: auto;
+    margin-right: auto; */
+    margin: 10px;
+    width: 30%;
+}
+
+p {
+    /* display: inline-block; */
 }
 
 
@@ -53,10 +74,14 @@ h1 {
     PROGRAMMING ELEMENTS
 */
 #programming {
-    background-color: blue;
+    background-color: #5460c8;
     float: left;
     width: 50%;
     height: 90vh;
+}
+
+#programming_header {
+    
 }
 
 #programming_contents {
@@ -69,10 +94,14 @@ h1 {
     ART ELEMENTS
 */
 #art {
-    background-color: red;
+    background-color: #e65d84;
     float: right;
     width: 50%;
     height: 90vh;
+}
+
+#art_header {
+    
 }
 
 #art_contents {
@@ -86,7 +115,15 @@ h1 {
 .header {
     display: block;
     text-align: center;
-    /* padding: 50% 0; */
+    /* margin-top: 100px; */
+
+
+    
+
+    /* TODO: change font size on screen size
+            vertically center img&text
+            add shadows to make it look prettier?
+    */
     
 }
 
@@ -128,4 +165,9 @@ h1 {
 @keyframes subPage {
     0% {width: 25%;}
     100% {width: 10%;}
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
