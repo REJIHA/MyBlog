@@ -1,103 +1,24 @@
 <!-- 
-    This is the Projects page that lists projects I've done since university.
+    This is the ... page ...
 -->
 <!DOCTYPE html>
 <html lang="en">
-  <!-- <script>location.href = "../deny/"</script> -->
+  <script>location.href = "../deny/"</script>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="projectsStyle.css">
-    <link rel="icon" type="image/png" href="../resources/img/myWebsite/projects_icon.png"/>
+    <link rel="stylesheet" type="text/css" href="">
+
+    <!-- add icon here -->
+    <!-- <link rel="icon" type="image/png" href="./icon.png"/> -->
+    <!-- <link rel="icon" type="image/x-icon" href="./favicon.ico"> -->
     <title>Projects</title>
+    <link rel="stylesheet" href="./style.css">
   </head>
   <body>
     <main>
-        <h1 id="ProjectsTitle" onclick="titleClick()">PROJECTs</h1>
-        <a id="programming" onmouseover="expandAnimation(this.id)" onmouseleave="resetAnimation(this.id)" onclick="clickSection(this.id)" tabindex="0" href="#">
-          <div class="header" id="programming_header">
-            <img src="../resources/img/projects/programming.png" alt="programming icon" id="programmingImg">
-            <p class="p_captions" id="programming_caption">programming</p>
-          </div>
-          <div class="contents" id="programming_contents">
-            <!-- Clicking on buttons... -->
-            <button class="categoryHeader" id="coding2024Header" onclick="showContent(this.id, 'coding2024_content', '#1e2893')">2024 ▼</button>
-            <button class="categoryHeader" id="coding2021Header" onclick="showContent(this.id, 'coding2021_content', '#66ae23')">2021 ▼</button>
-            <button class="categoryHeader" id="coding2020Header" onclick="showContent(this.id, 'coding2020_content', '#1e8b93')">2020 ▼</button>
-            <!-- ...Shows below contents -->
-            <div class="individualContents" id="coding2024_content">
-              2024 stuff
-            </div>
-            <div class="individualContents" id="coding2021_content">
-              2021 stuff
-            </div>
-            <div class="individualContents" id="coding2020_content">
-              2020 stuff
-            </div>
-          </div>
-        </a>
-        <a id="art" onmouseover="expandAnimation(this.id)" onmouseleave="resetAnimation(this.id)"  onclick="clickSection(this.id)" tabindex="0" href="#">
-          <div class="header" id="art_header">
-            <img src="../resources/img/projects/art.png" alt="art icon" id="artImg">
-            <p class="p_captions" id="art_caption">art</p>
-          </div>
-          <div class="contents" id="art_contents">
-            <!-- Clicking on buttons... -->
-            <button class="categoryHeader" id="illustrationHeader" onclick="showContent(this.id, 'illustration_content', '#9c2626')">Illustration ▼</button>
-            <button class="categoryHeader" id="animationHeader" onclick="showContent(this.id, 'animation_content', '#ec9830')">Animation ▼</button>
-            <button class="categoryHeader" id="modelingHeader" onclick="showContent(this.id, 'modeling_content', '#ae2397')">3D Modeling ▼</button>
-
-            <!-- ...Shows below contents -->
-            <div class="individualContents" id="illustration_content">
-              <!-- Info shows at top -->
-              <div class="contentInfo" id="illustrationContentInfo">
-                <img src="" alt="" class="contentImg" id="illustrationContentImg">
-                <div class="contentText" id="illustrationContentText">
-                </div>
-              </div>
-
-              <!-- Below are buttons to choose which info to see -->
-              <!-- 
-                FOR ADDING NEW PROJECT YOU HAVE TO:
-                  * make new button here on top (newest first)
-                  * add case at projectsCode.js
-                  (search "(ADD NEW PROJECTS HERE)" for locations)
-              -->
-              <button class="container" style="background-image: url('../resources/img/projects/art/HSR_Sparkle.png');" id="hsr_sparkle" onclick="showInfo(this.id, 'illustration')">
-                <div class="overlay">
-                  <div class="overlayTitle">Honkai: Star Rail - Sparkle</div>
-                </div>
-              </button>
-              <button class="container" style="background-image: url('../resources/img/projects/art/besties_all_universe.png');" id="besties" onclick="showInfo(this.id, 'illustration')">
-                <div class="overlay">
-                  <div class="overlayTitle">We Are Besties In Every Universe</div>
-                </div>
-              </button>
-              
-
-
-              <!-- TODO: FOR THIS ONE HAVE TO ADD MULTIPLE IMG SLIDESHOW-->
-
-              <!-- <button class="container" style="background-image: url('../resources/img/projects/art/Kwag_Hyoseo_Cupid.jpg');" onclick="showInfo(this.id, 'cupid_info')">
-                <div class="overlay">
-                  <div class="overlayTitle">Greek Myth Character Design</div>
-                </div>
-              </button> -->
-
-
-              <!-- TODO: clicking image shows img in full screen -->
-              
-              
-            </div>
-            <div class="individualContents" id="animation_content">
-              animation
-            </div>
-            <div class="individualContents" id="modeling_content">
-              3d modeling
-            </div>
-          </div>
-        </a>
+        <h1>PROJECT SHOWCASE</h1>  
     </main>
   </body>
-  <script src="projectsCode.js"></script>
+  <!-- <script src="javascript.js"></script> -->
 </html>
