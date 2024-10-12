@@ -11,6 +11,7 @@ const progElem_header = document.getElementById("programming_header");
 const progElem_img = document.getElementById("programmingImg");
 const progElem_caption = document.getElementById("programming_caption");
 const progElem_content = document.getElementById("programming_contents");
+
 const artElem = document.getElementById("art");
 const artElem_header = document.getElementById("art_header");
 const artElem_img = document.getElementById("artImg");
@@ -18,6 +19,7 @@ const artElem_caption = document.getElementById("art_caption");
 const artElem_content = document.getElementById("art_contents");
 
 var currentClicked;
+var currentShowing;
 
 /*
     TITLE CODE
@@ -168,5 +170,44 @@ function showContent(header, content, color) {
         showHeader.style.color = color;
         showHeader.style.backgroundColor = '';
     }
-    
+}
+
+function showInfo(button, fromWhere) {
+    let contentInfoElem;
+    let contentImgElem;
+    let contentTextElem;
+
+    // Decide which category contents is showing
+    // TODO: add rest of category (animation, 3d modeling, prog2024, prog2021, prog2020)
+    if (fromWhere == 'illustration') {
+        contentInfoElem = document.getElementById("illustrationContentInfo");
+        contentImgElem = document.getElementById("illustrationContentImg");
+        contentTextElem = document.getElementById("illustrationContentText");
+    }
+
+    // Decide which button was clicked
+    // ADD NEW PROJECTS HERE
+    // TODO: add rest of info
+    switch (button) {
+        case 'hsr_sparkle':
+            contentImgElem.src = "../resources/img/projects/art/HSR_Sparkle.png";
+            contentImgElem.alt = "HSR_Sparkle_img";
+            contentTextElem.innerHTML = "<b>Title:</b>&ensp;Honkai: Star Rail - Sparkle<br><b>Date:</b>&ensp;6/24/2024<br><b>Medium:</b>&ensp;Digital - Medibang Paint<br>> Fan art of a character 'Sparkle' from game 'Honkai: Star Rail'.<br>";
+            break;
+        case 'besties':
+            contentImgElem.src = "../resources/img/projects/art/besties_all_universe.png";
+            contentImgElem.alt = "besties_img";
+            contentTextElem.innerHTML = "<b>Title:</b>&ensp;We Are Besties In Every Universe<br><b>Date:</b>&ensp;3/5/2024<br><b>Medium:</b>&ensp;Digital - Medibang Paint<br>> Animalification of my best friends.<br>";
+            break;
+    }
+
+    if ((contentInfoElem.style.display=="") || (contentInfoElem.style.display=="none") || (currentShowing != button)) {
+        // If the content info part is not shown or it's showing something but different button is clicked, show correspondingly
+        contentInfoElem.style.display = 'block';
+        contentInfoElem.style.animation = "fadeIn 0.5s forwards";
+        currentShowing = button;
+    } else {
+        // The same button was clicked twice, hide
+        contentInfoElem.style.display = 'none';
+    }
 }

@@ -46,12 +46,46 @@
             <button class="categoryHeader" id="illustrationHeader" onclick="showContent(this.id, 'illustration_content', '#9c2626')">Illustration ▼</button>
             <button class="categoryHeader" id="animationHeader" onclick="showContent(this.id, 'animation_content', '#ec9830')">Animation ▼</button>
             <button class="categoryHeader" id="modelingHeader" onclick="showContent(this.id, 'modeling_content', '#ae2397')">3D Modeling ▼</button>
+
             <!-- ...Shows below contents -->
             <div class="individualContents" id="illustration_content">
-              <!-- TODO: finish & add containers -->
-              <button class="container" style="background-image: url('../resources/img/projects/art/HSR_Sparkle.png');">
-                <div class="overlay">Digital</div>
+              <!-- Info shows at top -->
+              <div class="contentInfo" id="illustrationContentInfo">
+                <img src="" alt="" class="contentImg" id="illustrationContentImg">
+                <div class="contentText" id="illustrationContentText">
+                </div>
+              </div>
+
+              <!-- Below are buttons to choose which info to see -->
+              <!-- 
+                FOR ADDING NEW PROJECT YOU HAVE TO:
+                  * make new button here on top (newest first)
+                  * add case at projectsCode.js
+                  (search "(ADD NEW PROJECTS HERE)" for locations)
+              -->
+              <button class="container" style="background-image: url('../resources/img/projects/art/HSR_Sparkle.png');" id="hsr_sparkle" onclick="showInfo(this.id, 'illustration')">
+                <div class="overlay">
+                  <div class="overlayTitle">Honkai: Star Rail - Sparkle</div>
+                </div>
               </button>
+              <button class="container" style="background-image: url('../resources/img/projects/art/besties_all_universe.png');" id="besties" onclick="showInfo(this.id, 'illustration')">
+                <div class="overlay">
+                  <div class="overlayTitle">We Are Besties In Every Universe</div>
+                </div>
+              </button>
+              
+
+
+              <!-- TODO: FOR THIS ONE HAVE TO ADD MULTIPLE IMG SLIDESHOW-->
+
+              <!-- <button class="container" style="background-image: url('../resources/img/projects/art/Kwag_Hyoseo_Cupid.jpg');" onclick="showInfo(this.id, 'cupid_info')">
+                <div class="overlay">
+                  <div class="overlayTitle">Greek Myth Character Design</div>
+                </div>
+              </button> -->
+
+
+              <!-- TODO: clicking image shows img in full screen -->
               
               
             </div>
