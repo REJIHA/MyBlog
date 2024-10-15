@@ -18,6 +18,8 @@ const artElem_img = document.getElementById("artImg");
 const artElem_caption = document.getElementById("art_caption");
 const artElem_content = document.getElementById("art_contents");
 
+var currImgID;
+
 var currentClicked;
 var currentShowing;
 
@@ -176,13 +178,17 @@ function showInfo(button, fromWhere) {
     let contentInfoElem;
     let contentImgElem;
     let contentTextElem;
+    let slideshowImgs;
+    let thisPageNum;
 
     // Decide which category contents is showing
     // TODO: add rest of category (animation, 3d modeling, prog2024, prog2021, prog2020)
     if (fromWhere == 'illustration') {
         contentInfoElem = document.getElementById("illustrationContentInfo");
-        contentImgElem = document.getElementById("illustrationContentImg");
+        contentImgElem = document.getElementById("illustrationContentImg1");
         contentTextElem = document.getElementById("illustrationContentText");
+        slideshowImgs = document.getElementsByClassName("contentImg_ill");
+        thisPageNum = document.getElementById("pageNum_ill")
     }
 
     // Decide which button was clicked
@@ -199,15 +205,116 @@ function showInfo(button, fromWhere) {
             contentImgElem.alt = "besties_img";
             contentTextElem.innerHTML = "<b>Title:</b>&ensp;We Are Besties In Every Universe<br><b>Date:</b>&ensp;3/5/2024<br><b>Medium:</b>&ensp;Digital - Medibang Paint<br>> Animalification of my best friends.<br>";
             break;
+        case 'greek':
+            thisPageNum.innerHTML = "1/5";
+            contentImgElem.src = "../resources/img/projects/art/Kwag_Hyoseo_Cupid.jpg";
+            contentImgElem.alt = "cupid_img";
+            contentTextElem.innerHTML = "<b>Title:</b>&ensp;Greek Myth Character Design<br><b>Date:</b>&ensp;11/20/2021<br><b>Medium:</b>&ensp;Digital - Medibang Paint<br>> Character design of Cupid, Persephone, and Hades in modern world with opposite sex.<br>";
+            // Second image
+            let secondImg = document.createElement('img');
+            secondImg.classList.add('contentImg');
+            secondImg.classList.add('contentImg_ill');
+            secondImg.id = 'illustrationContentImg2';
+            secondImg.src = "../resources/img/projects/art/Kwag_Hyoseo_Cupid.gif";
+            secondImg.alt = "cupid_rotate_gif";
+            secondImg.style.display = 'none';
+            // parentDiv.appendChild(secondImg);
+            // Third image
+            let thirdImg = document.createElement('img');
+            thirdImg.classList.add('contentImg');
+            thirdImg.classList.add('contentImg_ill');
+            thirdImg.id = 'illustrationContentImg3';
+            thirdImg.src = "../resources/img/projects/art/Kwag_Hyoseo_Percy.jpg";
+            thirdImg.alt = "persephone_img";
+            thirdImg.style.display = 'none';
+            // Fourth image
+            let fourthImg = document.createElement('img');
+            fourthImg.classList.add('contentImg');
+            fourthImg.classList.add('contentImg_ill');
+            fourthImg.id = 'illustrationContentImg4';
+            fourthImg.src = "../resources/img/projects/art/Kwag_Hyoseo_Percy.gif";
+            fourthImg.alt = "persephone_rotate_gif";
+            fourthImg.style.display = 'none';
+            // Fifth image
+            let FifthImg = document.createElement('img');
+            FifthImg.classList.add('contentImg');
+            FifthImg.classList.add('contentImg_ill');
+            FifthImg.id = 'illustrationContentImg5';
+            FifthImg.src = "../resources/img/projects/art/Kwag_Hyoseo_Heidi.jpg";
+            FifthImg.alt = "hades_img";
+            FifthImg.style.display = 'none';
+            // Add all images to container
+            const parentDiv = document.querySelector(".slideshow-container");
+            parentDiv.append(secondImg, thirdImg, fourthImg, FifthImg);
+
+        default:
+            break;
     }
 
     if ((contentInfoElem.style.display=="") || (contentInfoElem.style.display=="none") || (currentShowing != button)) {
         // If the content info part is not shown or it's showing something but different button is clicked, show correspondingly
+        let singleImgElems = 'hsr_sparkle besties';
+        if (singleImgElems.includes(button)) {
+            // For single images, have to remove excessive images resulted from slideshow
+            removeExcessiveSlideshow(slideshowImgs);
+            thisPageNum.innerHTML = "1/1";
+        }
+        currImgID = contentImgElem.id;
         contentInfoElem.style.display = 'block';
         contentInfoElem.style.animation = "fadeIn 0.5s forwards";
         currentShowing = button;
     } else {
         // The same button was clicked twice, hide
         contentInfoElem.style.display = 'none';
+    }
+}
+
+function removeExcessiveSlideshow(parentDiv) {
+    let i=0;
+    while (i<parentDiv.length) {
+        if (i==0) {
+            // Reset display of first image
+            parentDiv[i].style.display = "block";
+            i++;
+        } else {
+            // Remove second to last images (so it only has first image)
+            parentDiv[i].remove();
+        }
+    }
+}
+
+function nextSlide(num, fromWhere) {
+    let pageNum;
+    if (fromWhere == 'illustration') {
+        // Get correct pageNum depending on from where buttons were clicked
+        pageNum = document.getElementById("pageNum_ill");
+    }
+    let slideNum = Number(currImgID[currImgID.length-1]);   // Get number of current image shown in slideshow
+    let changedSlideNum;
+    let changeTo = currImgID.slice(0, -1);                  // Get id of the current image shown in slideshow
+    // Depending on previous or next, add right number to move slide to
+    if (num < 0) {
+        // Show previous slide
+        changedSlideNum = slideNum-1;
+        changeTo += changedSlideNum;
+        
+    } else {
+        // Show next slide
+        changedSlideNum = slideNum+1;
+        changeTo += changedSlideNum;
+    }
+
+    let changeFromElem = document.getElementById(currImgID);
+    let changeToElem = document.getElementById(changeTo);
+    if (changeToElem) {
+        // Previous or next image exists (else, curr is first or last image)
+        changeFromElem.style.display = 'none';
+        changeToElem.style.display = 'block';
+        currImgID = changeTo;
+
+        // Change page num too
+        let origPageNum = pageNum.innerHTML;
+        let newPageNum = changedSlideNum + origPageNum.slice(1);
+        pageNum.innerHTML = newPageNum;
     }
 }

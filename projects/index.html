@@ -51,9 +51,17 @@
             <div class="individualContents" id="illustration_content">
               <!-- Info shows at top -->
               <div class="contentInfo" id="illustrationContentInfo">
-                <img src="" alt="" class="contentImg" id="illustrationContentImg">
+                <button class="prev" onclick="nextSlide(-1, 'illustration')">&#10094;</button>
+                <h2 class="pageNum" id="pageNum_ill">1/1</h2>
+                <button class="next" onclick="nextSlide(1, 'illustration')">&#10095;</button>
+
+                <div class="slideshow-container">
+                  <img src="" alt="" class="contentImg contentImg_ill" id="illustrationContentImg1">
+                </div>
                 <div class="contentText" id="illustrationContentText">
                 </div>
+                <!-- TODO: button here -->
+
               </div>
 
               <!-- Below are buttons to choose which info to see -->
@@ -78,11 +86,11 @@
 
               <!-- TODO: FOR THIS ONE HAVE TO ADD MULTIPLE IMG SLIDESHOW-->
 
-              <!-- <button class="container" style="background-image: url('../resources/img/projects/art/Kwag_Hyoseo_Cupid.jpg');" onclick="showInfo(this.id, 'cupid_info')">
+              <button class="container" style="background-image: url('../resources/img/projects/art/Kwag_Hyoseo_Cupid.jpg');" id="greek" onclick="showInfo(this.id, 'illustration')">
                 <div class="overlay">
                   <div class="overlayTitle">Greek Myth Character Design</div>
                 </div>
-              </button> -->
+              </button>
 
 
               <!-- TODO: clicking image shows img in full screen -->
