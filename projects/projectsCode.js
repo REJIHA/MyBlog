@@ -205,11 +205,11 @@ function showInfo(button, fromWhere) {
             contentImgElem.alt = "besties_img";
             contentTextElem.innerHTML = "<b>Title:</b>&ensp;We Are Besties In Every Universe<br><b>Date:</b>&ensp;3/5/2024<br><b>Medium:</b>&ensp;Digital - Medibang Paint<br>> Animalification of my best friends.<br>";
             break;
-        case 'greek':
+        case 'char_concept':
             thisPageNum.innerHTML = "1/5";
             contentImgElem.src = "../resources/img/projects/art/Kwag_Hyoseo_Cupid.jpg";
             contentImgElem.alt = "cupid_img";
-            contentTextElem.innerHTML = "<b>Title:</b>&ensp;Greek Myth Character Design<br><b>Date:</b>&ensp;11/20/2021<br><b>Medium:</b>&ensp;Digital - Medibang Paint<br>> Character design of Cupid, Persephone, and Hades in modern world with opposite sex.<br>";
+            contentTextElem.innerHTML = "<b>Title:</b>&ensp;Character Concept<br><b>Date:</b>&ensp;11/20/2021<br><b>Medium:</b>&ensp;Digital - Medibang Paint<br>> Character concept project from animation class. I chose to design Cupid, Persephone, and Hades in modern world with opposite sex.<br>";
             // Second image
             let secondImg = document.createElement('img');
             secondImg.classList.add('contentImg');
@@ -246,6 +246,12 @@ function showInfo(button, fromWhere) {
             // Add all images to container
             const parentDiv = document.querySelector(".slideshow-container");
             parentDiv.append(secondImg, thirdImg, fourthImg, FifthImg);
+            break;
+        case 'garden':
+            contentImgElem.src = "../resources/img/projects/art/Garden.gif";
+            contentImgElem.alt = "garden_gif";
+            contentTextElem.innerHTML = "<b>Title:</b>&ensp;Garden<br><b>Date:</b>&ensp;2/18/2021<br><b>Medium:</b>&ensp;Digital - Photoshop, Clip Studio<br>> Mixed media class project. Used copyright-free photo mixed with digital animation.<br>";
+            break;
 
         default:
             break;
@@ -253,7 +259,8 @@ function showInfo(button, fromWhere) {
 
     if ((contentInfoElem.style.display=="") || (contentInfoElem.style.display=="none") || (currentShowing != button)) {
         // If the content info part is not shown or it's showing something but different button is clicked, show correspondingly
-        let singleImgElems = 'hsr_sparkle besties';
+        // ADD NEW PROJECTS HERE : for single image ones only
+        let singleImgElems = 'hsr_sparkle besties garden';
         if (singleImgElems.includes(button)) {
             // For single images, have to remove excessive images resulted from slideshow
             removeExcessiveSlideshow(slideshowImgs);

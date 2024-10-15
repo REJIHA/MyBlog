@@ -237,9 +237,7 @@ button {
 
 /* TODO */
 .slideshow-container {
-    max-width: 1000px;
-    position: relative;
-    margin: auto;
+    margin-top: 15px;
 }
 
 .contentInfo .prev, .next {
