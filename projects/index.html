@@ -21,18 +21,27 @@
           </div>
           <div class="contents" id="programming_contents">
             <!-- Clicking on buttons... -->
-            <button class="categoryHeader" id="coding2024Header" onclick="showContent(this.id, 'coding2024_content', '#1e2893')">2024 ▼</button>
-            <button class="categoryHeader" id="coding2021Header" onclick="showContent(this.id, 'coding2021_content', '#66ae23')">2021 ▼</button>
-            <button class="categoryHeader" id="coding2020Header" onclick="showContent(this.id, 'coding2020_content', '#1e8b93')">2020 ▼</button>
+            <button class="categoryHeader" id="coding2024Header" onclick="showContent(this.id, 'coding2024_content', 'coding2024ContentInfo', '#1e2893')">2024 ▼</button>
+            <button class="categoryHeader" id="coding2021Header" onclick="showContent(this.id, 'coding2021_content', 'coding2021ContentInfo', '#66ae23')">2021 ▼</button>
+            <button class="categoryHeader" id="coding2020Header" onclick="showContent(this.id, 'coding2020_content', 'coding2020ContentInfo', '#1e8b93')">2020 ▼</button>
             <!-- ...Shows below contents -->
             <div class="individualContents" id="coding2024_content">
               2024 stuff
+              <div class="contentInfo" id="coding2024ContentInfo">
+                <!-- TODO: add 2024 projects -->
+              </div>
             </div>
             <div class="individualContents" id="coding2021_content">
               2021 stuff
+              <div class="contentInfo" id="coding2021ContentInfo">
+                <!-- TODO: add 2021 projects -->
+              </div>
             </div>
             <div class="individualContents" id="coding2020_content">
               2020 stuff
+              <div class="contentInfo" id="coding2020ContentInfo">
+                <!-- TODO: add 2020 projects -->
+              </div>
             </div>
           </div>
         </a>
@@ -43,9 +52,9 @@
           </div>
           <div class="contents" id="art_contents">
             <!-- Clicking on buttons... -->
-            <button class="categoryHeader" id="illustrationHeader" onclick="showContent(this.id, 'illustration_content', '#9c2626')">Illustration ▼</button>
-            <button class="categoryHeader" id="animationHeader" onclick="showContent(this.id, 'animation_content', '#ec9830')">Animation ▼</button>
-            <button class="categoryHeader" id="modelingHeader" onclick="showContent(this.id, 'modeling_content', '#ae2397')">3D Modeling ▼</button>
+            <button class="categoryHeader" id="illustrationHeader" onclick="showContent(this.id, 'illustration_content', 'illustrationContentInfo', '#9c2626')">Illustration ▼</button>
+            <button class="categoryHeader" id="animationHeader" onclick="showContent(this.id, 'animation_content', 'animationContentInfo', '#ec9830')">Animation ▼</button>
+            <button class="categoryHeader" id="modelingHeader" onclick="showContent(this.id, 'modeling_content', 'modelingContentInfo', '#ae2397')">3D Modeling ▼</button>
 
             <!-- ...Shows below contents -->
             <div class="individualContents" id="illustration_content">
@@ -62,14 +71,13 @@
                 <div class="contentText" id="illustrationContentText">
                 </div>
               </div>
-
-              <!-- Below are buttons to choose which info to see -->
               <!-- 
-                FOR ADDING NEW PROJECT YOU HAVE TO:
+                FOR ADDING NEW ILLUSTRATION PROJECT YOU HAVE TO:
                   * make new button here on top (newest first)
                   * add case at projectsCode.js
                   (search "(ADD NEW PROJECTS HERE)" for locations)
               -->
+              <!-- Below are buttons to choose which info to see -->
               <button class="container" style="background-image: url('../resources/img/projects/art/HSR_Sparkle.png');" id="hsr_sparkle" onclick="showInfo(this.id, 'illustration')">
                 <div class="overlay">
                   <div class="overlayTitle">Honkai: Star Rail - Sparkle</div>
@@ -116,16 +124,21 @@
 
 
 
-              <!-- TODO: ADD REST OF ILLUSTRATIONN PROJECTS -->
               <!-- TODO: clicking image shows img in full screen -->
               
               
             </div>
             <div class="individualContents" id="animation_content">
               animation
+              <div class="contentInfo" id="animationContentInfo">
+                <!-- TODO: add animation projects -->
+              </div>
             </div>
             <div class="individualContents" id="modeling_content">
               3d modeling
+              <div class="contentInfo" id="modelingContentInfo">
+                <!-- TODO: add 3d modeling projects -->
+              </div>
             </div>
           </div>
         </a>

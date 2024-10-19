@@ -159,9 +159,10 @@ function clickSection(thisOne) {
     CONTENT CODE
 */
 // This function shows content depending on which category button is clicked
-function showContent(header, content, color) {
+function showContent(header, content, slideshow, color) {
     let showContent = document.getElementById(content);
-    let showHeader = document.getElementById(header)
+    let showHeader = document.getElementById(header);
+    let hideSlideshow = document.getElementById(slideshow);
     if ((showContent.style.display == '') || (showContent.style.display == 'none')) {
         // Show content
         showContent.style.display = 'block';
@@ -173,6 +174,7 @@ function showContent(header, content, color) {
         showContent.style.display = 'none';
         showHeader.style.color = color;
         showHeader.style.backgroundColor = '';
+        hideSlideshow.style.display = 'none';
     }
 }
 
@@ -217,7 +219,7 @@ function showInfo(button, fromWhere) {
             thisPageNum.innerHTML = "1/5";
             contentImgElem.src = "../resources/img/projects/art/Kwag_Hyoseo_Cupid.jpg";
             contentImgElem.alt = "cupid_img";
-            contentTextElem.innerHTML = "<b>Title:</b>&ensp;Character Concept<br><b>Date:</b>&ensp;11/20/2021<br><b>Medium:</b>&ensp;Digital - Medibang Paint<br>> Character concept project from animation class. I chose to design Cupid, Persephone, and Hades in modern world with opposite sex.<br>";
+            contentTextElem.innerHTML = "<b>Title:</b>&ensp;Character Concept<br><b>Date:</b>&ensp;11/20/2021<br><b>Medium:</b>&ensp;Digital - Medibang Paint, Stop Motion Studio<br>> Character concept project from animation class. I chose to design Cupid, Persephone, and Hades in modern world with opposite sex. I didn't get to finish the third turnaround.<br>";
             // Second image
             let secondImg_charconcept = document.createElement('img');
             secondImg_charconcept.classList.add('contentImg');
