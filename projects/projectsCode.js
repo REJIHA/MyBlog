@@ -194,6 +194,7 @@ function showInfo(button, fromWhere) {
     // Decide which button was clicked
     // ADD NEW PROJECTS HERE
     // TODO: add rest of info
+    const parentDiv = document.querySelector(".slideshow-container");
     switch (button) {
         case 'hsr_sparkle':
             contentImgElem.src = "../resources/img/projects/art/HSR_Sparkle.png";
@@ -211,46 +212,59 @@ function showInfo(button, fromWhere) {
             contentImgElem.alt = "cupid_img";
             contentTextElem.innerHTML = "<b>Title:</b>&ensp;Character Concept<br><b>Date:</b>&ensp;11/20/2021<br><b>Medium:</b>&ensp;Digital - Medibang Paint<br>> Character concept project from animation class. I chose to design Cupid, Persephone, and Hades in modern world with opposite sex.<br>";
             // Second image
-            let secondImg = document.createElement('img');
-            secondImg.classList.add('contentImg');
-            secondImg.classList.add('contentImg_ill');
-            secondImg.id = 'illustrationContentImg2';
-            secondImg.src = "../resources/img/projects/art/Kwag_Hyoseo_Cupid.gif";
-            secondImg.alt = "cupid_rotate_gif";
-            secondImg.style.display = 'none';
-            // parentDiv.appendChild(secondImg);
+            let secondImg_charconcept = document.createElement('img');
+            secondImg_charconcept.classList.add('contentImg');
+            secondImg_charconcept.classList.add('contentImg_ill');
+            secondImg_charconcept.id = 'illustrationContentImg2';
+            secondImg_charconcept.src = "../resources/img/projects/art/Kwag_Hyoseo_Cupid.gif";
+            secondImg_charconcept.alt = "cupid_rotate_gif";
+            secondImg_charconcept.style.display = 'none';
             // Third image
-            let thirdImg = document.createElement('img');
-            thirdImg.classList.add('contentImg');
-            thirdImg.classList.add('contentImg_ill');
-            thirdImg.id = 'illustrationContentImg3';
-            thirdImg.src = "../resources/img/projects/art/Kwag_Hyoseo_Percy.jpg";
-            thirdImg.alt = "persephone_img";
-            thirdImg.style.display = 'none';
+            let thirdImg_charconcept = document.createElement('img');
+            thirdImg_charconcept.classList.add('contentImg');
+            thirdImg_charconcept.classList.add('contentImg_ill');
+            thirdImg_charconcept.id = 'illustrationContentImg3';
+            thirdImg_charconcept.src = "../resources/img/projects/art/Kwag_Hyoseo_Percy.jpg";
+            thirdImg_charconcept.alt = "persephone_img";
+            thirdImg_charconcept.style.display = 'none';
             // Fourth image
-            let fourthImg = document.createElement('img');
-            fourthImg.classList.add('contentImg');
-            fourthImg.classList.add('contentImg_ill');
-            fourthImg.id = 'illustrationContentImg4';
-            fourthImg.src = "../resources/img/projects/art/Kwag_Hyoseo_Percy.gif";
-            fourthImg.alt = "persephone_rotate_gif";
-            fourthImg.style.display = 'none';
+            let fourthImg_charconcept = document.createElement('img');
+            fourthImg_charconcept.classList.add('contentImg');
+            fourthImg_charconcept.classList.add('contentImg_ill');
+            fourthImg_charconcept.id = 'illustrationContentImg4';
+            fourthImg_charconcept.src = "../resources/img/projects/art/Kwag_Hyoseo_Percy.gif";
+            fourthImg_charconcept.alt = "persephone_rotate_gif";
+            fourthImg_charconcept.style.display = 'none';
             // Fifth image
-            let FifthImg = document.createElement('img');
-            FifthImg.classList.add('contentImg');
-            FifthImg.classList.add('contentImg_ill');
-            FifthImg.id = 'illustrationContentImg5';
-            FifthImg.src = "../resources/img/projects/art/Kwag_Hyoseo_Heidi.jpg";
-            FifthImg.alt = "hades_img";
-            FifthImg.style.display = 'none';
+            let FifthImg_charconcept = document.createElement('img');
+            FifthImg_charconcept.classList.add('contentImg');
+            FifthImg_charconcept.classList.add('contentImg_ill');
+            FifthImg_charconcept.id = 'illustrationContentImg5';
+            FifthImg_charconcept.src = "../resources/img/projects/art/Kwag_Hyoseo_Heidi.jpg";
+            FifthImg_charconcept.alt = "hades_img";
+            FifthImg_charconcept.style.display = 'none';
             // Add all images to container
-            const parentDiv = document.querySelector(".slideshow-container");
-            parentDiv.append(secondImg, thirdImg, fourthImg, FifthImg);
+            parentDiv.append(secondImg_charconcept, thirdImg_charconcept, fourthImg_charconcept, FifthImg_charconcept);
             break;
         case 'garden':
             contentImgElem.src = "../resources/img/projects/art/Garden.gif";
             contentImgElem.alt = "garden_gif";
             contentTextElem.innerHTML = "<b>Title:</b>&ensp;Garden<br><b>Date:</b>&ensp;2/18/2021<br><b>Medium:</b>&ensp;Digital - Photoshop, Clip Studio<br>> Mixed media class project. Used copyright-free photo mixed with digital animation.<br>";
+            break;
+        case 'alone_together':
+            thisPageNum.innerHTML = "1/2";
+            contentImgElem.src = "../resources/img/projects/art/Alone.jpg";
+            contentImgElem.alt = "alone_img";
+            contentTextElem.innerHTML = "<b>Title:</b>&ensp;Alone/ Together<br><b>Date:</b>&ensp;12/10/2019<br><b>Medium:</b>&ensp;Digital - Clip Studio<br>> Illustration class project. I represented the idea with me alone in the room, but together in game (League of Legends). My inspiration came from 'Where's Wally?' artist.<br>";
+            // Second image
+            let secondImg_alonetogether = document.createElement('img');
+            secondImg_alonetogether.classList.add('contentImg');
+            secondImg_alonetogether.classList.add('contentImg_ill');
+            secondImg_alonetogether.id = 'illustrationContentImg2';
+            secondImg_alonetogether.src = "../resources/img/projects/art/Together.jpg";
+            secondImg_alonetogether.alt = "together_img";
+            secondImg_alonetogether.style.display = 'none';
+            parentDiv.append(secondImg_alonetogether);
             break;
 
         default:
@@ -261,11 +275,20 @@ function showInfo(button, fromWhere) {
         // If the content info part is not shown or it's showing something but different button is clicked, show correspondingly
         // ADD NEW PROJECTS HERE : for single image ones only
         let singleImgElems = 'hsr_sparkle besties garden';
+        let twoImgElems = 'alone_together';
+        let fiveImgElems = 'char_concept';
         if (singleImgElems.includes(button)) {
-            // For single images, have to remove excessive images resulted from slideshow
-            removeExcessiveSlideshow(slideshowImgs);
             thisPageNum.innerHTML = "1/1";
+            removeExcessiveSlideshow(slideshowImgs, 0);
+        } else if (twoImgElems.includes(button)) {
+            thisPageNum.innerHTML = "1/2";
+            removeExcessiveSlideshow(slideshowImgs, 1);
+        } else if (fiveImgElems.includes(button)) {
+            thisPageNum.innerHTML = "1/5";
+            removeExcessiveSlideshow(slideshowImgs, 4);
         }
+        // Remove excessive images resulted from slideshow
+        // removeExcessiveSlideshow(slideshowImgs);
         currImgID = contentImgElem.id;
         contentInfoElem.style.display = 'block';
         contentInfoElem.style.animation = "fadeIn 0.5s forwards";
@@ -276,7 +299,7 @@ function showInfo(button, fromWhere) {
     }
 }
 
-function removeExcessiveSlideshow(parentDiv) {
+function removeExcessiveSlideshow(parentDiv, n) {
     let i=0;
     while (i<parentDiv.length) {
         if (i==0) {
@@ -284,8 +307,12 @@ function removeExcessiveSlideshow(parentDiv) {
             parentDiv[i].style.display = "block";
             i++;
         } else {
-            // Remove second to last images (so it only has first image)
+            if (i <= n) {
+                i++;
+            } else {
+                // Remove nth to last images
             parentDiv[i].remove();
+            }
         }
     }
 }
