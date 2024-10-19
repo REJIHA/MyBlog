@@ -122,6 +122,7 @@ function resetAnimation(thisOne) {
 /*
     HEADER ON CLICK CODE
 */
+// This function shows section (either programming or art) depending on which was clicked
 function clickSection(thisOne) {
     let [elem, otherElem, elem_header, otherElem_header, elem_content, otherElem_content,
         elem_img, otherElem_img, elem_caption, otherElem_caption] = getWhichOne(thisOne);
@@ -157,6 +158,7 @@ function clickSection(thisOne) {
 /*
     CONTENT CODE
 */
+// This function shows content depending on which category button is clicked
 function showContent(header, content, color) {
     let showContent = document.getElementById(content);
     let showHeader = document.getElementById(header)
@@ -174,6 +176,7 @@ function showContent(header, content, color) {
     }
 }
 
+// This function shows info from content depending on which category it's from
 function showInfo(button, fromWhere) {
     let contentInfoElem;
     let contentImgElem;
@@ -191,10 +194,14 @@ function showInfo(button, fromWhere) {
         thisPageNum = document.getElementById("pageNum_ill")
     }
 
+
     // Decide which button was clicked
     // ADD NEW PROJECTS HERE
     // TODO: add rest of info
+
     const parentDiv = document.querySelector(".slideshow-container");
+    // Reset slideshow
+    removeElemInDiv(slideshowImgs);
     switch (button) {
         case 'hsr_sparkle':
             contentImgElem.src = "../resources/img/projects/art/HSR_Sparkle.png";
@@ -264,9 +271,36 @@ function showInfo(button, fromWhere) {
             secondImg_alonetogether.src = "../resources/img/projects/art/Together.jpg";
             secondImg_alonetogether.alt = "together_img";
             secondImg_alonetogether.style.display = 'none';
+            // Add all images to container
             parentDiv.append(secondImg_alonetogether);
             break;
-
+        case 'propaganda':
+            contentImgElem.src = "../resources/img/projects/art/HyoseoK_Wallpaper.jpg";
+            contentImgElem.alt = "propaganda_img";
+            contentTextElem.innerHTML = "<b>Title:</b>&ensp;Propaganda<br><b>Date:</b>&ensp;11/7/2019<br><b>Medium:</b>&ensp;Watercolor, Digital - Photoshop<br>> Illustration class project. We had to choose one polarizing topic (I chose abortion) and make repetitive pattern into a wallpaper.<br>";
+            break;
+        case 'newyorker':
+            contentImgElem.src = "../resources/img/projects/art/HyoseoK_NewYorker_Final.jpg";
+            contentImgElem.alt = "newyorker_img";
+            contentTextElem.innerHTML = "<b>Title:</b>&ensp;New Yorker Magazine<br><b>Date:</b>&ensp;10/22/2019<br><b>Medium:</b>&ensp;Watercolor, Digital - Photoshop<br>> Illustration class project. We had to choose one social issue (I chose school shootings) and add New Yorker magazine's format.<br>";
+            break;
+        case 'comics':
+            thisPageNum.innerHTML = "1/2";
+            contentImgElem.src = "../resources/img/projects/art/SequentialComics1.jpg";
+            contentImgElem.alt = "comics_img1";
+            contentTextElem.innerHTML = "<b>Title:</b>&ensp;Sequential Comics<br><b>Date:</b>&ensp;10/14/2019<br><b>Medium:</b>&ensp;Black ink, Fountain pen<br>> Illustration class project. We had to choose one personal embarrassing story and draw comic of it. I couldn't remember good one at the moment so I made one up.<br>";
+            // Second image
+            let secondImg_comics = document.createElement('img');
+            secondImg_comics.classList.add('contentImg');
+            secondImg_comics.classList.add('contentImg_ill');
+            secondImg_comics.id = 'illustrationContentImg2';
+            secondImg_comics.src = "../resources/img/projects/art/SequentialComics2.jpg";
+            secondImg_comics.alt = "comics_img2";
+            secondImg_comics.style.display = 'none';
+            // Add all images to container
+            parentDiv.append(secondImg_comics);
+            break;
+    
         default:
             break;
     }
@@ -274,21 +308,16 @@ function showInfo(button, fromWhere) {
     if ((contentInfoElem.style.display=="") || (contentInfoElem.style.display=="none") || (currentShowing != button)) {
         // If the content info part is not shown or it's showing something but different button is clicked, show correspondingly
         // ADD NEW PROJECTS HERE : for single image ones only
-        let singleImgElems = 'hsr_sparkle besties garden';
-        let twoImgElems = 'alone_together';
+        let singleImgElems = 'hsr_sparkle besties garden propaganda newyorker';
+        let twoImgElems = 'alone_together comics';
         let fiveImgElems = 'char_concept';
         if (singleImgElems.includes(button)) {
             thisPageNum.innerHTML = "1/1";
-            removeExcessiveSlideshow(slideshowImgs, 0);
         } else if (twoImgElems.includes(button)) {
             thisPageNum.innerHTML = "1/2";
-            removeExcessiveSlideshow(slideshowImgs, 1);
         } else if (fiveImgElems.includes(button)) {
             thisPageNum.innerHTML = "1/5";
-            removeExcessiveSlideshow(slideshowImgs, 4);
         }
-        // Remove excessive images resulted from slideshow
-        // removeExcessiveSlideshow(slideshowImgs);
         currImgID = contentImgElem.id;
         contentInfoElem.style.display = 'block';
         contentInfoElem.style.animation = "fadeIn 0.5s forwards";
@@ -299,24 +328,26 @@ function showInfo(button, fromWhere) {
     }
 }
 
-function removeExcessiveSlideshow(parentDiv, n) {
+/*
+    SLIDESHOW CODE
+*/
+// This function deletes imgs in slideshow (except the first img)
+function removeElemInDiv(thisDiv) {
     let i=0;
-    while (i<parentDiv.length) {
+    while (i < thisDiv.length) {
+        let currElem = thisDiv[i];
         if (i==0) {
-            // Reset display of first image
-            parentDiv[i].style.display = "block";
+            // Show the first element
+            currElem.style.display = "block";
             i++;
         } else {
-            if (i <= n) {
-                i++;
-            } else {
-                // Remove nth to last images
-            parentDiv[i].remove();
-            }
+            // Remove rest of elements
+            currElem.remove();
         }
     }
 }
 
+// This function shows imgs in slideshow depending on which button was clicked (prev or next)
 function nextSlide(num, fromWhere) {
     let pageNum;
     if (fromWhere == 'illustration') {
