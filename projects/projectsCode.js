@@ -194,6 +194,11 @@ function showInfo(button, fromWhere) {
         contentTextElem = document.getElementById("illustrationContentText");
         slideshowImgs = document.getElementsByClassName("contentImg_ill");
         thisPageNum = document.getElementById("pageNum_ill")
+
+    } else if (fromWhere == 'animation') {
+        contentInfoElem = document.getElementById("animationContentInfo");
+        contentImgElem = document.getElementById("animationIframe");
+        contentTextElem = document.getElementById("animationContentText");
     }
 
 
@@ -202,9 +207,14 @@ function showInfo(button, fromWhere) {
     // TODO: add rest of info
 
     const parentDiv = document.querySelector(".slideshow-container");
-    // Reset slideshow
-    removeElemInDiv(slideshowImgs);
+    // Reset slideshow if it was used (default is one image or video)
+    if (slideshowImgs != null) {
+        removeElemInDiv(slideshowImgs);
+    }
     switch (button) {
+        /*
+        ILLUSTRATION PROJECTS
+        */
         case 'hsr_sparkle':
             contentImgElem.src = "../resources/img/projects/art/HSR_Sparkle.png";
             contentImgElem.alt = "HSR_Sparkle_img";
@@ -247,14 +257,6 @@ function showInfo(button, fromWhere) {
             // Add all images to container
             parentDiv.append(secondImg_stickersheet, thirdImg_stickersheet, fourthImg_stickersheet);
             break;
-
-
-
-
-
-
-
-
         case 'char_concept':
             thisPageNum.innerHTML = "1/5";
             contentImgElem.src = "../resources/img/projects/art/Kwag_Hyoseo_Cupid.jpg";
@@ -341,6 +343,12 @@ function showInfo(button, fromWhere) {
             secondImg_comics.style.display = 'none';
             // Add all images to container
             parentDiv.append(secondImg_comics);
+            break;
+        /*
+        ANIMATION PROJECTS
+        */
+        case 'recipe':
+            contentImgElem.src = "https://drive.google.com/file/d/19pE3V-s-uZQIWJEdsygBptfQpezzaE5e/preview";
             break;
     
         default:
