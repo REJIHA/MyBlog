@@ -215,6 +215,46 @@ function showInfo(button, fromWhere) {
             contentImgElem.alt = "besties_img";
             contentTextElem.innerHTML = "<b>Title:</b>&ensp;We Are Besties In Every Universe<br><b>Date:</b>&ensp;3/5/2024<br><b>Medium:</b>&ensp;Digital - Medibang Paint<br>> Animalification of my best friends.<br>";
             break;
+        case 'sticker_sheets':
+            thisPageNum.innerHTML = "1/4";
+            contentImgElem.src = "../resources/img/projects/art/animalfrens_01_hello.png";
+            contentImgElem.alt = "01_hello_img";
+            contentTextElem.innerHTML = "<b>Title:</b>&ensp;Sticker Sheets<br><b>Date:</b>&ensp;September 2022 - June 2023<br><b>Medium:</b>&ensp;Digital - Medibang Paint<br>> Some of the sticker sheet designs I made.<br>";
+            // Second image
+            let secondImg_stickersheet = document.createElement('img');
+            secondImg_stickersheet.classList.add('contentImg');
+            secondImg_stickersheet.classList.add('contentImg_ill');
+            secondImg_stickersheet.id = 'illustrationContentImg2';
+            secondImg_stickersheet.src = "../resources/img/projects/art/animalfrens_02_halloween.png";
+            secondImg_stickersheet.alt = "02_halloween_img";
+            secondImg_stickersheet.style.display = 'none';
+            // Third image
+            let thirdImg_stickersheet = document.createElement('img');
+            thirdImg_stickersheet.classList.add('contentImg');
+            thirdImg_stickersheet.classList.add('contentImg_ill');
+            thirdImg_stickersheet.id = 'illustrationContentImg3';
+            thirdImg_stickersheet.src = "../resources/img/projects/art/animalfrens_06_flower.png";
+            thirdImg_stickersheet.alt = "06_flower_img";
+            thirdImg_stickersheet.style.display = 'none';
+            // Fourth image
+            let fourthImg_stickersheet = document.createElement('img');
+            fourthImg_stickersheet.classList.add('contentImg');
+            fourthImg_stickersheet.classList.add('contentImg_ill');
+            fourthImg_stickersheet.id = 'illustrationContentImg4';
+            fourthImg_stickersheet.src = "../resources/img/projects/art/animalfrens_07_gamer.png";
+            fourthImg_stickersheet.alt = "07_gamer_img";
+            fourthImg_stickersheet.style.display = 'none';
+            // Add all images to container
+            parentDiv.append(secondImg_stickersheet, thirdImg_stickersheet, fourthImg_stickersheet);
+            break;
+
+
+
+
+
+
+
+
         case 'char_concept':
             thisPageNum.innerHTML = "1/5";
             contentImgElem.src = "../resources/img/projects/art/Kwag_Hyoseo_Cupid.jpg";
@@ -312,11 +352,14 @@ function showInfo(button, fromWhere) {
         // ADD NEW PROJECTS HERE : for single image ones only
         let singleImgElems = 'hsr_sparkle besties garden propaganda newyorker';
         let twoImgElems = 'alone_together comics';
+        let fourImgElems = 'sticker_sheets'
         let fiveImgElems = 'char_concept';
         if (singleImgElems.includes(button)) {
             thisPageNum.innerHTML = "1/1";
         } else if (twoImgElems.includes(button)) {
             thisPageNum.innerHTML = "1/2";
+        } else if (fourImgElems.includes(button)) {
+            thisPageNum.innerHTML = "1/4";
         } else if (fiveImgElems.includes(button)) {
             thisPageNum.innerHTML = "1/5";
         }
