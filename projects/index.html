@@ -24,24 +24,54 @@
             <button class="categoryHeader" id="coding2024Header" onclick="showContent(this.id, 'coding2024_content', 'coding2024ContentInfo', '#1e2893')">2024 ▼</button>
             <button class="categoryHeader" id="coding2021Header" onclick="showContent(this.id, 'coding2021_content', 'coding2021ContentInfo', '#66ae23')">2021 ▼</button>
             <button class="categoryHeader" id="coding2020Header" onclick="showContent(this.id, 'coding2020_content', 'coding2020ContentInfo', '#1e8b93')">2020 ▼</button>
-            <!-- ...Shows below contents -->
+            
+            <!-- ...Shows below contents (this is coding 2024) -->
             <div class="individualContents" id="coding2024_content">
               2024 stuff
               <div class="contentInfo" id="coding2024ContentInfo">
                 <!-- TODO: add 2024 projects -->
               </div>
             </div>
+            
+            <!-- ...Shows below contents (this is coding 2021) -->
             <div class="individualContents" id="coding2021_content">
-              2021 stuff
               <div class="contentInfo" id="coding2021ContentInfo">
-                <!-- TODO: add 2021 projects -->
+                <!-- Buttons for slideshow -->
+                <button class="prev" onclick="nextSlide(-1, 'coding2021')">&#10094;</button>
+                <h2 class="pageNum" id="pageNum_coding2021">1/1</h2>
+                <button class="next" onclick="nextSlide(1, 'coding2021')">&#10095;</button>
+                <!-- Slideshow image container -->
+                <div class="slideshow-container" id="slideshow-container_coding2021">
+                  <img src="" alt="" class="contentImg contentImg_coding2021" id="coding2021ContentImg1">
+                </div>
+                <div class="contentText" id="coding2021ContentText"></div>
               </div>
+              <button class="container" style="background-image: url('../resources/img/projects/programming/totalvery.png');" id="totalvery" onclick="showInfo(this.id, 'coding2021')">
+                <div class="overlay">
+                  <div class="overlayTitle"><br>Totalvery</div>
+                </div>
+              </button>
+
+
+
+
             </div>
+            
+            <!-- ...Shows below contents (this is coding 2020) -->
             <div class="individualContents" id="coding2020_content">
-              2020 stuff
               <div class="contentInfo" id="coding2020ContentInfo">
-                <!-- TODO: add 2020 projects -->
+                <iframe src="" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" id="coding2020Iframe"></iframe>
+                <div class="contentText" id="coding2020ContentText"></div>
               </div>
+              <button class="container" style="background-image: url('../resources/img/projects/programming/mainmenu.jpg');" id="social_deduction" onclick="showInfo(this.id, 'coding2020')">
+                <div class="overlay">
+                  <div class="overlayTitle">Social<br>Deduction</div>
+                </div>
+              </button>
+
+
+
+
             </div>
           </div>
         </a>

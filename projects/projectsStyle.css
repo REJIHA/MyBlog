@@ -46,8 +46,11 @@ h1 {
     font-size: 50px;
 }
 
-b {
+b, a {
     font-size: 20px;
+}
+a:hover {
+    cursor: url('../resources/img/myWebsite/xp_cursor_red.png'), auto;
 }
 
 img {

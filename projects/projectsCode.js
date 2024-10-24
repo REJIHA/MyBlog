@@ -189,7 +189,22 @@ function showInfo(button, fromWhere) {
 
     // Decide which category contents is showing
     // TODO: add rest of category (prog2024, prog2021, prog2020)
-    if (fromWhere == 'illustration') {
+    if (fromWhere == 'coding2024') {
+
+    } else if (fromWhere == 'coding2021') {
+        contentInfoElem = document.getElementById("coding2021ContentInfo");
+        contentImgElem = document.getElementById("coding2021ContentImg1");
+        contentTextElem = document.getElementById("coding2021ContentText");
+        slideshowImgs = document.getElementsByClassName("contentImg_coding2021");
+        thisPageNum = document.getElementById("pageNum_coding2021");
+        parentDiv = document.getElementById("slideshow-container_coding2021");
+
+    } else if (fromWhere == 'coding2020') {
+        contentInfoElem = document.getElementById("coding2020ContentInfo");
+        contentImgElem = document.getElementById("coding2020Iframe");
+        contentTextElem = document.getElementById("coding2020ContentText");
+
+    } else if (fromWhere == 'illustration') {
         contentInfoElem = document.getElementById("illustrationContentInfo");
         contentImgElem = document.getElementById("illustrationContentImg1");
         contentTextElem = document.getElementById("illustrationContentText");
@@ -222,6 +237,25 @@ function showInfo(button, fromWhere) {
     // Decide which button was clicked
     // ADD NEW PROJECTS HERE
     switch (button) {
+        /*
+        CODING 2021 PROJECTS
+        */
+        case 'totalvery':
+            thisPageNum.innerHTML = "1/8";
+            contentImgElem.src = "../resources/img/projects/programming/result1.png";
+            contentImgElem.alt = "totalvery1_img";
+            contentTextElem.innerHTML = "<b>Title:</b>&ensp;Totalvery<br><b>Date:</b>&ensp; 1/3/2021 - 2/7/2021<br><b>Used:</b>&ensp;Python, HTML, CSS, Javascript, React, Bootstrap, MongoDB, Django, Docker, Google Cloud API<br>> Group project with Sooyoung Moon and Hyunju Song. Built a website that combines Doordash, UberEats and Grubhub delivery services for users to compare costs between platforms. Participated in Black Wings Hacks and won ”Best Use of Google Cloud” award.<br><a href='https://github.com/Totalvery/totalvery' target='_blank'>► Link to GitHub ◀</a></details>";
+            // Second image
+            // TODO: here
+
+            break;
+        /*
+        CODING 2020 PROJECTS
+        */
+        case 'social_deduction':
+            contentImgElem.src = "https://docs.google.com/presentation/d/e/2PACX-1vQl08y4IcirkOFeTU601GlrQtxPCfeK1_pDMqb0qojLXRi1sFix9sCEvzbgCJWTQH0tz4uYP6KLvCV-/embed?start=false&loop=true&delayms=3000";
+            contentTextElem.innerHTML = "<b>Title:</b>&ensp;Social Deduction<br><b>Date:</b>&ensp; 12/1/2020 - 12/10/2020<br><b>Used:</b>&ensp;Java, JavaFX<br>> Object Oriented Programming class group project with Sooyoung Moon, Hyunju Song, and David Kennedy. It plays small social deduction game (we referenced Among Us).</details>";
+            break;
         /*
         ILLUSTRATION PROJECTS
         */
