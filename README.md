@@ -43,7 +43,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
     - [x] ADA compliance check
 - [ ] projects
     - [ ] programming
-    - [ ] art
+    - [x] art
 - [ ] funsies
     - [ ] animal frens profile maker & popularity poll (using cookie)
     - [ ] QR code generaor
@@ -86,6 +86,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
 * [ADA Compliance Checker - accessScan](https://accessibe.com/accessscan)
 * [CSS Gradient Generator](https://cssgradient.io/)
 * [CSS Pixel Art](https://css-tricks.com/fun-times-css-pixel-art/)
+* [Image Resizer & crop](https://imageresizer.com/)
 
 <!-- * Below are links I didn't end up using...
 * [Let's Encrypt](https://letsencrypt.org/) free SSL site

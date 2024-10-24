@@ -185,38 +185,42 @@ function showInfo(button, fromWhere) {
     let contentTextElem;
     let slideshowImgs;
     let thisPageNum;
+    let parentDiv;
 
     // Decide which category contents is showing
-    // TODO: add rest of category (animation, 3d modeling, prog2024, prog2021, prog2020)
+    // TODO: add rest of category (prog2024, prog2021, prog2020)
     if (fromWhere == 'illustration') {
         contentInfoElem = document.getElementById("illustrationContentInfo");
         contentImgElem = document.getElementById("illustrationContentImg1");
         contentTextElem = document.getElementById("illustrationContentText");
         slideshowImgs = document.getElementsByClassName("contentImg_ill");
         thisPageNum = document.getElementById("pageNum_ill")
-
+        parentDiv = document.getElementById("slideshow-container_illustration");
     } else if (fromWhere == 'animation') {
         if (button == 'flipbook') {
             // Flipbook is gif, so use img tag
-            contentImgElem = document.getElementById("animationImg1");
+            contentImgElem = document.getElementById("animationContentImg1");
         } else {
             // Other animation projects are videos, use iframe tag
             contentImgElem = document.getElementById("animationIframe");
         }
         contentInfoElem = document.getElementById("animationContentInfo");
         contentTextElem = document.getElementById("animationContentText");
+    } else if (fromWhere == 'modeling') {
+        contentInfoElem = document.getElementById("modelingContentInfo");
+        contentImgElem = document.getElementById("modelingContentImg1");
+        contentTextElem = document.getElementById("modelingContentText");
+        slideshowImgs = document.getElementsByClassName("contentImg_modeling");
+        thisPageNum = document.getElementById("pageNum_modeling");
+        parentDiv = document.getElementById("slideshow-container_modeling");
     }
 
-
-    // Decide which button was clicked
-    // ADD NEW PROJECTS HERE
-    // TODO: add rest of info
-
-    const parentDiv = document.querySelector(".slideshow-container");
     // Reset slideshow if it was used (default is one image or video)
     if (slideshowImgs != null) {
         removeElemInDiv(slideshowImgs);
     }
+    // Decide which button was clicked
+    // ADD NEW PROJECTS HERE
     switch (button) {
         /*
         ILLUSTRATION PROJECTS
@@ -353,11 +357,10 @@ function showInfo(button, fromWhere) {
         /*
         ANIMATION PROJECTS
         */
-        
         case 'personal_structure':
             switchGifAndVideo("video");
             contentImgElem.src = "https://drive.google.com/file/d/1m31185Wd2goz_kIyS3-maOplm6ZFMtdG/preview";
-            contentTextElem.innerHTML = "<b>Title:</b>&ensp;Personal Structure<br><b>Date:</b>&ensp;12/7/2021<br><b>Medium:</b>&ensp;Digital - Medibang Paint, Stop Motion Studio<br>> Animation class project. Since this was going to become one compilation of animation as a class, we decided on specific quincunx pattern for transition and color palettes for unity. For my personal structure, I chose to illustrate two contrasting sides I have in me.<br><br><details><summary>I recommend watching the video first then reading my explanation.</summary>Extrovert vs introvert, programmer vs artist, Korean vs American/English.</details>";
+            contentTextElem.innerHTML = "<b>Title:</b>&ensp;Personal Structure<br><b>Date:</b>&ensp;12/7/2021<br><b>Medium:</b>&ensp;Digital - Medibang Paint, Stop Motion Studio<br>> Animation class project. Since this was going to become one compilation of animation as a class, we decided on specific quincunx pattern for transition and color palettes for unity. For my personal structure, I chose to illustrate two contrasting sides I have in me.<br><br><details><summary>I recommend watching the video first then reading my explanation.</summary>Extrovert vs introvert, programmer vs artist, Korean vs American.</details>";
             break;
         case 'experimentation':
             switchGifAndVideo("video");
@@ -385,20 +388,83 @@ function showInfo(button, fromWhere) {
             contentImgElem.src = "https://drive.google.com/file/d/19pE3V-s-uZQIWJEdsygBptfQpezzaE5e/preview";
             contentTextElem.innerHTML = "<b>Title:</b>&ensp;Recipe<br><b>Date:</b>&ensp;3/8/2021<br><b>Medium:</b>&ensp;Digital - Adobe Illustrator, After Effects<br>> Motion class project. We had to animate recipe of our choice and I chose tomato juice with my mom's special recipe.<br>";
             break;
-        
-
-
-    
+        /*
+        3D MODELING PROJECTS
+        */
+        case 'self_portrait':
+            thisPageNum.innerHTML = "1/2";
+            contentImgElem.src = "../resources/img/projects/art/HyoseoK_Body_Color_Front.jpg";
+            contentImgElem.alt = "body_front_img";
+            contentTextElem.innerHTML = "<b>Title:</b>&ensp;Self-Portrait<br><b>Date:</b>&ensp;September - December 2020<br><b>Medium:</b>&ensp;Digital - ZBrush<br>> 3D Modeling class project. We made 3D modelings of ourselves.<br>";
+            // Second image
+            let secondImg_selfportrait = document.createElement('img');
+            secondImg_selfportrait.classList.add('contentImg');
+            secondImg_selfportrait.classList.add('contentImg_modeling');
+            secondImg_selfportrait.id = 'modelingContentImg2';
+            secondImg_selfportrait.src = "../resources/img/projects/art/HyoseoK_Body_Color_Side.jpg";
+            secondImg_selfportrait.alt = "body_side_img";
+            secondImg_selfportrait.style.display = 'none';
+            // Add all images to container
+            parentDiv.append(secondImg_selfportrait);
+            break;
+        case 'double_meaning':
+            thisPageNum.innerHTML = "1/2";
+            contentImgElem.src = "../resources/img/projects/art/HyoseoK_Positive.jpg";
+            contentImgElem.alt = "positive_img";
+            contentTextElem.innerHTML = "<b>Title:</b>&ensp;Double Meaning<br><b>Date:</b>&ensp;11/23/2020<br><b>Medium:</b>&ensp;Digital - ZBrush, Photoshop<br>> 3D Modeling class project. Reusing the models we made for 'Alienation', we had to put the 3D model in the photo we took in real life to create one positive/utopia image and one negative/dystopia image.<br>";
+            // Second image
+            let secondImg_doublemeaning = document.createElement('img');
+            secondImg_doublemeaning.classList.add('contentImg');
+            secondImg_doublemeaning.classList.add('contentImg_modeling');
+            secondImg_doublemeaning.id = 'modelingContentImg2';
+            secondImg_doublemeaning.src = "../resources/img/projects/art/HyoseoK_Negative.jpg";
+            secondImg_doublemeaning.alt = "negative_img";
+            secondImg_doublemeaning.style.display = 'none';
+            // Add all images to container
+            parentDiv.append(secondImg_doublemeaning);
+            break;
+        case 'alienation':
+            thisPageNum.innerHTML = "1/4";
+            contentImgElem.src = "../resources/img/projects/art/HyoseoK_Alienation1.jpg";
+            contentImgElem.alt = "alienation1_img";
+            contentTextElem.innerHTML = "<b>Title:</b>&ensp;Alienation<br><b>Date:</b>&ensp;11/19/2020<br><b>Medium:</b>&ensp;Digital - ZBrush<br>> 3D Modeling class project. I chose to alienate myself from my friends.<br>";
+            // Second image
+            let secondImg_alienation = document.createElement('img');
+            secondImg_alienation.classList.add('contentImg');
+            secondImg_alienation.classList.add('contentImg_modeling');
+            secondImg_alienation.id = 'modelingContentImg2';
+            secondImg_alienation.src = "../resources/img/projects/art/HyoseoK_Alienation2.jpg";
+            secondImg_alienation.alt = "alienation2_img";
+            secondImg_alienation.style.display = 'none';
+            // Third image
+            let thirdImg_alienation = document.createElement('img');
+            thirdImg_alienation.classList.add('contentImg');
+            thirdImg_alienation.classList.add('contentImg_modeling');
+            thirdImg_alienation.id = 'modelingContentImg3';
+            thirdImg_alienation.src = "../resources/img/projects/art/HyoseoK_Alienation3.jpg";
+            thirdImg_alienation.alt = "alienation3_img";
+            thirdImg_alienation.style.display = 'none';
+            // Fourth image
+            let fourthImg_alienation = document.createElement('img');
+            fourthImg_alienation.classList.add('contentImg');
+            fourthImg_alienation.classList.add('contentImg_modeling');
+            fourthImg_alienation.id = 'modelingContentImg4';
+            fourthImg_alienation.src = "../resources/img/projects/art/HyoseoK_Alienation4.jpg";
+            fourthImg_alienation.alt = "alienation4_img";
+            fourthImg_alienation.style.display = 'none';
+            // Add all images to container
+            parentDiv.append(secondImg_alienation, thirdImg_alienation, fourthImg_alienation);
+            break;
         default:
             break;
     }
 
     if ((contentInfoElem.style.display=="") || (contentInfoElem.style.display=="none") || (currentShowing != button)) {
         // If the content info part is not shown or it's showing something but different button is clicked, show correspondingly
-        // ADD NEW PROJECTS HERE : for single image ones only
+        // ADD NEW PROJECTS HERE : for images only (no videos)
         let singleImgElems = 'hsr_sparkle besties garden propaganda newyorker';
-        let twoImgElems = 'alone_together comics';
-        let fourImgElems = 'sticker_sheets'
+        let twoImgElems = 'alone_together comics double_meaning self_portrait';
+        let fourImgElems = 'sticker_sheets alienation'
         let fiveImgElems = 'char_concept';
         if (singleImgElems.includes(button)) {
             thisPageNum.innerHTML = "1/1";
@@ -441,9 +507,11 @@ function removeElemInDiv(thisDiv) {
 // This function shows imgs in slideshow depending on which button was clicked (prev or next)
 function nextSlide(num, fromWhere) {
     let pageNum;
+    // Get correct pageNum depending on from where buttons were clicked
     if (fromWhere == 'illustration') {
-        // Get correct pageNum depending on from where buttons were clicked
         pageNum = document.getElementById("pageNum_ill");
+    } else if (fromWhere == 'modeling') {
+        pageNum = document.getElementById("pageNum_modeling");
     }
     let slideNum = Number(currImgID[currImgID.length-1]);   // Get number of current image shown in slideshow
     let changedSlideNum;
@@ -478,7 +546,7 @@ function nextSlide(num, fromWhere) {
 // This function switches between gif and video to show in animation contents
 function switchGifAndVideo(toThis) {
     iframeElem = document.getElementById("animationIframe");
-    gifElem = document.getElementById("animationImg1");
+    gifElem = document.getElementById("animationContentImg1");
     if (toThis == "gif") {
         // Disable iframe and show gif
         iframeElem.style.display = "none";

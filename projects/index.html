@@ -45,6 +45,8 @@
             </div>
           </div>
         </a>
+
+        <!-- TODO: clicking image shows img in full screen -->
         <a id="art" onmouseover="expandAnimation(this.id)" onmouseleave="resetAnimation(this.id)"  onclick="clickSection(this.id)" tabindex="0" href="#">
           <div class="header" id="art_header">
             <img src="../resources/img/projects/art.png" alt="art icon" id="artImg">
@@ -65,7 +67,7 @@
                 <h2 class="pageNum" id="pageNum_ill">1/1</h2>
                 <button class="next" onclick="nextSlide(1, 'illustration')">&#10095;</button>
                 <!-- Slideshow image container -->
-                <div class="slideshow-container">
+                <div class="slideshow-container" id="slideshow-container_illustration">
                   <img src="" alt="" class="contentImg contentImg_ill" id="illustrationContentImg1">
                 </div>
                 <div class="contentText" id="illustrationContentText"></div>
@@ -121,28 +123,22 @@
                   <div class="overlayTitle">Sequential<br>Comics</div>
                 </div>
               </button>
-              
-
-              <!-- TODO: clicking image shows img in full screen -->
-              
-              
             </div>
+
             <!-- ...Shows below contents (this is animation) -->
             <div class="individualContents" id="animation_content">
               <!-- Info shows at top -->
               <div class="contentInfo" id="animationContentInfo">
                 <iframe src="" allow="autoplay" id="animationIframe"></iframe>
-                <img src="" alt="" class="contentImg" id="animationImg1">
+                <img src="" alt="" class="contentImg" id="animationContentImg1">
                 <div class="contentText" id="animationContentText"></div>
               </div>
-
               <!-- 
                 FOR ADDING NEW ANIMATION PROJECT YOU HAVE TO:
                   * make new button here on top (newest first)
                   * add case at projectsCode.js
                   (search "(ADD NEW PROJECTS HERE)" for locations)
               -->
-              
               <button class="container" style="background-image: url('../resources/img/projects/art/personal_structure_still.png');" id="personal_structure" onclick="showInfo(this.id, 'animation')">
                 <div class="overlay">
                   <div class="overlayTitle">Personal<br>Structure</div>
@@ -173,18 +169,45 @@
                   <div class="overlayTitle"><br>Recipe</div>
                 </div>
               </button>
-
-
             </div>
+
+            <!-- ...Shows below contents (this is 3d modeling) -->
             <div class="individualContents" id="modeling_content">
-              3d modeling
               <div class="contentInfo" id="modelingContentInfo">
-                <!-- TODO: add 3d modeling projects -->
+                <!-- Buttons for slideshow -->
+                <button class="prev" onclick="nextSlide(-1, 'modeling')">&#10094;</button>
+                <h2 class="pageNum" id="pageNum_modeling">1/1</h2>
+                <button class="next" onclick="nextSlide(1, 'modeling')">&#10095;</button>
+                <!-- Slideshow image container -->
+                <div class="slideshow-container" id="slideshow-container_modeling">
+                  <img src="" alt="" class="contentImg contentImg_modeling" id="modelingContentImg1">
+                </div>
+                <div class="contentText" id="modelingContentText"></div>
               </div>
+              <!-- 
+                FOR ADDING NEW 3D MODELING PROJECT YOU HAVE TO:
+                  * make new button here on top (newest first)
+                  * add case at projectsCode.js
+                  (search "(ADD NEW PROJECTS HERE)" for locations)
+              -->
+              <button class="container" style="background-image: url('../resources/img/projects/art/HyoseoK_Head_Color_Front.jpg');" id="self_portrait" onclick="showInfo(this.id, 'modeling')">
+                <div class="overlay">
+                  <div class="overlayTitle"><br>Self-Portrait</div>
+                </div>
+              </button>
+              <button class="container" style="background-image: url('../resources/img/projects/art/HyoseoK_PosNeg.jpg');" id="double_meaning" onclick="showInfo(this.id, 'modeling')">
+                <div class="overlay">
+                  <div class="overlayTitle">Double<br>Meaning</div>
+                </div>
+              </button>
+              <button class="container" style="background-image: url('../resources/img/projects/art/alienation.jpg');" id="alienation" onclick="showInfo(this.id, 'modeling')">
+                <div class="overlay">
+                  <div class="overlayTitle"><br>Alienation</div>
+                </div>
+              </button>
             </div>
           </div>
         </a>
-
     </main>
   </body>
   <script src="projectsCode.js"></script>

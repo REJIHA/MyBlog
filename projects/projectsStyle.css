@@ -263,10 +263,17 @@ summary:hover {
     display: inline-block;
 }
 
+#animationContentInfo {
+    text-align: center;
+}
+
 iframe {
+    display: block;
     width: 95%;
     height: 95%;
     aspect-ratio: 16/9;
+    margin: 0 auto;
+    margin-bottom: 10px;
 }
 
 #animationImg1 {
