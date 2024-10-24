@@ -196,8 +196,14 @@ function showInfo(button, fromWhere) {
         thisPageNum = document.getElementById("pageNum_ill")
 
     } else if (fromWhere == 'animation') {
+        if (button == 'flipbook') {
+            // Flipbook is gif, so use img tag
+            contentImgElem = document.getElementById("animationImg1");
+        } else {
+            // Other animation projects are videos, use iframe tag
+            contentImgElem = document.getElementById("animationIframe");
+        }
         contentInfoElem = document.getElementById("animationContentInfo");
-        contentImgElem = document.getElementById("animationIframe");
         contentTextElem = document.getElementById("animationContentText");
     }
 
@@ -326,7 +332,7 @@ function showInfo(button, fromWhere) {
         case 'newyorker':
             contentImgElem.src = "../resources/img/projects/art/HyoseoK_NewYorker_Final.jpg";
             contentImgElem.alt = "newyorker_img";
-            contentTextElem.innerHTML = "<b>Title:</b>&ensp;New Yorker Magazine<br><b>Date:</b>&ensp;10/22/2019<br><b>Medium:</b>&ensp;Watercolor, Digital - Photoshop<br>> Illustration class project. We had to choose one social issue (I chose school shootings) and add New Yorker magazine's format.<br>";
+            contentTextElem.innerHTML = "<b>Title:</b>&ensp;New Yorker Magazine<br><b>Date:</b>&ensp;10/22/2019<br><b>Medium:</b>&ensp;Watercolor, Digital - Photoshop<br>> Illustration class project. We had to choose one social issue (I chose school shootings) and fit to New Yorker magazine's format.<br>";
             break;
         case 'comics':
             thisPageNum.innerHTML = "1/2";
@@ -347,9 +353,41 @@ function showInfo(button, fromWhere) {
         /*
         ANIMATION PROJECTS
         */
-        case 'recipe':
-            contentImgElem.src = "https://drive.google.com/file/d/19pE3V-s-uZQIWJEdsygBptfQpezzaE5e/preview";
+        
+        case 'personal_structure':
+            switchGifAndVideo("video");
+            contentImgElem.src = "https://drive.google.com/file/d/1m31185Wd2goz_kIyS3-maOplm6ZFMtdG/preview";
+            contentTextElem.innerHTML = "<b>Title:</b>&ensp;Personal Structure<br><b>Date:</b>&ensp;12/7/2021<br><b>Medium:</b>&ensp;Digital - Medibang Paint, Stop Motion Studio<br>> Animation class project. Since this was going to become one compilation of animation as a class, we decided on specific quincunx pattern for transition and color palettes for unity. For my personal structure, I chose to illustrate two contrasting sides I have in me.<br><br><details><summary>I recommend watching the video first then reading my explanation.</summary>Extrovert vs introvert, programmer vs artist, Korean vs American/English.</details>";
             break;
+        case 'experimentation':
+            switchGifAndVideo("video");
+            contentImgElem.src = "https://drive.google.com/file/d/1E-yjF4Okmq8GYVmFA6r-EzOxcVWt8D9S/preview";
+            contentTextElem.innerHTML = "<b>Title:</b>&ensp;Week of Experimentation<br><b>Date:</b>&ensp;10/7/2021<br><b>Medium:</b>&ensp;Sand, Chalk, Acrylic, Magazine, Digital - Stop Motion Studio<br>> Animation class group project. During this week we were given various materials to animate with, and our group decided to try out all. Ours is the water droplet animation in the beginning of the video. The techniques used are: sand animation, lotoscoping, paint animation, and collage animation.<br>";
+            break;
+        case 'flipbook':
+            switchGifAndVideo("gif");
+            contentImgElem.src = "../resources/img/projects/art/HyoseoK_Flip-Book.gif";
+            contentImgElem.alt = "flipbook_gif";
+            contentTextElem.innerHTML = "<b>Title:</b>&ensp;Flip Book<br><b>Date:</b>&ensp;9/10/2021<br><b>Medium:</b>&ensp;Watercolor, Digital - Stop Motion Studio<br>> Animation class project. We had to choose one virus and make an infinite loop animation. I chose Influenza (flu).<br>";
+            break;
+        case 'title_sequence':
+            switchGifAndVideo("video");
+            contentImgElem.src = "https://drive.google.com/file/d/1UOEltHCKhvAOH_M_gygJ2f0z-XaC7-8Y/preview";
+            contentTextElem.innerHTML = "<b>Title:</b>&ensp;Title Sequence<br><b>Date:</b>&ensp;5/3/2021<br><b>Medium:</b>&ensp;Digital - Clip Studio, After Effects<br>> Motion class project. We had to choose one typeface except Helvetica to animate its history like the movie title logo and I chose Comic Sans.<br>";
+            break;
+        case 'puppet':
+            switchGifAndVideo("video");
+            contentImgElem.src = "https://drive.google.com/file/d/13s4iDymcal9tjLkntST3Yyg0h710fIm8/preview";
+            contentTextElem.innerHTML = "<b>Title:</b>&ensp;Puppet<br><b>Date:</b>&ensp;4/7/2021<br><b>Medium:</b>&ensp;Digital - Clip Studio, After Effects<br>> Motion class project. We had to make unique character, dub and animate it using our own facial expressions. I recreated Cupid from greek mythology as modern Youtuber/streamer telling people about romance stories.<br>";
+            break;
+        case 'recipe':
+            switchGifAndVideo("video");
+            contentImgElem.src = "https://drive.google.com/file/d/19pE3V-s-uZQIWJEdsygBptfQpezzaE5e/preview";
+            contentTextElem.innerHTML = "<b>Title:</b>&ensp;Recipe<br><b>Date:</b>&ensp;3/8/2021<br><b>Medium:</b>&ensp;Digital - Adobe Illustrator, After Effects<br>> Motion class project. We had to animate recipe of our choice and I chose tomato juice with my mom's special recipe.<br>";
+            break;
+        
+
+
     
         default:
             break;
@@ -434,5 +472,20 @@ function nextSlide(num, fromWhere) {
         let origPageNum = pageNum.innerHTML;
         let newPageNum = changedSlideNum + origPageNum.slice(1);
         pageNum.innerHTML = newPageNum;
+    }
+}
+
+// This function switches between gif and video to show in animation contents
+function switchGifAndVideo(toThis) {
+    iframeElem = document.getElementById("animationIframe");
+    gifElem = document.getElementById("animationImg1");
+    if (toThis == "gif") {
+        // Disable iframe and show gif
+        iframeElem.style.display = "none";
+        gifElem.style.display = "block";
+    } else if (toThis == "video") {
+        // Disable gif and show iframe
+        iframeElem.style.display = "block";
+        gifElem.style.display = "none";
     }
 }
