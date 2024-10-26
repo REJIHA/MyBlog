@@ -41,8 +41,8 @@ Date: March 9 & 10 2024, August 28 2024 - Present
         - [x] contact me
     - [x] denied access page (for unfinished pages)
     - [x] ADA compliance check
-- [ ] projects
-    - [ ] programming
+- [x] projects
+    - [x] programming
     - [x] art
 - [ ] funsies
     - [ ] animal frens profile maker & popularity poll (using cookie)

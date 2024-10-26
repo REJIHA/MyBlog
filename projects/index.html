@@ -27,34 +27,59 @@
             
             <!-- ...Shows below contents (this is coding 2024) -->
             <div class="individualContents" id="coding2024_content">
-              2024 stuff
               <div class="contentInfo" id="coding2024ContentInfo">
-                <!-- TODO: add 2024 projects -->
+                <!-- Buttons for slideshow -->
+                <button class="prev" onclick="nextSlide(-1, 'coding2024')">&#10094;</button>
+                <h2 class="pageNum" id="pageNum_coding2024">1/1</h2>
+                <button class="next" onclick="nextSlide(1, 'coding2024')">&#10095;</button>
+                <!-- Slideshow image container -->
+                <div class="slideshow-container" id="slideshow-container_coding2024">
+                  <img src="" alt="" class="contentImg contentImg_coding2024" id="coding2024ContentImg1">
+                </div>
+                <div class="contentText" id="coding2024ContentText"></div>
               </div>
+              <!-- 
+                FOR ADDING NEW CODING PROJECT YOU HAVE TO:
+                  * make new button here on top (newest first)
+                  * add case at projectsCode.js
+                  (search "(ADD NEW PROJECTS HERE)" for locations)
+              -->
+              <button class="container" style="background-image: url('../resources/img/projects/programming/myWebsite_1.png');" id="mywebsite" onclick="showInfo(this.id, 'coding2024')">
+                <div class="overlay">
+                  <div class="overlayTitle">Personal<br>Website</div>
+                </div>
+              </button>
             </div>
             
             <!-- ...Shows below contents (this is coding 2021) -->
             <div class="individualContents" id="coding2021_content">
               <div class="contentInfo" id="coding2021ContentInfo">
                 <!-- Buttons for slideshow -->
-                <button class="prev" onclick="nextSlide(-1, 'coding2021')">&#10094;</button>
-                <h2 class="pageNum" id="pageNum_coding2021">1/1</h2>
-                <button class="next" onclick="nextSlide(1, 'coding2021')">&#10095;</button>
+                <button class="prev slideshowButtons2021" onclick="nextSlide(-1, 'coding2021')">&#10094;</button>
+                <h2 class="pageNum slideshowButtons2021" id="pageNum_coding2021">1/1</h2>
+                <button class="next slideshowButtons2021" onclick="nextSlide(1, 'coding2021')">&#10095;</button>
                 <!-- Slideshow image container -->
                 <div class="slideshow-container" id="slideshow-container_coding2021">
+                  <iframe src="" allow="autoplay" id="coding2021Iframe"></iframe>
                   <img src="" alt="" class="contentImg contentImg_coding2021" id="coding2021ContentImg1">
                 </div>
                 <div class="contentText" id="coding2021ContentText"></div>
               </div>
+              <button class="container" style="background-image: url('../resources/img/projects/programming/AccessU.png');" id="accessu" onclick="showInfo(this.id, 'coding2021')">
+                <div class="overlay">
+                  <div class="overlayTitle">AccessU<br>Website</div>
+                </div>
+              </button>
+              <button class="container" style="background-image: url('../resources/img/projects/programming/tower_defense_1.png');" id="tower_defense" onclick="showInfo(this.id, 'coding2021')">
+                <div class="overlay">
+                  <div class="overlayTitle">Tower<br>Defense</div>
+                </div>
+              </button>
               <button class="container" style="background-image: url('../resources/img/projects/programming/totalvery.png');" id="totalvery" onclick="showInfo(this.id, 'coding2021')">
                 <div class="overlay">
                   <div class="overlayTitle"><br>Totalvery</div>
                 </div>
               </button>
-
-
-
-
             </div>
             
             <!-- ...Shows below contents (this is coding 2020) -->
@@ -68,9 +93,6 @@
                   <div class="overlayTitle">Social<br>Deduction</div>
                 </div>
               </button>
-
-
-
 
             </div>
           </div>

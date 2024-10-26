@@ -190,10 +190,22 @@ function showInfo(button, fromWhere) {
     // Decide which category contents is showing
     // TODO: add rest of category (prog2024, prog2021, prog2020)
     if (fromWhere == 'coding2024') {
+        contentInfoElem = document.getElementById("coding2024ContentInfo");
+        contentImgElem = document.getElementById("coding2024ContentImg1");
+        contentTextElem = document.getElementById("coding2024ContentText");
+        slideshowImgs = document.getElementsByClassName("contentImg_coding2024");
+        thisPageNum = document.getElementById("pageNum_coding2024");
+        parentDiv = document.getElementById("slideshow-container_coding2024");
 
     } else if (fromWhere == 'coding2021') {
+        if (button == 'accessu') {
+            // AccessU is video, so use video tag
+            contentImgElem = document.getElementById("coding2021Iframe");
+        } else {
+            // Other coding 2021 projects are images, use img tag
+            contentImgElem = document.getElementById("coding2021ContentImg1");
+        }
         contentInfoElem = document.getElementById("coding2021ContentInfo");
-        contentImgElem = document.getElementById("coding2021ContentImg1");
         contentTextElem = document.getElementById("coding2021ContentText");
         slideshowImgs = document.getElementsByClassName("contentImg_coding2021");
         thisPageNum = document.getElementById("pageNum_coding2021");
@@ -234,27 +246,52 @@ function showInfo(button, fromWhere) {
     if (slideshowImgs != null) {
         removeElemInDiv(slideshowImgs);
     }
-    // Decide which button was clicked
+    // Depending on which button was clicked, show different info
     // ADD NEW PROJECTS HERE
     switch (button) {
         /*
+        CODING 2024 PROJECTS
+        */
+        case 'mywebsite':
+            thisPageNum.innerHTML = "1/8";
+            contentImgElem.src = "../resources/img/projects/programming/myWebsite_1.png";
+            contentImgElem.alt = "mywebsite1_img";
+            contentTextElem.innerHTML = "<b>Title:</b>&ensp;Personal Website<br><b>Date:</b>&ensp; 3/9/2024 - 3/10/2024, 8/28/2024 - present<br><b>Used:</b>&ensp;HTML, CSS, JavaScript, GitHub Pages, Web3Forms, Namecheap<br>> Personal portfolio website. Went for Windows XP theme and tried not to use any frameworks.<br><a href='https://rejiha.online' target='_blank'>► Link to Website ◀</a><br>";
+            // Add rest of images
+            addImgtoSlideshow(8, "contentImg_coding2024", "coding2024ContentImg", "programming", "myWebsite_", ".png", "mywebsite", "_img", parentDiv);
+            break;
+        /*
         CODING 2021 PROJECTS
         */
+        case 'accessu':
+            switchImgAndVideo("coding2021", "video", "coding2021Iframe", "coding2021ContentImg1");
+            contentImgElem.src = "https://www.youtube.com/embed/KUjCdz5MU-A?si=KRAoEczew_ETsDcD";
+            contentTextElem.innerHTML = "<b>Title:</b>&ensp;AccessU Website<br><b>Date:</b>&ensp;11/7/2021 - 12/8/2021<br><b>Used:</b>&ensp;HTML, CSS, JavaScript, MongoDB, Mongoose, Node.js, Express.js, AJAX, jQuery, Digital Ocean<br><b>Role:</b>&ensp; Full stack developer<br>> Web programming class group project with Kiana Thatcher and Connor Benson. It mimics UofA’s UAccess (course registration and management page) and we used Arizona State University’s color theme.<br>";
+            break;
+        case 'tower_defense':
+            switchImgAndVideo("coding2021", "img", "coding2021Iframe", "coding2021ContentImg1");
+            thisPageNum.innerHTML = "1/9";
+            contentImgElem.src = "../resources/img/projects/programming/tower_defense_1.png";
+            contentImgElem.alt = "towerdefense1_img";
+            contentTextElem.innerHTML = "<b>Title:</b>&ensp;Tower Defense<br><b>Date:</b>&ensp; 9/20/2021 - 12/3/2021<br><b>Used:</b>&ensp;C#, Unity<br><b>Role:</b>&ensp; Front-end developer<br>> Software engineering class group project with Hyungjun Ha. This was a free project so we self-learned Unity and programmed a tower defense game using copyright-free resources.<br><a href='https://drive.google.com/file/d/1fqnPYOXf8J18VI1HkkAAbAyx7_O8gZYx/view?usp=sharing' target='_blank'>► PC Download</a>/<a href='https://drive.google.com/file/d/1XQvOKM9z3N91Al0m0wnWu4T1wbNaV_sc/view?usp=sharing' target='_blank'> Mobile Download ◀</a><br>";
+            // Add rest of images
+            addImgtoSlideshow(9, "contentImg_coding2021", "coding2021ContentImg", "programming", "tower_defense_", ".png", "towerdefense", "_img", parentDiv);
+            break;
         case 'totalvery':
+            switchImgAndVideo("coding2021", "img", "coding2021Iframe", "coding2021ContentImg1");
             thisPageNum.innerHTML = "1/8";
             contentImgElem.src = "../resources/img/projects/programming/result1.png";
             contentImgElem.alt = "totalvery1_img";
-            contentTextElem.innerHTML = "<b>Title:</b>&ensp;Totalvery<br><b>Date:</b>&ensp; 1/3/2021 - 2/7/2021<br><b>Used:</b>&ensp;Python, HTML, CSS, Javascript, React, Bootstrap, MongoDB, Django, Docker, Google Cloud API<br>> Group project with Sooyoung Moon and Hyunju Song. Built a website that combines Doordash, UberEats and Grubhub delivery services for users to compare costs between platforms. Participated in Black Wings Hacks and won ”Best Use of Google Cloud” award.<br><a href='https://github.com/Totalvery/totalvery' target='_blank'>► Link to GitHub ◀</a></details>";
-            // Second image
-            // TODO: here
-
+            contentTextElem.innerHTML = "<b>Title:</b>&ensp;Totalvery<br><b>Date:</b>&ensp; 1/3/2021 - 2/7/2021<br><b>Used:</b>&ensp;Python, HTML, CSS, Javascript, React, Bootstrap, MongoDB, Django, Docker, Google Cloud API<br><b>Role:</b>&ensp; Front-end developer<br>> Group project with Sooyoung Moon and Hyunju Song. Built a website that combines Doordash, UberEats and Grubhub delivery services for users to compare costs between platforms. Participated in Black Wings Hacks and won ”Best Use of Google Cloud” award.<br><a href='https://github.com/Totalvery/totalvery' target='_blank'>► Link to GitHub ◀</a><br>";
+            // Add rest of images
+            addImgtoSlideshow(8, "contentImg_coding2021", "coding2021ContentImg", "programming", "result", ".png", "totalvery", "_img", parentDiv);
             break;
         /*
         CODING 2020 PROJECTS
         */
         case 'social_deduction':
             contentImgElem.src = "https://docs.google.com/presentation/d/e/2PACX-1vQl08y4IcirkOFeTU601GlrQtxPCfeK1_pDMqb0qojLXRi1sFix9sCEvzbgCJWTQH0tz4uYP6KLvCV-/embed?start=false&loop=true&delayms=3000";
-            contentTextElem.innerHTML = "<b>Title:</b>&ensp;Social Deduction<br><b>Date:</b>&ensp; 12/1/2020 - 12/10/2020<br><b>Used:</b>&ensp;Java, JavaFX<br>> Object Oriented Programming class group project with Sooyoung Moon, Hyunju Song, and David Kennedy. It plays small social deduction game (we referenced Among Us).</details>";
+            contentTextElem.innerHTML = "<b>Title:</b>&ensp;Social Deduction<br><b>Date:</b>&ensp; 12/1/2020 - 12/10/2020<br><b>Used:</b>&ensp;Java, JavaFX<br>> Object Oriented Programming class group project with Sooyoung Moon, Hyunju Song, and David Kennedy. It plays small social deduction game (we referenced Among Us).<br>";
             break;
         /*
         ILLUSTRATION PROJECTS
@@ -392,33 +429,33 @@ function showInfo(button, fromWhere) {
         ANIMATION PROJECTS
         */
         case 'personal_structure':
-            switchGifAndVideo("video");
+            switchImgAndVideo("animation", "video", "animationIframe", "animationContentImg1");
             contentImgElem.src = "https://drive.google.com/file/d/1m31185Wd2goz_kIyS3-maOplm6ZFMtdG/preview";
             contentTextElem.innerHTML = "<b>Title:</b>&ensp;Personal Structure<br><b>Date:</b>&ensp;12/7/2021<br><b>Medium:</b>&ensp;Digital - Medibang Paint, Stop Motion Studio<br>> Animation class project. Since this was going to become one compilation of animation as a class, we decided on specific quincunx pattern for transition and color palettes for unity. For my personal structure, I chose to illustrate two contrasting sides I have in me.<br><br><details><summary>I recommend watching the video first then reading my explanation.</summary>Extrovert vs introvert, programmer vs artist, Korean vs American.</details>";
             break;
         case 'experimentation':
-            switchGifAndVideo("video");
+            switchImgAndVideo("animation", "video", "animationIframe", "animationContentImg1");
             contentImgElem.src = "https://drive.google.com/file/d/1E-yjF4Okmq8GYVmFA6r-EzOxcVWt8D9S/preview";
             contentTextElem.innerHTML = "<b>Title:</b>&ensp;Week of Experimentation<br><b>Date:</b>&ensp;10/7/2021<br><b>Medium:</b>&ensp;Sand, Chalk, Acrylic, Magazine, Digital - Stop Motion Studio<br>> Animation class group project. During this week we were given various materials to animate with, and our group decided to try out all. Ours is the water droplet animation in the beginning of the video. The techniques used are: sand animation, lotoscoping, paint animation, and collage animation.<br>";
             break;
         case 'flipbook':
-            switchGifAndVideo("gif");
+            switchImgAndVideo("animation", "gif", "animationIframe", "animationContentImg1");
             contentImgElem.src = "../resources/img/projects/art/HyoseoK_Flip-Book.gif";
             contentImgElem.alt = "flipbook_gif";
             contentTextElem.innerHTML = "<b>Title:</b>&ensp;Flip Book<br><b>Date:</b>&ensp;9/10/2021<br><b>Medium:</b>&ensp;Watercolor, Digital - Stop Motion Studio<br>> Animation class project. We had to choose one virus and make an infinite loop animation. I chose Influenza (flu).<br>";
             break;
         case 'title_sequence':
-            switchGifAndVideo("video");
+            switchImgAndVideo("animation", "video", "animationIframe", "animationContentImg1");
             contentImgElem.src = "https://drive.google.com/file/d/1UOEltHCKhvAOH_M_gygJ2f0z-XaC7-8Y/preview";
             contentTextElem.innerHTML = "<b>Title:</b>&ensp;Title Sequence<br><b>Date:</b>&ensp;5/3/2021<br><b>Medium:</b>&ensp;Digital - Clip Studio, After Effects<br>> Motion class project. We had to choose one typeface except Helvetica to animate its history like the movie title logo and I chose Comic Sans.<br>";
             break;
         case 'puppet':
-            switchGifAndVideo("video");
+            switchImgAndVideo("animation", "video", "animationIframe", "animationContentImg1");
             contentImgElem.src = "https://drive.google.com/file/d/13s4iDymcal9tjLkntST3Yyg0h710fIm8/preview";
             contentTextElem.innerHTML = "<b>Title:</b>&ensp;Puppet<br><b>Date:</b>&ensp;4/7/2021<br><b>Medium:</b>&ensp;Digital - Clip Studio, After Effects<br>> Motion class project. We had to make unique character, dub and animate it using our own facial expressions. I recreated Cupid from greek mythology as modern Youtuber/streamer telling people about romance stories.<br>";
             break;
         case 'recipe':
-            switchGifAndVideo("video");
+            switchImgAndVideo("animation", "video", "animationIframe", "animationContentImg1");
             contentImgElem.src = "https://drive.google.com/file/d/19pE3V-s-uZQIWJEdsygBptfQpezzaE5e/preview";
             contentTextElem.innerHTML = "<b>Title:</b>&ensp;Recipe<br><b>Date:</b>&ensp;3/8/2021<br><b>Medium:</b>&ensp;Digital - Adobe Illustrator, After Effects<br>> Motion class project. We had to animate recipe of our choice and I chose tomato juice with my mom's special recipe.<br>";
             break;
@@ -462,32 +499,8 @@ function showInfo(button, fromWhere) {
             contentImgElem.src = "../resources/img/projects/art/HyoseoK_Alienation1.jpg";
             contentImgElem.alt = "alienation1_img";
             contentTextElem.innerHTML = "<b>Title:</b>&ensp;Alienation<br><b>Date:</b>&ensp;11/19/2020<br><b>Medium:</b>&ensp;Digital - ZBrush<br>> 3D Modeling class project. I chose to alienate myself from my friends.<br>";
-            // Second image
-            let secondImg_alienation = document.createElement('img');
-            secondImg_alienation.classList.add('contentImg');
-            secondImg_alienation.classList.add('contentImg_modeling');
-            secondImg_alienation.id = 'modelingContentImg2';
-            secondImg_alienation.src = "../resources/img/projects/art/HyoseoK_Alienation2.jpg";
-            secondImg_alienation.alt = "alienation2_img";
-            secondImg_alienation.style.display = 'none';
-            // Third image
-            let thirdImg_alienation = document.createElement('img');
-            thirdImg_alienation.classList.add('contentImg');
-            thirdImg_alienation.classList.add('contentImg_modeling');
-            thirdImg_alienation.id = 'modelingContentImg3';
-            thirdImg_alienation.src = "../resources/img/projects/art/HyoseoK_Alienation3.jpg";
-            thirdImg_alienation.alt = "alienation3_img";
-            thirdImg_alienation.style.display = 'none';
-            // Fourth image
-            let fourthImg_alienation = document.createElement('img');
-            fourthImg_alienation.classList.add('contentImg');
-            fourthImg_alienation.classList.add('contentImg_modeling');
-            fourthImg_alienation.id = 'modelingContentImg4';
-            fourthImg_alienation.src = "../resources/img/projects/art/HyoseoK_Alienation4.jpg";
-            fourthImg_alienation.alt = "alienation4_img";
-            fourthImg_alienation.style.display = 'none';
-            // Add all images to container
-            parentDiv.append(secondImg_alienation, thirdImg_alienation, fourthImg_alienation);
+            // Add rest of images
+            addImgtoSlideshow(4, "contentImg_modeling", "modelingContentImg", "art", "HyoseoK_Alienation", ".jpg", "alienation", "_img", parentDiv);
             break;
         default:
             break;
@@ -500,6 +513,8 @@ function showInfo(button, fromWhere) {
         let twoImgElems = 'alone_together comics double_meaning self_portrait';
         let fourImgElems = 'sticker_sheets alienation'
         let fiveImgElems = 'char_concept';
+        let eightImgElems = 'totalvery mywebsite';
+        let nineImgElems = 'tower_defense';
         if (singleImgElems.includes(button)) {
             thisPageNum.innerHTML = "1/1";
         } else if (twoImgElems.includes(button)) {
@@ -508,6 +523,10 @@ function showInfo(button, fromWhere) {
             thisPageNum.innerHTML = "1/4";
         } else if (fiveImgElems.includes(button)) {
             thisPageNum.innerHTML = "1/5";
+        } else if (eightImgElems.includes(button)) {
+            thisPageNum.innerHTML = "1/8";
+        } else if (nineImgElems.includes(button)) {
+            thisPageNum.innerHTML = "1/9";
         }
         currImgID = contentImgElem.id;
         contentInfoElem.style.display = 'block';
@@ -542,7 +561,12 @@ function removeElemInDiv(thisDiv) {
 function nextSlide(num, fromWhere) {
     let pageNum;
     // Get correct pageNum depending on from where buttons were clicked
-    if (fromWhere == 'illustration') {
+    // ADD NEW CATEGORY HERE
+    if (fromWhere == 'coding2021') {
+        pageNum = document.getElementById("pageNum_coding2021");
+    } else if (fromWhere == 'coding2024') {
+        pageNum = document.getElementById("pageNum_coding2024");
+    } else if (fromWhere == 'illustration') {
         pageNum = document.getElementById("pageNum_ill");
     } else if (fromWhere == 'modeling') {
         pageNum = document.getElementById("pageNum_modeling");
@@ -577,17 +601,53 @@ function nextSlide(num, fromWhere) {
     }
 }
 
-// This function switches between gif and video to show in animation contents
-function switchGifAndVideo(toThis) {
-    iframeElem = document.getElementById("animationIframe");
-    gifElem = document.getElementById("animationContentImg1");
-    if (toThis == "gif") {
-        // Disable iframe and show gif
+// This function adds multiple images to slideshow (only if image files have consistent numbering)
+function addImgtoSlideshow(howmany, className, idName, folderName, imgFileName, fileType, altName, altType, parentDiv) {            
+    for (let i=2; i<=howmany; i++) {
+        // Create img element
+        let currElem = document.createElement('img');
+        currElem.classList.add('contentImg');
+        currElem.classList.add(className);
+        currElem.id = idName + i;
+        currElem.src = "../resources/img/projects/" + folderName + "/" + imgFileName + i + fileType;
+        currElem.alt = altName + i + altType;
+        currElem.style.display = 'none';
+        // Add image element to container
+        parentDiv.append(currElem);
+    }
+}
+
+/*
+    SWITCH CODE
+*/
+// This function switches between img/gif and video to show in info section
+function switchImgAndVideo(fromWhere, toThis, iframeId, imgId) {
+    let iframeElem = document.getElementById(iframeId);
+    let imgElem = document.getElementById(imgId);
+    
+    if ((toThis == "gif") || (toThis == "img")) {
+        // Disable iframe and show img
         iframeElem.style.display = "none";
-        gifElem.style.display = "block";
+        imgElem.style.display = "block";
+        if (fromWhere == 'coding2021') {
+            // Coding 2021 section has both video and img so bring back slideshow buttons on img
+            let slideshowButtons = document.getElementsByClassName("slideshowButtons2021");
+            for (let i=0; i<slideshowButtons.length; i++) {
+                let currElem = slideshowButtons[i];
+                currElem.style.display = "inline-block";
+            }
+        }
     } else if (toThis == "video") {
-        // Disable gif and show iframe
+        // Disable img and show iframe
         iframeElem.style.display = "block";
-        gifElem.style.display = "none";
+        imgElem.style.display = "none";
+        if (fromWhere == 'coding2021') {
+            // Coding 2021 section has both video and img so hide slideshow buttons on video
+            let slideshowButtons = document.getElementsByClassName("slideshowButtons2021");
+            for (let i=0; i<slideshowButtons.length; i++) {
+                let currElem = slideshowButtons[i];
+                currElem.style.display = "none";
+            }
+        }
     }
 }
