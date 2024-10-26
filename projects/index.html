@@ -3,7 +3,6 @@
 -->
 <!DOCTYPE html>
 <html lang="en">
-  <!-- <script>location.href = "../deny/"</script> -->
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,6 +19,12 @@
             <p class="p_captions" id="programming_caption">programming</p>
           </div>
           <div class="contents" id="programming_contents">
+            <!-- 
+                FOR ADDING NEW CATEGORY YOU HAVE TO:
+                  * make new button here on top (newest first)
+                  * add ifs at projectsCode.js
+                  (search "(ADD NEW CATEGORY HERE)" for locations)
+            -->
             <!-- Clicking on buttons... -->
             <button class="categoryHeader" id="coding2024Header" onclick="showContent(this.id, 'coding2024_content', 'coding2024ContentInfo', '#1e2893')">2024 ▼</button>
             <button class="categoryHeader" id="coding2021Header" onclick="showContent(this.id, 'coding2021_content', 'coding2021ContentInfo', '#66ae23')">2021 ▼</button>
@@ -98,13 +103,18 @@
           </div>
         </a>
 
-        <!-- TODO: clicking image shows img in full screen -->
         <a id="art" onmouseover="expandAnimation(this.id)" onmouseleave="resetAnimation(this.id)"  onclick="clickSection(this.id)" tabindex="0" href="#">
           <div class="header" id="art_header">
             <img src="../resources/img/projects/art.png" alt="art icon" id="artImg">
             <p class="p_captions" id="art_caption">art</p>
           </div>
           <div class="contents" id="art_contents">
+            <!-- 
+                FOR ADDING NEW CATEGORY YOU HAVE TO:
+                  * make new button here on top (newest first)
+                  * add ifs at projectsCode.js
+                  (search "(ADD NEW CATEGORY HERE)" for locations)
+            -->
             <!-- Clicking on buttons... -->
             <button class="categoryHeader" id="illustrationHeader" onclick="showContent(this.id, 'illustration_content', 'illustrationContentInfo', '#9c2626')">Illustration ▼</button>
             <button class="categoryHeader" id="animationHeader" onclick="showContent(this.id, 'animation_content', 'animationContentInfo', '#ec9830')">Animation ▼</button>

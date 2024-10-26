@@ -15,16 +15,6 @@ Could not convert ttf to woff so change upon malfunction */
     font-style: normal;
 }
 
-/* @font-face {
-    font-family: 'rejiha_font';
-    src: url('../resources/font/webfontkit-20240309-135718/rejiha_font-regular-webfont.woff') format('woff'),
-        url('../resources/font/webfontkit-20240309-135718/rejiha_font-regular-webfont.woff2') format('woff2'),
-        url('../resources/font/Rejiha_font-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-} */
-
-
 /*
     ALL ELEMENTS
 */
@@ -35,10 +25,6 @@ Could not convert ttf to woff so change upon malfunction */
     text-decoration: none;
     margin: 0;
     cursor: url('../resources/img/myWebsite/xp_cursor.png'), auto;
-}
-
-body {
-    /* cursor: url('../resources/img/myWebsite/xp_cursor.png'), auto; */
 }
 
 h1 {

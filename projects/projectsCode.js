@@ -1,5 +1,8 @@
 /*
-    This...
+    This javascript code shows information on projects page depending on which
+    categories and buttons are clicked. When certain category is clicked, it
+    lists all buttons that user can click. Once these buttons are clicked,
+    javascript fetches correct image/ gif/ video/ slideshow files to show.
  */
 
 
@@ -188,7 +191,7 @@ function showInfo(button, fromWhere) {
     let parentDiv;
 
     // Decide which category contents is showing
-    // TODO: add rest of category (prog2024, prog2021, prog2020)
+    // ADD NEW CATEGORY HERE
     if (fromWhere == 'coding2024') {
         contentInfoElem = document.getElementById("coding2024ContentInfo");
         contentImgElem = document.getElementById("coding2024ContentImg1");
@@ -196,7 +199,6 @@ function showInfo(button, fromWhere) {
         slideshowImgs = document.getElementsByClassName("contentImg_coding2024");
         thisPageNum = document.getElementById("pageNum_coding2024");
         parentDiv = document.getElementById("slideshow-container_coding2024");
-
     } else if (fromWhere == 'coding2021') {
         if (button == 'accessu') {
             // AccessU is video, so use video tag
@@ -210,12 +212,10 @@ function showInfo(button, fromWhere) {
         slideshowImgs = document.getElementsByClassName("contentImg_coding2021");
         thisPageNum = document.getElementById("pageNum_coding2021");
         parentDiv = document.getElementById("slideshow-container_coding2021");
-
     } else if (fromWhere == 'coding2020') {
         contentInfoElem = document.getElementById("coding2020ContentInfo");
         contentImgElem = document.getElementById("coding2020Iframe");
         contentTextElem = document.getElementById("coding2020ContentText");
-
     } else if (fromWhere == 'illustration') {
         contentInfoElem = document.getElementById("illustrationContentInfo");
         contentImgElem = document.getElementById("illustrationContentImg1");
