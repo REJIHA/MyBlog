@@ -27,13 +27,13 @@ Date: March 9 & 10 2024, August 28 2024 - Present
     - [x] third link: instagram (shop)
     - [x] fourth link: instagram (art)
     - [x] fifth link: tiktok
-    - [ ] ~~sixth link: animal frens (description)~~
+    - [ ] sixth link: animal frens (description)
     - [x] ADA compliance check
 - [x] my website - main page
     - [x] website animation
     - [x] about me page
     - [x] skills page
-    - [ ] link to projects
+    - [x] link to projects
     - [x] link to resume
     - [x] link to link page
     - [x] tool bar
@@ -41,9 +41,9 @@ Date: March 9 & 10 2024, August 28 2024 - Present
         - [x] contact me
     - [x] denied access page (for unfinished pages)
     - [x] ADA compliance check
-- [ ] projects
-    - [ ] programming
-    - [ ] art
+- [x] projects
+    - [x] programming
+    - [x] art
 - [ ] funsies
     - [ ] animal frens profile maker & popularity poll (using cookie)
     - [ ] QR code generaor
@@ -86,6 +86,7 @@ Date: March 9 & 10 2024, August 28 2024 - Present
 * [ADA Compliance Checker - accessScan](https://accessibe.com/accessscan)
 * [CSS Gradient Generator](https://cssgradient.io/)
 * [CSS Pixel Art](https://css-tricks.com/fun-times-css-pixel-art/)
+* [Image Resizer & crop](https://imageresizer.com/)
 
 <!-- * Below are links I didn't end up using...
 * [Let's Encrypt](https://letsencrypt.org/) free SSL site

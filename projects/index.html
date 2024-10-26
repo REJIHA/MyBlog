@@ -1,24 +1,276 @@
 <!-- 
-    This is the ... page ...
+    This is the Projects page that lists projects I've done since university.
 -->
 <!DOCTYPE html>
 <html lang="en">
-  <script>location.href = "../deny/"</script>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="">
-
-    <!-- add icon here -->
-    <!-- <link rel="icon" type="image/png" href="./icon.png"/> -->
-    <!-- <link rel="icon" type="image/x-icon" href="./favicon.ico"> -->
+    <link rel="stylesheet" type="text/css" href="projectsStyle.css">
+    <link rel="icon" type="image/png" href="../resources/img/myWebsite/projects_icon.png"/>
     <title>Projects</title>
-    <link rel="stylesheet" href="./style.css">
   </head>
   <body>
     <main>
-        <h1>PROJECT SHOWCASE</h1>  
+        <h1 id="ProjectsTitle" onclick="titleClick()">PROJECTs</h1>
+        <a id="programming" onmouseover="expandAnimation(this.id)" onmouseleave="resetAnimation(this.id)" onclick="clickSection(this.id)" tabindex="0" href="#">
+          <div class="header" id="programming_header">
+            <img src="../resources/img/projects/programming.png" alt="programming icon" id="programmingImg">
+            <p class="p_captions" id="programming_caption">programming</p>
+          </div>
+          <div class="contents" id="programming_contents">
+            <!-- 
+                FOR ADDING NEW CATEGORY YOU HAVE TO:
+                  * make new button here on top (newest first)
+                  * add ifs at projectsCode.js
+                  (search "(ADD NEW CATEGORY HERE)" for locations)
+            -->
+            <!-- Clicking on buttons... -->
+            <button class="categoryHeader" id="coding2024Header" onclick="showContent(this.id, 'coding2024_content', 'coding2024ContentInfo', '#1e2893')">2024 ▼</button>
+            <button class="categoryHeader" id="coding2021Header" onclick="showContent(this.id, 'coding2021_content', 'coding2021ContentInfo', '#66ae23')">2021 ▼</button>
+            <button class="categoryHeader" id="coding2020Header" onclick="showContent(this.id, 'coding2020_content', 'coding2020ContentInfo', '#1e8b93')">2020 ▼</button>
+            
+            <!-- ...Shows below contents (this is coding 2024) -->
+            <div class="individualContents" id="coding2024_content">
+              <div class="contentInfo" id="coding2024ContentInfo">
+                <!-- Buttons for slideshow -->
+                <button class="prev" onclick="nextSlide(-1, 'coding2024')">&#10094;</button>
+                <h2 class="pageNum" id="pageNum_coding2024">1/1</h2>
+                <button class="next" onclick="nextSlide(1, 'coding2024')">&#10095;</button>
+                <!-- Slideshow image container -->
+                <div class="slideshow-container" id="slideshow-container_coding2024">
+                  <img src="" alt="" class="contentImg contentImg_coding2024" id="coding2024ContentImg1">
+                </div>
+                <div class="contentText" id="coding2024ContentText"></div>
+              </div>
+              <!-- 
+                FOR ADDING NEW CODING PROJECT YOU HAVE TO:
+                  * make new button here on top (newest first)
+                  * add case at projectsCode.js
+                  (search "(ADD NEW PROJECTS HERE)" for locations)
+              -->
+              <button class="container" style="background-image: url('../resources/img/projects/programming/myWebsite_1.png');" id="mywebsite" onclick="showInfo(this.id, 'coding2024')">
+                <div class="overlay">
+                  <div class="overlayTitle">Personal<br>Website</div>
+                </div>
+              </button>
+            </div>
+            
+            <!-- ...Shows below contents (this is coding 2021) -->
+            <div class="individualContents" id="coding2021_content">
+              <div class="contentInfo" id="coding2021ContentInfo">
+                <!-- Buttons for slideshow -->
+                <button class="prev slideshowButtons2021" onclick="nextSlide(-1, 'coding2021')">&#10094;</button>
+                <h2 class="pageNum slideshowButtons2021" id="pageNum_coding2021">1/1</h2>
+                <button class="next slideshowButtons2021" onclick="nextSlide(1, 'coding2021')">&#10095;</button>
+                <!-- Slideshow image container -->
+                <div class="slideshow-container" id="slideshow-container_coding2021">
+                  <iframe src="" allow="autoplay" id="coding2021Iframe"></iframe>
+                  <img src="" alt="" class="contentImg contentImg_coding2021" id="coding2021ContentImg1">
+                </div>
+                <div class="contentText" id="coding2021ContentText"></div>
+              </div>
+              <button class="container" style="background-image: url('../resources/img/projects/programming/AccessU.png');" id="accessu" onclick="showInfo(this.id, 'coding2021')">
+                <div class="overlay">
+                  <div class="overlayTitle">AccessU<br>Website</div>
+                </div>
+              </button>
+              <button class="container" style="background-image: url('../resources/img/projects/programming/tower_defense_1.png');" id="tower_defense" onclick="showInfo(this.id, 'coding2021')">
+                <div class="overlay">
+                  <div class="overlayTitle">Tower<br>Defense</div>
+                </div>
+              </button>
+              <button class="container" style="background-image: url('../resources/img/projects/programming/totalvery.png');" id="totalvery" onclick="showInfo(this.id, 'coding2021')">
+                <div class="overlay">
+                  <div class="overlayTitle"><br>Totalvery</div>
+                </div>
+              </button>
+            </div>
+            
+            <!-- ...Shows below contents (this is coding 2020) -->
+            <div class="individualContents" id="coding2020_content">
+              <div class="contentInfo" id="coding2020ContentInfo">
+                <iframe src="" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" id="coding2020Iframe"></iframe>
+                <div class="contentText" id="coding2020ContentText"></div>
+              </div>
+              <button class="container" style="background-image: url('../resources/img/projects/programming/mainmenu.jpg');" id="social_deduction" onclick="showInfo(this.id, 'coding2020')">
+                <div class="overlay">
+                  <div class="overlayTitle">Social<br>Deduction</div>
+                </div>
+              </button>
+
+            </div>
+          </div>
+        </a>
+
+        <a id="art" onmouseover="expandAnimation(this.id)" onmouseleave="resetAnimation(this.id)"  onclick="clickSection(this.id)" tabindex="0" href="#">
+          <div class="header" id="art_header">
+            <img src="../resources/img/projects/art.png" alt="art icon" id="artImg">
+            <p class="p_captions" id="art_caption">art</p>
+          </div>
+          <div class="contents" id="art_contents">
+            <!-- 
+                FOR ADDING NEW CATEGORY YOU HAVE TO:
+                  * make new button here on top (newest first)
+                  * add ifs at projectsCode.js
+                  (search "(ADD NEW CATEGORY HERE)" for locations)
+            -->
+            <!-- Clicking on buttons... -->
+            <button class="categoryHeader" id="illustrationHeader" onclick="showContent(this.id, 'illustration_content', 'illustrationContentInfo', '#9c2626')">Illustration ▼</button>
+            <button class="categoryHeader" id="animationHeader" onclick="showContent(this.id, 'animation_content', 'animationContentInfo', '#ec9830')">Animation ▼</button>
+            <button class="categoryHeader" id="modelingHeader" onclick="showContent(this.id, 'modeling_content', 'modelingContentInfo', '#ae2397')">3D Modeling ▼</button>
+
+            <!-- ...Shows below contents (this is illustration) -->
+            <div class="individualContents" id="illustration_content">
+              <!-- Info shows at top -->
+              <div class="contentInfo" id="illustrationContentInfo">
+                <!-- Buttons for slideshow -->
+                <button class="prev" onclick="nextSlide(-1, 'illustration')">&#10094;</button>
+                <h2 class="pageNum" id="pageNum_ill">1/1</h2>
+                <button class="next" onclick="nextSlide(1, 'illustration')">&#10095;</button>
+                <!-- Slideshow image container -->
+                <div class="slideshow-container" id="slideshow-container_illustration">
+                  <img src="" alt="" class="contentImg contentImg_ill" id="illustrationContentImg1">
+                </div>
+                <div class="contentText" id="illustrationContentText"></div>
+              </div>
+              <!-- 
+                FOR ADDING NEW ILLUSTRATION PROJECT YOU HAVE TO:
+                  * make new button here on top (newest first)
+                  * add case at projectsCode.js
+                  (search "(ADD NEW PROJECTS HERE)" for locations)
+              -->
+              <button class="container" style="background-image: url('../resources/img/projects/art/HSR_Sparkle.png');" id="hsr_sparkle" onclick="showInfo(this.id, 'illustration')">
+                <div class="overlay">
+                  <div class="overlayTitle">Honkai: Star Rail<br>- Sparkle</div>
+                </div>
+              </button>
+              <button class="container" style="background-image: url('../resources/img/projects/art/besties_all_universe.png');" id="besties" onclick="showInfo(this.id, 'illustration')">
+                <div class="overlay">
+                  <div class="overlayTitle">We Are Besties In<br>Every Universe</div>
+                </div>
+              </button>
+              <button class="container" style="background-image: url('../resources/img/projects/art/animalfrens_01_hello.png');" id="sticker_sheets" onclick="showInfo(this.id, 'illustration')">
+                <div class="overlay">
+                  <div class="overlayTitle">Sticker<br>sheets</div>
+                </div>
+              </button>
+              <button class="container" style="background-image: url('../resources/img/projects/art/Kwag_Hyoseo_Cupid.jpg');" id="char_concept" onclick="showInfo(this.id, 'illustration')">
+                <div class="overlay">
+                  <div class="overlayTitle">Character<br>Concept</div>
+                </div>
+              </button>
+              <button class="container" style="background-image: url('../resources/img/projects/art/Garden_5.jpg');" id="garden" onclick="showInfo(this.id, 'illustration')">
+                <div class="overlay">
+                  <div class="overlayTitle"><br>Garden</div>
+                </div>
+              </button>
+              <button class="container" style="background-image: url('../resources/img/projects/art/Together.jpg');" id="alone_together" onclick="showInfo(this.id, 'illustration')">
+                <div class="overlay">
+                  <div class="overlayTitle"><br>Alone/ Together</div>
+                </div>
+              </button>
+              <button class="container" style="background-image: url('../resources/img/projects/art/HyoseoK_Wallpaper.jpg');" id="propaganda" onclick="showInfo(this.id, 'illustration')">
+                <div class="overlay">
+                  <div class="overlayTitle">Propaganda<br>Wallpaper</div>
+                </div>
+              </button>
+              <button class="container" style="background-image: url(../resources/img/projects/art/HyoseoK_NewYorker_Final.jpg);" id="newyorker" onclick="showInfo(this.id, 'illustration')">
+                <div class="overlay">
+                  <div class="overlayTitle">New Yorker<br>Magazine</div>
+                </div>
+              </button>
+              <button class="container" style="background-image: url(../resources/img/projects/art/SequentialComics1.jpg);" id="comics" onclick="showInfo(this.id, 'illustration')">
+                <div class="overlay">
+                  <div class="overlayTitle">Sequential<br>Comics</div>
+                </div>
+              </button>
+            </div>
+
+            <!-- ...Shows below contents (this is animation) -->
+            <div class="individualContents" id="animation_content">
+              <!-- Info shows at top -->
+              <div class="contentInfo" id="animationContentInfo">
+                <iframe src="" allow="autoplay" id="animationIframe"></iframe>
+                <img src="" alt="" class="contentImg" id="animationContentImg1">
+                <div class="contentText" id="animationContentText"></div>
+              </div>
+              <!-- 
+                FOR ADDING NEW ANIMATION PROJECT YOU HAVE TO:
+                  * make new button here on top (newest first)
+                  * add case at projectsCode.js
+                  (search "(ADD NEW PROJECTS HERE)" for locations)
+              -->
+              <button class="container" style="background-image: url('../resources/img/projects/art/personal_structure_still.png');" id="personal_structure" onclick="showInfo(this.id, 'animation')">
+                <div class="overlay">
+                  <div class="overlayTitle">Personal<br>Structure</div>
+                </div>
+              </button>
+              <button class="container" style="background-image: url('../resources/img/projects/art/experimentation.png');" id="experimentation" onclick="showInfo(this.id, 'animation')">
+                <div class="overlay">
+                  <div class="overlayTitle">Week of<br>Experimentation</div>
+                </div>
+              </button>
+              <button class="container" style="background-image: url('../resources/img/projects/art/frame-00000.jpg');" id="flipbook" onclick="showInfo(this.id, 'animation')">
+                <div class="overlay">
+                  <div class="overlayTitle"><br>Flip Book</div>
+                </div>
+              </button>
+              <button class="container" style="background-image: url('../resources/img/projects/art/ComicSans_1.jpg');" id="title_sequence" onclick="showInfo(this.id, 'animation')">
+                <div class="overlay">
+                  <div class="overlayTitle">Title<br>Sequence</div>
+                </div>
+              </button>
+              <button class="container" style="background-image: url('../resources/img/projects/art/puppet.png');" id="puppet" onclick="showInfo(this.id, 'animation')">
+                <div class="overlay">
+                  <div class="overlayTitle"><br>Puppet</div>
+                </div>
+              </button>
+              <button class="container" style="background-image: url('../resources/img/projects/art/recipe.png');" id="recipe" onclick="showInfo(this.id, 'animation')">
+                <div class="overlay">
+                  <div class="overlayTitle"><br>Recipe</div>
+                </div>
+              </button>
+            </div>
+
+            <!-- ...Shows below contents (this is 3d modeling) -->
+            <div class="individualContents" id="modeling_content">
+              <div class="contentInfo" id="modelingContentInfo">
+                <!-- Buttons for slideshow -->
+                <button class="prev" onclick="nextSlide(-1, 'modeling')">&#10094;</button>
+                <h2 class="pageNum" id="pageNum_modeling">1/1</h2>
+                <button class="next" onclick="nextSlide(1, 'modeling')">&#10095;</button>
+                <!-- Slideshow image container -->
+                <div class="slideshow-container" id="slideshow-container_modeling">
+                  <img src="" alt="" class="contentImg contentImg_modeling" id="modelingContentImg1">
+                </div>
+                <div class="contentText" id="modelingContentText"></div>
+              </div>
+              <!-- 
+                FOR ADDING NEW 3D MODELING PROJECT YOU HAVE TO:
+                  * make new button here on top (newest first)
+                  * add case at projectsCode.js
+                  (search "(ADD NEW PROJECTS HERE)" for locations)
+              -->
+              <button class="container" style="background-image: url('../resources/img/projects/art/HyoseoK_Head_Color_Front.jpg');" id="self_portrait" onclick="showInfo(this.id, 'modeling')">
+                <div class="overlay">
+                  <div class="overlayTitle"><br>Self-Portrait</div>
+                </div>
+              </button>
+              <button class="container" style="background-image: url('../resources/img/projects/art/HyoseoK_PosNeg.jpg');" id="double_meaning" onclick="showInfo(this.id, 'modeling')">
+                <div class="overlay">
+                  <div class="overlayTitle">Double<br>Meaning</div>
+                </div>
+              </button>
+              <button class="container" style="background-image: url('../resources/img/projects/art/alienation.jpg');" id="alienation" onclick="showInfo(this.id, 'modeling')">
+                <div class="overlay">
+                  <div class="overlayTitle"><br>Alienation</div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </a>
     </main>
   </body>
-  <!-- <script src="javascript.js"></script> -->
+  <script src="projectsCode.js"></script>
 </html>
